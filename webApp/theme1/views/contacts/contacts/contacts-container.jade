@@ -1,0 +1,56 @@
+.container.contacts-container
+  .row
+    .col-sm-9.col-xs-12
+      .row.contacts-list.container
+        .col-xs-12.margin-20
+          .title CONTACT US
+        form.info-form.clearfix.valid-form#form
+          .col-sm-5.col-xs-12.form-group.short
+            label
+              i.req *
+              span.fi-name First name
+            input.empty-input#first-name.validate-input(name='firstName')
+            div.validate-tip.animated.fadeIn
+              i.glyphicon-tishi
+              span First name can't be empty
+          .col-sm-6.col-xs-12.form-group
+            label
+              i.req *
+              span.fi-name Last name
+            input.empty-input#last-name.validate-input(name='lastName')
+            div.validate-tip.animated.fadeIn
+              i.glyphicon-tishi
+              span Last name can't be empty
+          .col-sm-12.col-xs-12.form-group
+            label
+              i.req *
+              span.fi-name Company
+            input.empty-input#company.validate-input(name='company')
+            div.validate-tip.animated.fadeIn
+              i.glyphicon-tishi
+              span Company can't be empty
+          .col-sm-12.col-xs-12.form-group
+            label
+              i.req *
+              span.fi-name Email address
+            input.empty-input#email.validate-input(name='email')
+            .validate-tip.animated.fadeIn
+              i.glyphicon-tishi
+              span This is not valid email address
+          .col-sm-12.col-xs-12.form-group
+            label
+              i.req
+              span.fi-name Phone
+            input.empty-input#phone.validate-input(name='phone')
+            div.validate-tip.animated.fadeIn
+              i.glyphicon-tishi
+              span This is not valid phone number
+          .col-sm-12.col-xs-12.form-group
+            label
+              i.req *
+              span.fi-name Message
+            textarea.empty-input#msg.validate-input(name='content')
+            div.validate-tip.animated.fadeIn
+              i.glyphicon-tishi
+              span Message can't be empty
+          button.send.send-to(type='button') SEND

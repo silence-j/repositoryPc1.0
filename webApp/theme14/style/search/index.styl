@@ -1,0 +1,68 @@
+@import "../common/color.styl"
+@import "../common/header.styl"
+@import "../common/footer.styl"
+@import "../../../common/style/normal.styl"
+@import "../common/normal.styl"
+
+body
+  background #F7F7F7
+
+.search-result-list
+  margin-left -15px
+  margin-right -15px
+
+.search-result
+  background $white
+  margin-top 20px
+  .loading-search-title
+    width 30%
+    margin-top 20px
+    height 20px
+    margin-bottom 10px
+    background $loadingBg
+  .search-title
+    display none
+    margin-top 20px
+    height 30px
+    .num
+      color $mainColor
+      margin-right 5px
+  .load-more-products
+    display none
+    text-align center
+    padding-top 15px
+    .load-more
+      display inline-block
+      height 36px
+      line-height 36px
+      text-decoration none
+      color $blackOO
+      border 1px solid $blackOOO
+      padding 0 15px
+      cursor pointer
+      &:hover, &:active, &:focus
+        text-decoration none
+      &[disabled]
+        background-color $grayOO
+      .theme-icon
+        margin-left 5px
+
+// 产品列表
+@import "../common/productList.styl"
+
+// 分页
+.pagination
+  width 100%
+  text-align center
+  margin-top 45px
+  margin-bottom 40px
+
+.search-container-empty
+  text-align center
+  margin-top 10%
+  margin-bottom 15%
+  .info-text
+    color $blackOO
+    .search-text
+      margin-left 10px
+      color $black

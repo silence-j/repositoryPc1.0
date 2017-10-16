@@ -1,0 +1,28 @@
+.menu-title
+  | CATEGORIES
+  span.caret.caret14.caret-right
+  span.line
+#accordion.panel-group
+  .panel.panel-default.all
+    .panel-heading
+      .panel-title
+        a(href='/products?shopId=#{shopId}') All Products
+  each group,i in groups
+    .panel.panel-default
+      .panel-heading
+        .panel-title
+          if group.subGroup.length > 0
+            a(data-toggle="collapse", data-parent="#accordion", href="#collapse#{i}")
+              //- i.caret.l
+              //- i.caret.opt-icon.minus
+              //- i.caret.caret-right.opt-icon.plus
+              i.theme-icon.icon-minus.opt-icon.minus
+              i.theme-icon.icon-plus.opt-icon.plus
+          a(href="/products?shopId=#{shopId}&groupId=#{group.id}")
+            | #{group.name}
+      .panel-collapse.collapse(id='collapse#{i}')
+        .panel-body
+          ul
+            each gp in group.subGroup
+              li
+                a(href='/products?shopId=#{shopId}&groupId=#{gp.id}', gid='#{gp.id}') #{gp.name}

@@ -1,0 +1,172 @@
+div.col-sm-5.col-xs-12.left-pic
+    div#carousel-mainpic.carousel.slide.img-box
+      .carousel-inner.img-main(role="listbox")
+        each img, i in productPicUrlsWhole
+          if i == 0
+            .item.active
+              img(src="#{img}", alt="")
+          else
+            .item
+              img(src="#{img}", alt="")
+        div.magnify-begin
+        if productPicUrlsWhole.length > 1
+          a.left.carousel-control(href="#carousel-mainpic",role="button",data-slide="prev")
+            span.glyphicon.glyphicon-chevron-left(aria-hidden="true")
+          a.right.carousel-control(href="#carousel-mainpic",role="button",data-slide="next")
+            span.glyphicon.glyphicon-chevron-right(aria-hidden="true")
+    div.magnify-show
+      img(src="#{productFirstPic}")
+    div.share-four.hidden-xs
+      label Share to:
+      a.glyphicon-facebook(href="javascript:;")
+      a.glyphicon-linkedIn(href="javascript:;")
+      a.glyphicon-twitter(href="javascript:;")
+      a.glyphicon-pinterest(href="javascript:;")
+
+div.col-sm-7.col-xs-12.right-pic
+  h1.clearfix
+    span.col-sm-12.col-xs-10 #{productName}
+    span.share-four-xs.visible-xs
+      a.glyphicon-share(href="javascript:;")
+      div.share-four-toggle
+        a.glyphicon-facebook(href="javascript:;")
+        a.glyphicon-linkedIn(href="javascript:;")
+        a.glyphicon-twitter(href="javascript:;")
+        a.glyphicon-pinterest(href="javascript:;")
+
+  .img-list#img-list
+    each img, i in productPicUrlsWhole
+      if i == 0
+        a.select(href="javascript:void(0);",data-index=i)
+          img(src="#{img}?x-oss-process=image/resize,h_50,w_50",data-bigimg="#{img}")
+      else
+        a(href="javascript:void(0);",data-index=i)
+          img(src="#{img}?x-oss-process=image/resize,h_50,w_50",data-bigimg="#{img}")
+
+  if quotationMethod == 1
+    .spec-box#spec-box
+      .price-tab 
+        ul.clearfix#sku-price
+      h3#sku-allprice #{priceUnit} #{skuprice}
+      //- h3 #{priceUnit} #{skuprice}
+      .spec-select
+        each opt, key in specMap
+          .form-group
+              label(data-val="#{key}") #{key.replace(/\b\w/g, l => l.toUpperCase())}:
+              select.ui-select
+                //- option(value="") Select
+                each v, k in opt
+                  option(value="#{v}") #{v}
+        .form-group
+          label Quantity:
+          .calu-wrap
+            a.glyphicon-reduce(href="javascript:;")
+            input.ui-input(type="number",value=1)
+            a.glyphicon-plus(href="javascript:;")
+  if quotationMethod == 0
+    .num-box
+      .price-tab
+        ul.clearfix
+          li.tit
+            p Price<em>(#{priceUnit})</em>
+            p Quantity
+          if productNumPrices.length
+            each item, i in productNumPrices
+              li
+                p.price(title="#{(item.price/100).toFixed(2)}") #{(item.price/100).toFixed(2)}
+                if i == productNumPrices.length-1
+                  p.quant ≥ #{item.wholesaleStartNum}
+                else
+                  p.quant #{item.wholesaleStartNum}  ~ #{productNumPrices[i+1].wholesaleStartNum-1}
+      .num-detail
+        .text-group
+          label Min.Order:
+          if productNumPrices.length
+            p #{productNumPrices[0].wholesaleStartNum}  #{dupunit}
+        .text-group
+          label Supply Ability:
+          p
+            b #{supplyNum}
+            span   #{dupunit} per #{suptype}
+        .text-group
+          label OEM:
+          if oemMode == 1
+            p Refuse
+          else
+            p Available
+        .text-group
+          label Sample:
+          if sampleAvailable == 1
+            p Refuse
+          else
+            p Available
+        .text-group
+          label Port:
+          p #{tradingPort}
+        .text-group
+          label Payment:
+          p #{paymentMethod}
+        .text-group
+          label Place of orign:
+          p #{originPlaceArea} #{originPlaceCountry}
+        //- .text-group.socail-links.hidden-xs
+        //-   label Share to:
+        //-   a.glyphicon.glyphicon-facebook(href="javascript:;")
+        //-   a.glyphicon.glyphicon-linkedIn(href="javascript:;")
+        //-   a.glyphicon.glyphicon-twitter(href="javascript:;")
+        //-   a.glyphicon.glyphicon-pinterest(href="javascript:;")
+  if quotationMethod == 2
+    .fob-box
+      h3 #{priceUnit} #{fobprice}
+      span.tit-unit /#{unitEn}
+      span #{fobStartNums} #{dupunit}  (Min. Order)
+      //- .img-list#img-list
+      //-   each img, i in productPicUrlsWhole
+      //-     if i == 0
+      //-       a.select(href="javascript:void(0);",data-index=i)
+      //-         img(src="#{img}?x-oss-process=image/resize,h_50,w_50",data-bigimg="#{img}")
+      //-     else
+      //-       a(href="javascript:void(0);",data-index=i)
+      //-         img(src="#{img}?x-oss-process=image/resize,h_50,w_50",data-bigimg="#{img}")
+      .num-detail.clearfix
+        .text-group
+          label Supply Ability:
+          p
+            b #{supplyNum}
+            span #{dupunit} per #{suptype}
+        .text-group
+          label OEM:
+          if oemMode == 1
+            p Refuse
+          else
+            p Available
+        .text-group
+          label Sample:
+          if sampleAvailable == 1
+            p Refuse
+          else
+            p Available
+        .text-group
+          label Port:
+          p #{tradingPort}
+        .text-group
+          label Payment:
+          p #{paymentMethod}
+        .text-group
+          label Place of orign:
+          p #{originPlaceArea} #{originPlaceCountry}
+        //- .text-group.socail-links.hidden-xs
+        //-   label Share to:
+        //-   a.glyphicon.glyphicon-facebook(href="javascript:;")
+        //-   a.glyphicon.glyphicon-linkedIn(href="javascript:;")
+        //-   a.glyphicon.glyphicon-twitter(href="javascript:;")
+        //-   a.glyphicon.glyphicon-pinterest(href="javascript:;")
+  div.btn-group
+    a.btn-blue(href="#supplier") CONTACT SUPPLIER
+    if quotationMethod == 1
+      if iSBindPayAccount == 0 || iSBindPayAccount == '0'
+        a.btn-black-trans#buy-now(href="javascript:;") BUY NOW
+      //- if iSBindPayAccount == 1
+      //-   button.btn-black-trans#buy-now(disabled="disabled") BUY NOW
+      //- else
+      //-   a.btn-black-trans#buy-now BUY NOW

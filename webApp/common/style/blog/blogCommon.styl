@@ -1,0 +1,184 @@
+#blog-bg
+  width 100%
+  padding-bottom: 15.62%;
+  position relative
+  overflow hidden
+  #blog-bg-img
+    width 100%
+    position absolute
+    top 0
+#blog-container
+  position relative
+  background white
+  max-width 1200px
+  min-height 500px
+  margin 0 auto
+  top -58px
+  padding-top 20px
+  .valid-form
+    .form-group
+        label
+            position absolute
+            top 16px
+            width 110px
+            font-size 14px
+            color #2a2a2a
+            font-weight normal
+    .form-group.form-group-focus
+       border-color $mainColor 
+       label
+           top 3px
+           font-size 12px
+           color $mainColor
+    .form-group-min
+       label
+           top 3px
+           font-size 12px
+  .send-msg-part
+    padding-left 15px
+    padding-right 15px
+    .msg-title
+        background #F7F7F7
+        height 54px
+        line-height 54px
+        font-size 24px
+        color #333333
+        padding-left 15px
+        padding-right 15px
+        overflow hidden
+        text-overflow ellipsis
+        white-space nowrap
+        margin-top 20px
+    .info-form
+      margin 40px auto
+      width calc(100% - 300px)
+      .form-group
+        padding 25px 0 0 0
+        min-height 30px
+        border-bottom 1px solid #d8d8d8
+      .short
+        margin-right 8.33%
+    .empty-input
+        padding: 0 0 0 10px
+        width 100%
+        height 100%
+        min-height 30px
+        border 0
+        outline none
+    textarea.empty-input
+        display inline-block
+        margin-bottom -5px
+        padding 0 0 0 10px
+        height 100px
+        resize none
+    .req
+      color red
+    .fi-name
+      font-weight normal
+      padding-left 5px
+    .send
+      margin 10px 0
+      padding 13px 79px
+      display block
+      background-color $whiteOO
+      color #ccc
+      font-weight bold
+      border 2px solid #D9D9D9
+      outline none
+      position relative
+      top 15px
+    .send.able
+      color $white
+      background-color $mainColor
+      border 2px solid $mainColor
+    
+  .first-part
+    padding-left 15px
+    padding-right 15px
+    .left-container
+      // padding-right 0
+      .blog-title
+        background #F7F7F7
+        height 54px
+        line-height 54px
+        font-size 24px
+        color #333333
+        padding-left 15px
+        padding-right 15px
+        overflow hidden
+        text-overflow ellipsis
+        white-space nowrap
+      .blog-content
+        max-width 560px
+        width 100% 
+        margin 38px auto
+        font-size 13px
+        word-break break-all
+        li
+          list-style inherit
+        table
+          width 100%
+          // border-top 1px solid #e0e0e0
+          // border-left 1px solid #e0e0e0
+        table th, table td
+          padding 5px
+          text-align inherit
+          border 1px solid #e0e0e0
+        table th
+          background #f9f9f9
+    .right-container
+      // padding-left 0
+      .page-wraper
+        float right
+      .b-list
+        .blog-item
+          height 45px
+          line-height 45px
+          color #33475B
+          font-size 14px
+          font-family PingFangSC-Regular
+          border 1px solid #DFE3EB
+          border-right 0
+          border-bottom 0
+          padding-left 14px
+          overflow hidden
+          text-overflow ellipsis
+          white-space nowrap
+          &:hover
+            background #F5F8FA
+          &:last-child
+            border-bottom 1px solid #DFE3EB
+          span
+            cursor pointer 
+        .active-blog-item
+          border-left none
+          a
+            color #5488f9  
+      .list-title
+        height 54px
+        line-height 54px
+        font-size 24px
+        color #333333
+        overflow hidden
+        text-overflow ellipsis
+        white-space nowrap
+        background #CCD6E2
+        .list-bg
+          background #7D98B6
+          width 145px
+          padding-left 15px
+          color white 
+      .this-title
+        color #359AF6
+        font-size 14px 
+        overflow hidden
+        text-overflow ellipsis
+        white-space nowrap 
+        margin 14px 0
+@media screen and (max-width: 768px)
+  #blog-container
+    top 0
+    .send-msg-part
+      .info-form
+        margin 20px auto
+        width 90%     

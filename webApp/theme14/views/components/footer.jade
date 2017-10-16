@@ -1,0 +1,47 @@
+.footer-container
+  #footer-container
+    .container
+      .row
+        .support.col-xs-12
+          //- .container.footer-logo
+          //-   img.logo-img
+          if (fb !== '1')
+            .container.quick-links.text-center.hidden-xs
+              .links.context
+                if(plat != '1')
+                  span.col-xs-12
+                    a(href='/?shopId=#{shopId}') Home
+                span.col-xs-12
+                  a(href='/products?shopId=#{shopId}') Products
+                if(plat != '1')
+                  span.col-xs-12
+                    a(href='/blog/#{shopId}') Blog
+                  span.col-xs-12
+                    a(href='/profile?shopId=#{shopId}') Company Profile
+                  span.col-xs-12
+                    a(href='/contacts?shopId=#{shopId}') Contact Us
+          .container.follow-us
+            span Follow us
+            p.socail.context.icon-num
+              //- 通过JS动态添加
+              //- i.glyphicon.glyphicon-facebook
+              //- i.glyphicon.glyphicon-linkedIn
+              //- i.glyphicon.glyphicon-twitter
+    nav.navbar.bottom.navbar-inverse.footer-copyright.text-center
+      .support.container
+        .contact
+          .tit.hidden-xs Support
+          .contact-item
+            i.glyphicon.glyphicon-tel.sup-i
+            p.tel
+          .contact-item
+            i.glyphicon.glyphicon-email.sup-i
+            p.email
+          .contact-item
+            i.glyphicon.glyphicon-location.sup-i
+            p.location
+        //- .discribe.col-xs-12.col-sm-12
+        //-   p ONLOON &copy; All Rights Reserved.  POWERED BY ONLOON
+a.cd-top
+  i.theme-icon.icon-chevron-up
+  p Back to top

@@ -1,0 +1,73 @@
+extends ./userLayout
+block css
+  link(rel="stylesheet", href="/thirtyPart/bootstrap/bootstrap.min.css")
+  link(rel="stylesheet", href="/plugins/animate.css/animate.min.css")
+  link(rel='stylesheet', href='/common/css/login/login.css')
+  link(rel='stylesheet', href='/common/css/normal.css')
+block content
+  .container
+    .row
+      .col-md-3.col-sm-2
+      .col-md-6.col-sm-8.col-xs-12
+        .user-container
+          .user-title Login
+          .user-form
+            .validate-wrap
+              .validate-tip.animated.fadeIn 
+                  i.glyphicon &#xe6b5;
+                  span.login-head-tip    
+            .username-container
+              input.username.user-input.validate-input#email(type='text', placeholder='Email Address',vtype='email')
+              .validate-tip.animated.fadeIn
+                i.glyphicon &#xe6b5;
+                span This is not a valid email address           
+            .forget-passwd.hidden-xs
+              span.forgot Forgot my password? 
+            .forget-passwd.visible-xs
+              span.forgot Forgot? 
+            .password-container
+              input.password.user-input.validate-input#passwd(type='password', placeholder='Password',vtype='password',maxlength='20')
+              .validate-tip.animated.fadeIn
+                i.glyphicon &#xe6b5;
+                span 6-20 characters(letters or numbers only)
+            .remember
+                input#check(type='checkbox')
+                span.remember-text Remember me
+            .login-btn-wrap
+              .login-btn#login-btn Log in
+            .or-hr
+              .or-text or  
+            .social-login-wrap
+              button.facebook-login
+                .logo-left
+                  i.glyphicon-facebook
+                  //- span f
+                span.text-right Facebook
+              button.gg-login#gg-login
+                .logo-left
+                  i.glyphicon-gg
+                  //- span f
+                span.text-right Google
+              //- div.g-signin2#g-sign(data-onsuccess="onSignIn", data-onfailure="onFail",data-theme="")
+      .col-md-3.col-sm-2
+append scripts
+  script(src="/plugins/jquery/dist/jquery.min.js")
+  script(src='/thirtyPart/security.js')
+  script(src='/common/js/user.js')
+  //- script(src='https://apis.google.com/js/platform.js',async,defer)
+  //- script.
+  //-   function onSignIn (googleUser) {
+  //-     var isLogin = localStorage.getItem('isLogin')
+  //-     var ggClick = localStorage.getItem('ggClick') // 是否点击过gg登陆按钮
+  //-     if (isLogin && +isLogin === 1) {
+  //-       return
+  //-     }
+  //-     if (!ggClick) {
+  //-       return
+  //-     }
+  //-     var id_token = googleUser.getAuthResponse().id_token
+  //-     window.location.href = '/users/ggBack/?shopId=' + window.shopId + '&id_token=' + id_token
+  //-   }
+  //-   function onFail () {
+  //-     alert('Google登陆失败')
+  //-   }

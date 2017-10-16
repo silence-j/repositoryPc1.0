@@ -1,0 +1,75 @@
+div.desc-tit.module-title#supplier
+  | Send Your Message To This Supplier
+  span.caret.caret-right
+  span.line
+.load-spec
+  p
+  p
+  p
+form.supplier-form.clearfix.valid-form#form
+  .form-item.row
+    .col-xs-12
+      .col-sm-6.col-xs-12.form-group.short
+        label
+          i.req *
+          span First name
+        input.empty-input#first-name.validate-input(name="firstName", placeholder="First name")
+        div.validate-tip.animated.fadeIn
+          i.glyphicon-tishi
+          span First name can't be empty
+        div.valid-tip.animated.fadeIn
+          i.theme-icon.icon-ok-circled
+      .col-sm-6.col-xs-12.form-group
+        label
+          i.req *
+          span Last name
+        input.empty-input#last-name.validate-input(name="lastName", placeholder="Last name")
+        div.validate-tip.animated.fadeIn
+          i.glyphicon-tishi
+          span Last name can't be empty
+        div.valid-tip.animated.fadeIn
+          i.theme-icon.icon-ok-circled
+  .form-item.row
+    .col-xs-12
+      .col-sm-12.col-xs-12.form-group
+        label
+          i.req *
+          span Company
+        input.empty-input#company.validate-input(name="company", placeholder="Company")
+        div.validate-tip.animated.fadeIn
+          i.glyphicon-tishi
+          span Company can't be empty
+        div.valid-tip.animated.fadeIn
+          i.theme-icon.icon-ok-circled
+  .form-item.row
+    .col-xs-12
+      .col-sm-12.col-xs-12.form-group
+        label
+          i.req *
+          span Email address
+        input.empty-input#email.validate-input(name="email", placeholder="Email address")
+        div.validate-tip.animated.fadeIn
+          i.glyphicon-tishi
+          span This is not a valid email address
+        div.valid-tip.animated.fadeIn
+          i.theme-icon.icon-ok-circled
+  .form-item.row
+    .col-xs-12
+      .col-sm-12.col-xs-12.form-group
+        label
+          i.req *
+          span Message
+        textarea.empty-input#msg.validate-input(name="content", placeholder="Message")
+        div.validate-tip.animated.fadeIn
+          i.glyphicon-tishi
+          span Message can't be empty or over 500 characters
+        div.valid-tip.animated.fadeIn
+          i.theme-icon.icon-ok-circled
+  .form-item.row
+    .col-xs-12.text-center
+      input(type="hidden",name="detailsStr")
+      input(type="hidden",name="shopId")
+      button.btn-send(type="button", disabled) SEND
+//- div.alert.alert-success.alert-dismissible.fade.in#alert(data-dismiss="alert")
+//-   i.glyphicon-tishi
+//-   span Thanks for your feedback, we will have sales contact later

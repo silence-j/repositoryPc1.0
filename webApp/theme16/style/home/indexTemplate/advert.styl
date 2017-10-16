@@ -1,0 +1,69 @@
+.guide-container
+  background-color $advertSectionBgColor // add background color
+  margin-top 0 // 30px
+  padding 0
+  max-width 100%
+  overflow hidden
+  .guide-img
+    width 100%
+    .img
+      animation-duration 1s
+      overflow hidden
+      padding 0
+      .img-holder
+        display inline-block
+        // height 300px
+        height 0
+        // padding-bottom 200%
+        padding-bottom 78.94737%
+        width 100%
+        background $loadingBg
+      & > a
+        display block
+        position relative
+        width 100%
+        height 0
+        // padding-bottom 200%
+        padding-bottom 78.94737%
+        overflow hidden
+        background-position 50% 50%
+        background-repeat no-repeat
+        background-size cover
+        &:hover, &:focus
+          // opacity 0.8
+          box-shadow 1px 1px 10px $advertItemHoverShadowColor
+          &:before
+            display block
+        &:before
+          display none
+          content ""
+          position absolute
+          top 15px
+          bottom 15px
+          left 15px
+          right 15px
+          border 3px solid $mainColor
+        img
+          display none
+          width 100%
+          height auto
+
+@media screen and (max-width: 767px)
+  .guide-container
+    margin-top 0 // 15px
+    .guide-img
+      .row
+        width 150%
+        // margin-left -25%
+      .img
+        // transition .4s ease-in-out
+        // transform translateX(-43%)
+        &:nth-child(1)
+          text-align center
+          margin-left -16.66667%
+        &:nth-child(2)
+          text-align center
+        &:nth-child(3)
+          text-align center
+        & > a
+          border-width 0

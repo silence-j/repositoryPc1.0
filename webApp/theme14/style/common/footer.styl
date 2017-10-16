@@ -1,0 +1,165 @@
+.footer-container
+  margin-top 40px
+  background $footerBgColor
+  #footer-container
+    border-top 3px solid $footerBorderColor
+  .support, .quick-links, .follow-us
+    margin-top 30px
+    text-align center
+    padding-bottom 20px
+    // .title
+    //   color $white
+    //   font-size 16px
+    .context
+      .sup-i
+        color $forgroundColor
+        margin-right 10px
+      i
+        margin-right 15px
+      a, a:active
+        color $mainColor
+        text-decoration none
+      a:hover
+        color $black
+        .glyphicon
+          color $black
+      &.socail
+        margin 0
+        line-height 30px
+        .glyphicon
+          color $grayO
+          height 25px
+          width 25px
+          border-radius 12.5px
+          padding 5px
+          text-align center
+          &.glyphicon-facebook
+            background-color transparent
+          &.glyphicon-linkedIn
+            background-color transparent
+          &.glyphicon-twitter
+            background-color transparent
+      &.links
+        text-align center
+        padding-top 30px
+        .col-xs-12
+          width auto
+          float none
+          border-right 1px solid $white
+          &:last-child
+            border-right-width 0
+  .support
+    .footer-logo
+      text-align center
+      .logo-img
+        height 73.60px
+        width auto
+  .follow-us
+    padding-top 20px
+    margin-top 0
+    font-size 14px
+    line-height 30px
+    text-align center
+    color $grayO
+  .quick-links
+    // margin-top 25px
+    margin-top 0
+  .footer-copyright
+    position relative
+    border none
+    border-radius 0
+    margin-top 30px
+    margin-bottom 40px
+    background-color $footerBgColor
+    color $footerColor
+    border-top 1px solid $footerBorderColor
+    .support
+      margin-top 0
+    .contact
+      display inline-block
+      color $footerColor
+      margin 20px auto 0
+      .tit
+        display block
+        padding-left 0
+        color $black
+        text-align left
+      .contact-item
+        position relative
+        padding-left 20px
+        text-align left
+        display inline-block
+        margin-right 15px
+        &:last-child
+          width 273px
+          margin-right 0
+        &:before
+          content ""
+          display inline-block
+          vertical-align text-top
+          height 100%
+        .sup-i
+          position absolute
+          left 0
+          top 3px
+          height 15px
+          width 15px
+          line-height 15px
+          margin-right 5px
+          display inline-block
+          font-size 14px
+          color $mainColor
+          text-align center
+        p
+          margin 0
+          display inline-block
+          vertical-align text-top
+          width 100%
+          white-space pre-wrap
+  .discribe
+    display none
+    text-align center
+    font-size 14px
+    line-height 60px
+    p
+      margin 0
+
+@media (min-width: 768px) and (max-width: 991px)
+  .footer-container
+    .footer-copyright
+      .contact
+        .tit
+          text-align center
+
+@media screen and (max-width: 767px)
+  .footer-container
+    .support, .quick-links, .follow-us
+      text-align left
+      .context
+        &.footer-logo
+          text-align left
+    .follow-us
+      margin-top 0
+      margin-bottom 15px
+      color $black
+      font-size 20px
+      .context.socail .glyphicon
+        color $mainColor
+    .footer-copyright
+      margin-top 0
+      margin-bottom 0
+      .contact
+        text-align left
+        width:100%
+        .contact-item
+          display block
+          margin-bottom 10px
+          overflow hidden
+          text-overflow ellipsis
+          white-space nowrap
+          &:last-child
+            width 90%
+      .discribe
+        line-height 30px
+        padding 0
+        text-align center

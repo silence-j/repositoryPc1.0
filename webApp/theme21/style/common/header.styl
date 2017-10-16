@@ -1,0 +1,500 @@
+@import "color.styl"
+@import "homeEditor.styl"
+
+.navbar
+  min-height 40px
+  margin-bottom 0
+.header
+  background $headerBgColor
+  .bottom
+    background $navbarBgColor
+    border-radius 0
+    border none
+    z-index 499
+    .navbar
+      .logo-wrapper
+       .logo-img
+         position absolute
+         top 43px
+         height 45px
+      .navbar-header
+        background-color $navbarBgColor
+        .mbSearch-wrapper
+          display none
+          background-color $white
+          position absolute
+          z-index 699
+          top 0
+          left 0
+          right 0
+          height 91px
+          padding 30px 15px 0
+          animation-duration 0.2s
+          .search-tip-list
+            position absolute
+            z-index 999
+            left 0
+            top 40px
+            width 100%
+            margin 0
+            padding 5px 10px
+            background-color $pcTopSearchTipListBgColor
+            box-shadow 0 0 6px 0 $pcTopSearchTipListShadowColor
+            display none
+            max-height 400px
+            overflow auto
+            li
+              height 32px
+              line-height 32px
+              min-height auto
+              cursor pointer
+              overflow hidden
+              text-overflow ellipsis
+              &.empty
+                cursor default
+        .search-input
+          height 38px
+          border-top 1px solid transparent
+          border-bottom 1px solid $mbTopSearchBorderColor
+          background $mbTopSearchBgColor
+          input
+            background $mbTopSearchInputBgColor
+            color $mbTopSearchInputColor
+            border none
+            border-radius 0
+            height 40px
+            box-shadow none
+            &:active, &:focus
+              box-shadow none
+          span
+            border none
+            background $mbTopSearchLabelBgColor
+        button
+          padding 11px 15px
+          margin 5px 0 0 0
+          font-weight bold
+          border none
+          background-color #fff
+          color #333
+          .menu-close
+            display none
+          .menu-bar
+            font-size 14px
+            vertical-align bottom
+            display inline-block
+          .menu-text
+            vertical-align text-bottom
+          &.search-menu
+            color $mbTopSearchBtnColor
+        button:focus, button:hover
+          border none
+          background none
+          outline none
+          box-shadow none
+      ul > li
+        line-height 40px
+        min-height 40px
+        a
+          background-color $navbarItemBgColor
+          color $navbarItemColor
+          font-size 16px
+          line-height 50px
+          .caret
+            margin-left 2.5px
+          &:hover, &:focus
+            cursor pointer
+            text-decoration none
+            color $navbarItemHoverColor
+      ul.navbar-nav
+        position relative
+        padding 40px 0 0
+        li.drop-menu, li.nav-drop-menu
+          position relative
+          span.caret
+            vertical-align middle
+            &.slide-down
+              display inline-block
+            &.slide-up
+              display none
+          .drop-hidden-menu
+            position absolute
+            z-index 99
+            top 90px
+            width 210px
+            padding 0 0 5px
+            background $navbarSubBgColor
+            height 0
+            overflow hidden
+            opacity 0
+            margin-top 0
+            transition opacity 0.2s ease
+            box-shadow 1px 1px 5px $grayOOO
+            li
+              height 40px
+              line-height 40px
+              border-bottom 1px solid transparent
+              a
+                line-height normal
+                font-weight normal
+                background-color $navbarSubItemBgColor
+                color $navbarSubItemColor
+                width 100%
+                display inline-block
+                padding 10px 20px 10px 40px
+                text-overflow ellipsis
+                overflow hidden
+                white-space nowrap
+                position relative
+                i
+                  position absolute
+                  right 5px
+                  top 12.5px
+                  font-size 13px
+                  float right
+              .drop-hidden-menu-2-wrapper
+                position absolute
+                width 0
+                padding 0 5px
+                background transparent
+                z-index 999
+                height 0
+                overflow hidden
+                opacity 0
+                transition opacity 0.2s ease
+              .drop-hidden-menu-2
+                background-color $navbarSub2BgColor
+                padding 0
+                box-shadow 1px 1px 5px $grayOOO
+              a:hover
+                color $mainColor
+                text-decoration none
+            li.drop-menu-2:hover
+              & > a
+                color $mainColor
+              .drop-hidden-menu-2-wrapper
+                width 210px
+                margin-left 210px
+                margin-top -60px
+                height auto
+                opacity 1
+              .drop-hidden-menu-2
+                padding 0
+          &.drop-right
+            .drop-hidden-menu
+              left auto
+              display block
+              height 0
+              opacity 0
+              top 50px
+              left 0
+              width 120px
+              margin-left -30px
+              padding 0
+              border 1px solid $grayO
+              box-shadow none
+              &:before
+                position: absolute
+                z-index 100
+                content ''
+                border-left 1px solid $grayO
+                border-top 1px solid $grayO
+                width 10px
+                height 10px
+                transform rotate(45deg);
+                background $white
+                top -5.5px
+                left 50%
+                margin-left -5.5px
+                -webkit-clip-path polygon(100% 0, 100% 10%, 10% 100%, 0 100%, 0 0)
+                clip-path polygon(100% 0, 100% 10%, 10% 100%, 0 100%, 0 0)
+                -webkit-clip-path url("#about-us-drop-right-clip-shape")
+                clip-path url("#about-us-drop-right-clip-shape")
+                html.safari &
+                  -webkit-clip-path polygon(100% 0, 100% 10%, 10% 100%, 0 100%, 0 0)
+                  clip-path polygon(100% 0, 100% 10%, 10% 100%, 0 100%, 0 0)
+              a
+                display inline-block
+                padding 0 20px
+                line-height 40px
+                height 40px
+                text-align center
+                i
+                  width 16px
+                  height 16px
+              a:hover, a:focus
+                background-color #F8EED1
+        li.drop-menu:hover, li.nav-drop-menu:hover
+          span.caret
+            &.slide-down
+              display none
+            &.slide-up
+              display inline-block
+          .drop-hidden-menu
+            height auto
+            opacity 1
+            overflow visible
+        li:last-child
+          margin-right 0
+        li.active
+          border-bottom none
+          a
+            font-weight bold
+            background-color $white
+            color $forgroundColor
+          a:hover, a:focus
+            background-color $white
+            color $forgroundColor
+        .line-li
+          height 50px
+          margin 0
+          padding-top 0
+          .line
+            display inline-block
+            height 50px
+            width 1px
+            background $blackOOO0
+        .search-li, .user-li
+          a
+            padding 0 20px
+        .user-li
+          a
+            padding-right 0
+            i
+              color $white
+              background-color #6C6C6C
+              border-radius 50%
+        .user-opration, .user-loged
+          color $blackO
+          display none
+          line-height 60px
+          a
+            color $blackO
+          span
+            margin 0 7px
+          i
+            margin-right 6px
+          .username
+            width: 40px
+            display inline-block
+            white-space nowrap
+            overflow hidden
+            text-overflow: ellipsis
+            line-height 10px
+            padding 0
+    .hidden-search
+      position absolute
+      z-index 599
+      left 0
+      right 0
+      top 0
+      height 130px
+      width 100%
+      padding 45px 40px
+      background-color $pcTopSearchBgColor
+      display none
+      animation-duration 0.2s
+      .input-group
+        position relative
+        .form-control
+          background-color $pcTopSearchInputBgColor
+          border 1px solid $pcTopSearchBorderColor
+          border-radius 0
+          padding 0 12px
+          height 40px
+          line-height 38px
+          &:focus
+            outline none
+            box-shadow none
+        .btn
+          background none
+          border none
+          height 40px
+          color $pcTopSearchBtnColor
+          padding 0 20px
+          &:focus
+            outline none
+            color $mainColor
+          &.search-btn
+            padding-left 40px
+      .search-tip-list
+        position absolute
+        z-index 999
+        left 0
+        top 40px
+        // width 1009px
+        right 130px
+        margin 0
+        padding 5px 10px
+        background-color $pcTopSearchTipListBgColor
+        box-shadow 0 0 6px 0 $pcTopSearchTipListShadowColor
+        display none
+        max-height 400px
+        overflow auto
+        li
+          height 32px
+          line-height 32px
+          cursor pointer
+          overflow hidden
+          text-overflow ellipsis
+          &.empty
+            cursor default
+
+@media screen and (min-width: 1200px)
+  .bottom
+    ul > li
+      a
+        padding 0 40px 40px
+
+@media screen and (max-width: 1200px)
+  .header
+    .bottom
+      ul > li
+        a
+          padding 0 20px 40px
+    .hidden-search
+      .search-tip-list
+        width 781px
+
+@media screen and (max-width: 991px)
+  .header
+    .bottom
+      ul > li
+        a
+          padding 0 10px 40px
+      ul.navbar-nav
+        li.nav-drop-menu
+          &.drop-right
+            .drop-hidden-menu
+              left auto
+              right -5px
+              &:before
+                left auto
+                right 5px
+    .hidden-search
+      .search-tip-list
+        width 560px
+/*767px*/
+@media screen and (max-width: 999px)
+  .header
+    .bottom
+      background-color transparent
+      .navbar
+        .logo-wrapper
+         .logo-img
+           left 50%
+           transform:translateX(-50%)
+           top 30px
+           max-width 22%
+        .navbar-header
+          background-color transparent
+          padding 30px 20px
+          height 100px
+          button
+            display block
+            background-color transparent
+            .menu-text
+              display none
+        .navbar-collapse
+          padding 0
+          ul.navbar-nav
+            margin 0
+            padding 0
+            li
+              border-bottom 1px solid $whiteO
+              padding 0 10px
+              a
+                color $blackTrue
+                padding 15px 10px
+                text-decoration none
+                line-height normal
+                text-align left
+                &:hover, &:active, &:focus
+                  background-color $white
+                  color $blackTrue
+                .caret
+                  position absolute
+                  right 20px
+                  top 50%
+                  margin-top -5px
+            li.drop-menu
+              .drop-hidden-menu
+                background $white
+                opacity 1
+                height auto
+                position static
+                border-top none
+                width 100%
+                box-shadow none
+                li
+                  border none
+                li.drop-menu-2, li.drop-menu-2:hover
+                  background $white
+                  border none
+                  font-weight bold
+                  height auto
+                  a
+                    background-color transparent
+                    color $blackTrue
+                    padding 15px 0 5px
+                  &>a
+                    font-weight bold
+                    font-size 15px
+                  .drop-hidden-menu-2
+                    margin-top 0
+                    height auto
+                    opacity 1
+                    background $white
+                    margin-left 0
+                    position relative
+                    border-top none
+                    width 100%
+                    height auto
+                    overflow visible
+                    box-shadow none
+                    li
+                      height 40px
+                      margin-bottom 15px
+                      padding-left 10px
+                      padding-right 10px
+                    a
+                      line-height 40px
+                      background $loadingBg
+                      padding 2px 0
+                      text-align center
+                      margin-bottom 7px
+                      &:hover, &:focus
+                        background-color $mainColor
+                        color $white
+            li.active
+              border-bottom 1px solid $whiteO
+              a, a:hover
+                font-weight normal
+                padding 15px 10px
+                background-color $white
+                color $blackTrue
+            li.user-li
+              background $loadingBg
+              width 100%
+              text-align center
+              .user-opration, .user-loged
+                margin-left 10px
+                line-height 40px
+                a
+                  background-color transparent
+                  padding 0
+                  font-weight normal
+                  color $blackO
+                  &.username
+                    // width 80px
+                    width auto
+                    display inline
+                    line-height normal
+            li
+              .social-container
+                color $grayO
+                margin-top 40px
+                a
+                  display inline-block
+                i
+                  font-size 18px
+                  margin-right 40px

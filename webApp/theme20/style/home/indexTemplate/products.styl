@@ -1,0 +1,76 @@
+.newest-products-container
+  background-color $newestProductSectionBgColor
+  padding 0
+  // margin-top -290px
+
+.newest-products
+  margin-top 0 // 50px
+  padding 50px 0
+  overflow hidden
+  .title
+    display inline-block // place center and add vertical line at both sides
+    position relative
+    line-height 48px
+    font-size 40px
+    font-weight bold
+    color $newestProductSectionTitleColor
+    margin-bottom 0 // 20px
+    padding-bottom 30px // 110px
+    // text-transform uppercase
+    // &:before, &:after
+    //   content ''
+    //   display inline-block
+    //   position absolute
+    //   height 32px
+    //   width 1px
+    //   top 8px
+    //   background-color $newestProductTitleLineColor
+    // &:before
+    //   left -25px
+    // &:after
+    //   right -25px
+    // &:before, &:after // below close style
+    //   content ''
+    //   position absolute
+    //   display inline-block
+    //   top 100px
+    //   left 50%
+    //   margin-left -13.5px
+    //   height 1px
+    //   width 38px
+    //   background $productTitleLineColor
+    //   -webkit-transform rotate(45deg)
+    //   -moz-transform rotate(45deg)
+    //   transform rotate(45deg)
+    // &:after
+    //   -webkit-transform rotate(-45deg)
+    //   -moz-transform rotate(-45deg)
+    //   transform rotate(-45deg)
+    .title-line
+      display none // block
+      margin 0 auto
+      width 40px
+      height 4px
+      margin-top 25px
+      background $newestProductTitleLineColor
+  @import "../../common/productList.styl"
+  .showMore-products
+    margin-top 40px
+    margin-bottom 50px
+    text-align center
+
+@media screen and (max-width: 767px)
+  .newest-products-container
+    padding-top 0 // 50px
+  .newest-products
+    margin-top 0 // 50px
+    padding 30px 0
+    .title
+      font-size 26px
+    // .productList
+    //  .p-list
+    //    height 240px
+    //    overflow hidden
+    //    margin-bottom 30px
+    //    .img-container
+    //      height 170px

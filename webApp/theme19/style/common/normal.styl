@@ -1,0 +1,621 @@
+@import "./iconfont.styl"
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+  -webkit-appearance none
+  margin 0
+svg.css-shape
+  display block !important
+  html.safari &
+    display none !important
+
+body
+  color $textColor
+
+.text-center
+  text-align center !important
+.text-left
+  text-align left !important
+.text-right
+  text-align right !important
+
+// display image as cover background
+.image-cover
+  background-position 50% 50%
+  background-repeat no-repeat
+  background-size cover
+// display children middle vertivcally
+.vertical-middle
+  display inline-block
+  vertical-align middle
+  &:before
+    content ""
+    display inline-block
+    vertical-align middle
+    height 100%
+
+.btn
+  display inline-block
+  .glyphicon
+    margin-top -5px
+
+.btn-default
+  height 40px
+  padding 0 10px
+  font-size 15px
+  line-height 36px
+  background-color $mainColor
+  border 2px solid $mainColor
+  color $forgroundColor
+  border-radius $btnBorderRadius
+  .glyphicon
+    display none
+    color $forgroundColor
+    font-size 20px
+  .text
+    display inline-block // none
+  &:hover, &:focus
+    text-decoration none
+    border-color $backgroundColor
+    background $backgroundColor
+    color $forgroundColor
+    .text
+      display inline-block
+      // margin-left 5px
+
+.btn-blue, .btn-send
+  width 130px
+  height 40px
+  line-height 36px
+  background $secondaryColor url(/assets/$theme/images/btn_bg.png) left bottom repeat-x
+  border 2px solid $secondaryColor
+  // line-height 40px
+  // background $mainColor url(/assets/$theme/images/btn_bg.png) top left repeat-y
+  // border none
+  text-align center
+  color $forgroundColor
+  word-break break-all
+  text-decoration none
+  border-radius $btnBorderRadius
+  &.btn-flat
+    color $forgroundColor
+    background $mainColor
+    border-color $mainColor
+.btn-blue:hover, .btn-blue:focus, .btn-blue:active,
+.btn-send:hover, .btn-send:focus, .btn-send:active
+  color $forgroundColor
+  background $backgroundColor url(/assets/$theme/images/btn_bg_h.png) left bottom repeat-x
+  border-color $backgroundColor
+  // background $mainColor url(/assets/$theme/images/btn_bg_h.png) top left repeat-y
+  text-decoration none
+
+.btn-send
+  padding 0
+  margin 0 auto
+  display block
+  height 40px
+  line-height 36px
+  background $secondaryColor
+  border 2px solid $secondaryColor
+  // line-height 40px
+  // background $mainColor url(/assets/$theme/images/btn_bg.png) top left repeat-y
+  // border none
+  color $forgroundColor
+  border-radius $btnBorderRadius
+  &[disabled]
+    background $btnDisableBgColor
+    border-color $btnDisableBgColor
+    color $btnDisableColor
+
+.btn-blue-trans
+  height 40px
+  line-height 40px
+  padding 0 10px
+  background-color $mainColor
+  // background $mainColor url(/assets/$theme/images/btn_bg.png) top left repeat-y
+  border none // 2px solid $mainColor
+  color $forgroundColor
+  border-radius $btnBorderRadius
+  .glyphicon
+    display none
+    color $forgroundColor
+    font-size 20px
+  .text
+    display inline-block // none
+    // margin-left 5px
+.btn-blue-trans:hover, .btn-blue-trans:focus, .btn-blue-trans:active
+  background $backgroundColor
+  // background $backgroundColor url(/assets/$theme/images/btn_bg_h.png) top left repeat-y
+
+  border-color $backgroundColor
+  color $forgroundColor
+  .glyphicon
+    color $forgroundColor
+  .text
+    display inline-block
+    // margin-left 5px
+
+.btn-black-trans
+  // padding 12px 30px
+  display inline-block
+  text-align center
+  padding 0
+  height 50px
+  line-height 46px
+  background transparent
+  border 2px solid $mainColor // $blackTrue
+  color $mainColor // $blackTrue
+  font-size 1.6rem
+  font-weight bold
+  cursor pointer
+.btn-black-trans:hover, .btn-black-trans:focus, .btn-black-trans:active
+  // background $backgroundColor
+  background $backgroundColor url(/assets/$theme/images/btn_bg_h.png) left bottom repeat-x
+  border-color $backgroundColor
+  color $forgroundColor
+
+.caret
+  &.caret-right
+    border-left 7px dashed
+    border-left 7px solid \9
+    border-top 7px solid transparent
+    border-bottom 7px solid transparent
+    border-right none
+  &.caret-up
+    border-bottom 4px dashed
+    border-bottom 4px solid \9
+    border-left 4px solid transparent
+    border-right 4px solid transparent
+    border-top none
+  &.caret14
+    border-width 7px !important
+
+.ui-select, .ui-input
+  padding 6px 12px
+  width 100%
+  height 40px
+  -webkit-appearance none
+  background-image url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAsklEQVQ4T2NkoBAwUqifYZAYMH369ARGRsZ4Urzz////hZmZmQvAXpg/f77Az58/DzAyMuoTY8j///8vZmRkGIDUwsOAWENAmtnZ2R0SExM/oBhAjEvQNWMYABKYPn26AhMT0wUGBgZ+NO98ZGRkdEhLSwPJwQHWaJw1a5bB////DyAZglUzVhfAjEY25N+/f46ZmZkgAzEA3oQ0c+bMgH///gmAogtX7AySlEhM4qGZFwDG9EwR60u4QgAAAABJRU5ErkJggg==")
+  background-repeat no-repeat
+  background-position 98% center
+  border-radius $selectBorderRadius
+  border 0
+  background-color $selectBgColor
+  color $selectColor
+  border 1px solid $selectBorderColor
+.ui-select:hover
+  border-color $mainColor
+  background-image url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAtklEQVQ4T2NkoBAwUqifYZAYYDrre8J/hv/xpHiHkYFx4ek0zgVgLxjM/y/A+uvbAQZGRn2iDPn//+LpdG4DkFp4GBBtyP//F3+zcTlcSGT8gGIAUS5B04xhANiQ6d8VWJj+XWBkZORH9s7///8/MjKyOpxOY7uALI41Gk1n/TL4///3AZghuDRjdQHMdGRD/jMyOp5J5TyALYDxJiTjmV8DmBiZBEDRhSt2BklKJCrx4FBEsRcAfxZJESh0fIsAAAAASUVORK5CYII=")
+.ui-input
+  background-image none
+
+.select3-hidden
+  display none
+  visibility hidden
+  padding-right 10px
+.select3
+  cursor pointer
+  display inline-block
+  position relative
+  width 50%
+  height 40px
+  vertical-align middle
+  font-size 16px
+  color $selectItemColor
+.select3-styled
+  position absolute
+  top 0
+  right 0
+  bottom 0
+  left 0
+  background-color $selectBgColor
+  color $selectColor
+  padding 8px 35px 8px 15px
+  transition all 0.2s ease-in
+  border 1px solid $selectBorderColor
+  border-radius $selectBorderRadius
+  text-align center
+  overflow hidden
+  text-overflow ellipsis
+  white-space nowrap
+  span
+    .form-group &
+      color $selectColor
+  .chevron-down, .chevron-up
+    position absolute
+    top 10px
+    right 10px
+    display inline-block
+    color $selectCaretColor
+    font-size 13px
+  .chevron-up
+    display none
+  &:after
+    display none
+    content ""
+    width 0
+    height 0
+    border 7px solid transparent
+    border-color $selectItemColor transparent transparent transparent
+    position absolute
+    top 16px
+    right 10px
+  &:hover
+    background-color $selectBgColor
+    border-color $selectHoverBorderColor
+  &:active, &.active
+    background-color $selectBgColor
+    .chevron-down
+      display none
+    .chevron-up
+      display inline-block
+    &:after
+      display none
+      top 9px
+      border-color transparent transparent $selectItemColor transparent
+.select3-options
+  display none
+  position absolute
+  top 100%
+  right 0
+  left 0
+  z-index 999
+  margin 0
+  padding 0
+  list-style none
+  background-color $selectBgColor
+  box-shadow 0 0 6px 0 rgba(0, 0, 0, 0.20)
+  border 1px solid $selectOptionsBorderColor
+  li
+    margin 0
+    padding 12px 0
+    text-indent 15px
+    // border-top 1px solid $selectBgColor
+    transition all 0.15s ease-in
+    background-color $selectItemBgColor
+    color $selectItemColor
+    overflow hidden
+    text-overflow ellipsis
+    white-space nowrap
+    &:hover
+      background-color $selectItemHoverBgColor
+      color $selectItemHoverColor
+    &[rel="hide"]
+      display none
+    &.selected
+      background-color $selectItemSelectedBgColor
+      color $selectItemSelectedColor
+
+.modal
+  text-align: center;
+  &:before
+    display inline-block
+    vertical-align middle
+    content " "
+    height 100%
+.modal-dialog
+  display inline-block
+  text-align left
+  vertical-align middle
+
+.module-title
+  // background #F7F7F7
+  background transparent url(/assets/$theme/images/module_title_full_bg.png) right top no-repeat
+  display inline-block
+  position relative
+  margin-bottom 30px // 90px
+  padding 0 120px 0 10px
+  line-height 51px
+  height 51px
+  font-weight bold
+  font-size 3rem
+  color $moduleTitleColor
+  text-align left
+  .caret
+    display none
+    color $mainColor
+    margin-left 10px
+  .line
+    display none
+    position absolute
+    background-color $mainColor
+    height 5px
+    width 40px
+    bottom -5px
+    left 0
+
+.pagination>li
+  display inline-block
+  margin 0 5px
+.pagination>li>a, .pagination>li>span
+  padding 0
+  width 28px
+  height 28px
+  line-height 28px
+  text-align center
+  color $paginationColor
+  border-color $paginationBorderColor
+  background-color $paginationBgColor
+  border-radius $paginationRadius
+.pagination>li:first-child>a, .pagination>li:first-child>span,
+.pagination>li:last-child>a, .pagination>li:last-child>span
+  border-radius $paginationRadius
+  span
+    font-size 14px
+.pagination>li>a:hover, .pagination>li>span:hover, .pagination>li>a:focus, .pagination>li>span:focus
+  background-color $paginationHoverBgColor
+  border 1px solid $paginationHoverBorderColor
+  color $paginationHoverColor
+  cursor pointer
+.pagination>.active>a, .pagination>.active>span
+  background-color $paginationActiveBgColor
+  border-color $paginationActiveBorderColor
+  color $paginationActiveColor
+  &:hover, &:focus
+    background $paginationActiveHoverBgColor
+    border 1px solid $paginationActiveHoverBorderColor
+    color $paginationActiveHoverColor
+.pagination>.disabled>span, .pagination>.disabled>span:hover, .pagination>.disabled>span:focus,
+.pagination>.disabled>a, .pagination>.disabled>a:hover, .pagination>.disabled>a:focus
+  background $paginationDisabledBgColor
+  border 1px solid $paginationDisabledBorderColor
+  color $paginationDisabledColor
+
+/* 表单 focus加样式.form-group-focus;blur 去掉focus样式 根据是否输入 添加form-group-min样式 验证样式error*/
+.valid-form
+  .form-group
+    position relative
+    label
+      position absolute
+      top 16px
+      width 110px
+      font-size 14px
+      color $inputLabelColor
+      font-weight normal
+      margin-bottom 15px
+      span // remove label text and using placeholder
+        display none
+  .form-group.form-group-focus
+    border-color $mainColor
+    // remove label text and using placeholder
+    // label
+    //   top -5px
+    //   font-size 12px
+    //   color $inputLabelFocusColor
+  // remove label text and using placeholder
+  // .form-group-min
+  //   label
+  //     top -5px
+  //     font-size 12px
+
+.empty-input
+  // padding 10px 0 0 10px
+  padding 0 10px
+  width 100%
+  height 100%
+  // min-height 50px
+  min-height 40px
+  line-height 40px
+  background-color $inputBgColor
+  border 1px solid $inputBorderColor // 0
+  // border-bottom 1px solid $inputBorderColor
+  border-radius $selectBorderRadius
+  color $inputColor
+  outline 0
+  &:hover, &:active, &:focus
+    border-color $inputHoverBorderColor
+  // double border style
+  // &:active, &:focus
+  //   outline rgba(40, 184, 193, 0.10) solid thick
+
+.validate-tip
+  display none
+  // position at bottom of input
+  // padding 10px
+  // position at right top
+  position absolute
+  right 0
+  top -30px
+  height 30px
+  line-height 30px
+  padding 0 10px
+  color $inputErrorBorderColor
+.valid-tip
+  display none
+  // position at bottom of input
+  // padding 10px
+  // position at right top
+  position absolute
+  right 0
+  top -30px
+  height 30px
+  line-height 30px
+  padding 0 10px
+  color $inputSuccessBorderColor
+.error
+  label
+    span
+      color $errorColor
+  .validate-input
+    border-color $inputErrorBorderColor
+  .valid-tip
+    display none
+  .validate-tip
+    display block
+    min-height 18px
+    i[class^="glyphicon"]
+      margin-right 6px
+.valid
+  label
+    span
+      color $errorColor
+  .validate-input
+    border-color $inputSuccessBorderColor
+  .valid-tip
+    display block
+  .validate-tip
+    display none
+    min-height 18px
+    i[class^="glyphicon"]
+      margin-right 6px
+
+// 提示框
+.alert
+  position fixed
+  z-index 10000
+  top 100px
+  left 50%
+  margin-left -292.5px
+  width 585px
+  padding 4px 0 4px 15px
+  color $alertColor
+  word-break break-all
+  border-radius 4px
+  i
+    margin-right 10px
+    font-size 14px
+.alert-success
+  border 1px solid $successBorderColor
+  background-color $successBgColor
+  color $successColor
+.alert-info
+  border 1px solid $infoBorderColor
+  background-color $infoBgColor
+  color $infoColor
+.alert-warning
+  border 1px solid $warningBorderColor
+  background-color $warningBgColor
+  color $warningColor
+
+.learn-more-cntr
+  position relative
+  // display none
+.learn-more
+  position absolute
+  width 55%
+  top 45%
+  left 25%
+  // box-shadow:0 0 10px rgba(53, 154, 246, .8)
+  // display block
+  // margin-top 10px
+  // width 100%
+  // color $forgroundColor !important
+  cursor pointer
+
+.cd-top
+  display inline-block
+  position fixed
+  z-index 899
+  bottom 40px
+  right 15px
+  height 40px
+  width 40px
+  line-height 36px
+  text-decoration none
+  overflow visible
+  white-space nowrap
+  text-align center
+  font-size 20px
+  cursor pointer
+  border 2px solid $cdTopBgColor
+  background-color $cdTopBorderColor
+  color $cdTopColor
+  border-radius 0 // 4px
+  box-shadow 0 2px 8px 0 $cdTopBoxShadowColor
+  -webkit-transition opacity .3s 0s, visibility 0s .3s
+  -moz-transition opacity .3s 0s, visibility 0s .3s
+  transition opacity .3s 0s, visibility 0s .3s
+  visibility hidden
+  opacity 0
+  &:hover
+    text-decoration none
+    background-color $cdTopHoverBgColor
+    border-color $cdTopHoverBorderColor
+    color $cdTopHoverColor
+    .theme-icon
+      color $cdTopHoverColor
+  &.cd-is-visible,
+  &.cd-fade-out
+    -webkit-transition opacity .3s 0s, visibility 0s 0s
+    -moz-transition opacity .3s 0s, visibility 0s 0s
+    transition opacity .3s 0s, visibility 0s 0s
+  &.cd-is-visible
+    visibility visible
+    opacity 1
+  &.cd-fade-out
+    opacity .5
+  .theme-icon
+    width 36px
+    line-height 36px
+    font-size 20px
+    color $forgroundColor
+  p
+    display none
+    margin 0
+    color $mainColor
+    font-size 12px
+    text-align center
+    margin-left -12px
+
+@media (max-width: 767px)
+  .cd-top
+    right 25px
+@media (min-width: 769px) and (max-width: 809px)
+  .cd-top
+    right 0
+    left auto
+    margin-left 0
+@media (min-width: 810px)
+  .cd-top
+    right auto
+    left 50%
+    margin-left unit(750/2, 'px')
+@media (min-width: 993px) and (max-width: 1033px)
+  .cd-top
+    right 0
+    left auto
+    margin-left 0
+@media (min-width: 1034px)
+  .cd-top
+    right auto
+    left 50%
+    margin-left unit(970/2, 'px')
+@media (min-width: 1201px) and (max-width: 1243px)
+  .cd-top
+    right 0
+    left auto
+    margin-left 0
+@media (min-width: 1244px)
+  .cd-top
+    right auto
+    left 50%
+    margin-left unit(1200/2, 'px')
+
+@media screen and (max-width: 767px)
+  .alert
+    width 80%
+    margin-left -40%
+  .validate-tip
+    position static
+    margin-top 10px
+// responsive redefine
+// @media (min-width: 768px)
+//   .container
+//     width 970px
+@media (min-width: 1200px)
+  .container
+    width 1200px
+
+@media screen and (max-width: 414px)
+   .module-title
+     font-size 18px
+   .long-title
+     padding 7px 120px 0 10px
+     line-height 19px
+     
+@media screen and (max-width: 375px)
+   .module-title
+     font-size 14px
+   // .long-title
+   //   padding 7px 120px 0 10px
+   //   line-height 19px

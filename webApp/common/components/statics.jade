@@ -1,0 +1,303 @@
+include ../../common/components/fbmessage
+script.
+  var domain = '#{apiHost}'
+    kjax(domain+'/buyer/analysis/info?shopId='+window.shopId, 'GET', function (cb) {
+      var faString = cb.data.facebook  
+      var googleString = cb.data.google 
+      if (faString) {!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq = function () {n.callMethod ?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', faString);fbq('track', 'PageView'); } if (googleString){(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); ga('create', googleString, 'auto'); ga('send', 'pageview'); } })
+    
+    /**
+     * ajax方法
+     * @param  {[type]}   url      [description]
+     * @param  {[type]}   method   [description]
+     * @param  {Function} callback [description]
+     * @return {[type]}            [description]
+     */
+    function kjax(url, method, callback) {
+      var xmlhttp = new XMLHttpRequest();
+      if (xmlhttp) {
+        xmlhttp.open(method, url, true);
+        xmlhttp.withCredentials = true;
+        xmlhttp.onreadystatechange = function() {
+          if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var response = JSON.parse(xmlhttp.responseText)
+            callback(response)
+          }
+        };
+        xmlhttp.send();
+      }
+    }
+noscript.
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=264282400723956&ev=PageView&noscript=1">     
+script.
+  var analyzeDomain = '#{analyzeDomain}'
+  /**
+   domain 是 string  域名
+  url 是 string  相对链接
+  pageTitle 是 string  页面标题
+  referrer  否 string  前一页面链接
+  shopId  是 string  店铺ID
+  pageId  是 string  页面ID    ====>todo
+  viewFrom  否 string  来源    
+  productId 否 string  商品ID   
+  platform  是 byte  平台(b2b-买家为0)
+         * @type {Object}
+     */
+  var params = {};
+  //Document对象数据
+  if (document) {
+    params.domain = document.domain || '';
+    params.url = document.URL || '';
+    params.pageTitle = document.title || '';
+    if (document.title.length > 30 ) {
+      params.pageTitle = document.title.substr(0,30)
+    }
+    params.referrer = document.referrer || '';
+  }
+  //Window对象数据
+  if (window && window.screen) {
+    params.sh = window.screen.height || 0;
+    params.sw = window.screen.width || 0;
+    params.cd = window.screen.colorDepth || 0;
+    params.shopId = window.shopId || '';
+    params.productId = getQueryString('productId') || '';
+    params.viewFrom = getQueryString('viewFrom') || '';
+    if (params.productId) {
+      params.productType = 1
+    }
+    if (location.href.indexOf('/blog/') !== -1) {
+      params.productId = document.getElementById('blogId').value
+      params.productType = 2
+    }
+    // 标识来自facebook
+    if (plat === 1) {
+      params.viewFrom = 1
+    }
+    params.pageId = '#{pageCode}' || '';
+  }
+  // navigator对象数据
+  if (navigator) {
+    params.lang = navigator.language || '';
+  }
+  params.os = detectOS()
+  browserRedirect()
+  // 是否登录
+  var isLogin = localStorage.getItem('isLogin')
+  var sellid = localStorage.getItem('sellerId')
+  var intv = null
+  var nums = 0
+  var intv2 = null
+  var nums2 = 0
+  // 已登录
+  if (+isLogin === 1) {
+    var buyer = JSON.parse(localStorage.getItem('buyer'))
+    if (buyer) {
+      //- 如果有买家信息，延迟两秒钟触发接口（因为直接这样判断很可能会取到上一个locastorage存储的用户信息）
+      console.log('延迟两秒钟触发取值...')
+      setTimeout( function () {
+        buyer = JSON.parse(localStorage.getItem('buyer'))
+        params = setparam(params, buyer)
+        if (!sellid) {
+          nums2 = 0
+          getSellerid()
+        } else {
+          params.sellerId = sellid // 卖家id
+          doHeart(params)
+        }
+      }, 2000)
+    }else {
+      intv = setInterval(function () {
+        buyer = JSON.parse(localStorage.getItem('buyer'))
+        sellid = localStorage.getItem('sellerId')
+        if (buyer || nums > 1000) { // 100次还没有数据 就不等了
+          params = setparam(params, buyer)
+          params.sellerId = sellid // 卖家id
+          doHeart(params)
+          clearInterval(intv)
+        }
+        nums++
+      }, 320)
+    }
+  } else {
+    nums2 = 0
+    getSellerid()
+  }
+  function getSellerid () {
+    intv2 = setInterval(function () {
+      sellid = localStorage.getItem('sellerId')
+      if (sellid || nums2 > 1000) { // 100次还没有数据 就不等了
+        params.sellerId = sellid // 卖家id
+        doHeart(params)
+        clearInterval(intv2)
+      }
+      nums2++
+    }, 320)
+  }
+  /**
+   * 保持心跳
+   * @param  {[type]} data [description]
+   * @return {[type]}      [description]
+   */
+  function heartBeat(data) {
+    localStorage.setItem('pageviewCookie', data.data.cookie)
+    var pvid = data.data.pageViewId
+    kjax(analyzeDomain+'/collection/heartbeat?pageViewId=' + pvid, 'GET', function() {})
+    var timeoutId = window.setInterval(function() {
+      kjax(analyzeDomain+'/collection/heartbeat?pageViewId=' + pvid, 'GET', function() {})
+    }, 10000)
+  }
+  /**
+   * ajax方法
+   * @param  {[type]}   url      [description]
+   * @param  {[type]}   method   [description]
+   * @param  {Function} callback [description]
+   * @return {[type]}            [description]
+   */
+  function kjax(url, method, callback, params) {
+    var xmlhttp = new XMLHttpRequest()
+    if (xmlhttp) {
+      xmlhttp.open(method, url, true)
+      xmlhttp.withCredentials = true
+      if (method === 'GET') {
+        xmlhttp.send(null)
+      } else if (method === 'POST') {
+        xmlhttp.setRequestHeader('content-type', 'application/x-www-form-urlencoded')
+        xmlhttp.send(params)
+      }
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+          var response = JSON.parse(xmlhttp.responseText)
+          callback(response)
+        }
+      }
+    }
+  }
+
+  function getQueryString(name) {
+    var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) {
+      return unescape(r[2]);
+    }
+    return null;
+  }
+  function notnull (str) {
+    return str ? str: ''
+  }
+  function setparam (params, buyer) {
+    if (!buyer) {
+      return params
+    }
+    params.buyerId = buyer.id
+    params.buyerName = notnull(buyer.nickName)
+    params.buyerAvatar = notnull(buyer.avatar)
+    params.buyerProvideId = notnull(buyer.provideId)
+    if (buyer.channel === 'GOOGLE') {
+      params.buyerChannel = 2
+      params.buyerMail = notnull(buyer.loginAccount)
+    } else if (buyer.channel === 'FACEBOOK') {
+      params.buyerChannel = 1
+    } else {
+      params.buyerChannel = 0
+      params.buyerName = notnull(buyer.loginAccount)
+    }
+    return params
+  }
+
+  function doHeart (params) {
+    params['platform'] = 0
+    //拼接参数串
+    var args = '';
+    for (var i in params) {
+      if (args != '') {
+        args += '&';
+      }
+      args += i + '=' + encodeURIComponent(params[i]);
+    }
+    //- var url = analyzeDomain + '/collection/pageview?platform=0&' + args
+    /**
+     * 发送PV 以及统计数据
+     */
+    //- params['platform'] = 0
+    kjax(analyzeDomain + '/collection/pageview', 'POST', heartBeat, args)
+  }
+  // 判断操作系统
+  function detectOS() {
+    var sUserAgent = navigator.userAgent;
+    var isWin = (navigator.platform == 'Win32') || (navigator.platform == 'Windows')
+    var isMac = (navigator.platform == 'Mac68K') || (navigator.platform == 'MacPPC') || (navigator.platform == 'Macintosh') || (navigator.platform == 'MacIntel')
+    if (isMac) return 4 // MacOS
+    if (isWin) return 3 // windows
+    return 0 // 其他
+  }
+  // 判断浏览器
+  function pcBrowser() {
+    var userAgent = navigator.userAgent // 取得浏览器的userAgent字符串
+    var isOpera = userAgent.indexOf('Opera') > -1
+    if (isOpera) {
+      return 'Opera'
+    } else if (userAgent.indexOf('Firefox') > -1) {
+      return 'FF'
+    } else if (userAgent.indexOf('Chrome') > -1){
+      return 'Chrome'
+    } else if (userAgent.indexOf('Safari') > -1) {
+      return 'Safari'
+    } else if ((!!window.ActiveXObject || userAgent.indexOf('compatible') > -1 && userAgent.indexOf('MSIE') > -1) && !isOpera) {
+      return 'IE'
+    } else {
+      return 'Other'
+    }
+  }
+  // 设备
+  function browserRedirect() {
+    var sUserAgent = navigator.userAgent.toLowerCase();
+    var bIsIpad = sUserAgent.match(/ipad/i) == 'ipad'
+    var bIsIphoneOs = sUserAgent.match(/iphone os/i) == 'iphone os'
+    var bIsMidp = sUserAgent.match(/midp/i) == 'midp'
+    var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == 'rv:1.2.3.4'
+    var bIsUc = sUserAgent.match(/ucweb/i) == 'ucweb'
+    var bIsAndroid = sUserAgent.match(/android/i) == 'android'
+    var bIsCE = sUserAgent.match(/windows ce/i) == 'windows ce'
+    var bIsWM = sUserAgent.match(/windows mobile/i) == 'windows mobile'
+    if (bIsIpad) {
+      params.device = 3 // 平板
+      params.os = 2
+      params.browser = mobbrowser()
+    } else if (bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+      params.device = 2 // 手机
+      if (bIsIphoneOs) {
+        params.os = 2 // ios
+      } else if (bIsAndroid) {
+        params.os = 1 // android
+      } else {
+        params.os = 0
+      }
+      params.browser = mobbrowser()
+    } else { // pc
+      params.device = 1
+      params.browser = pcBrowser()
+    }
+    console.log('device ' + params.device,'browser3 ' + params.browser)
+  }
+
+  function mobbrowser () {
+    var u = navigator.userAgent, app = navigator.appVersion;
+    var trident = u.indexOf("Trident") > -1, //IE内核  
+     presto = u.indexOf("Presto") > -1, //opera内核  
+     //- webKit = u.indexOf("AppleWebKit") > -1, //苹果、谷歌内核 
+     chromeAndr =  u.indexOf("Chrome") > -1, // android上的chrome
+     chromeios = u.indexOf('iPhone') > -1 && u.indexOf('CriOS') > -1 && u.indexOf("Safari") > -1, // ios上的chrome
+     gecko = u.indexOf("Gecko") > -1 && u.indexOf("KHTML") == -1, //火狐内核 
+     safari =  (u.indexOf('iPhone') > -1 || u.indexOf('iPad') > -1) && u.indexOf('CriOS') === -1 && u.indexOf("Safari") > -1
+    if (chromeAndr || chromeios) {
+      return 'Chrome'
+    } else if (safari) {
+      return 'Safari'
+    } else if (gecko) {
+      return 'FF'
+    } else if (presto) {
+      return 'opera'
+    } else {
+      return 'Other'
+    }
+  } 

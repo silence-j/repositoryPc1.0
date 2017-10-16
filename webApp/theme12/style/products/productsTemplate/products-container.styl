@@ -1,0 +1,195 @@
+// 分页
+.pagination
+  width 100%
+  text-align center
+
+// 列表
+.product-list
+  // margin-top -45px
+  padding-top 15px
+  background $white
+  .loading-search-title
+    width 30%
+    height 20px
+    margin-bottom 10px
+    background $loadingBg
+  .title
+    margin-top 10px
+    margin-bottom 20px
+    padding 10px
+    background $whiteOO
+    font-size 18px
+  .menu-title
+    font-family: HelveticaNeueLTPro-Bd,sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+  .product-desc
+    display none
+    color $blackO
+    .num
+      color $mainColor
+      margin-left 5px
+      margin-right 5px
+  .load-more-products
+    display none
+    text-align center
+    padding-top 15px
+    .load-more
+      display inline-block
+      height 36px
+      line-height 36px
+      text-decoration none
+      color $blackOO
+      border 1px solid $blackOOO
+      padding 0 15px
+      cursor pointer
+      &:hover, &:active, &:focus
+        text-decoration none
+      &[disabled]
+        background-color $grayOO
+      .theme-icon
+        margin-left 5px
+
+// 产品列表
+@import "../../common/productList.styl"
+
+.product-menu
+  padding 30px 0 0 50px
+  .menu-title
+    font-family: HelveticaNeueLTPro-Bd,sans-serif;
+    position relative
+    font-weight bold
+    font-size 24px
+    margin-bottom 30px
+    // &::first-letter
+    //   color $mainColor
+    .caret
+      display none
+      color $mainColor
+      margin-left 10px
+    .line
+      position absolute
+      background-color $black
+      height 4px
+      width 30%
+      bottom -15px
+      left 0
+  .panel-group
+    .panel
+      a
+        padding-left 0
+        &:before
+          display inline-block
+          content ""
+          height 6px
+          width 6px
+          background-color #6C6C6C
+          margin-right 10px
+          vertical-align middle
+      &.all .panel-heading a
+        border-bottom none
+        padding-left 0
+        &:before
+          display none
+      .panel-collapse
+        .panel-body ul
+          padding-left 0
+          margin-top 5px
+          margin-bottom 5px
+        a
+          display block
+          height 40px
+          line-height 40px
+          text-decoration none
+          color $categorySubColor
+          font-weight normal
+          border-top 1px solid $grayO
+          padding-left 20px
+          width 100%
+          overflow hidden
+          text-overflow ellipsis
+          white-space nowrap
+          &:hover, &.active
+            // color $blackTrue
+            background-color #FDFAF3
+        li:last-child a
+            border-bottom 1px solid $grayO
+      .panel-heading
+        .panel-title
+          position relative
+        a
+          width 100%
+          height 45px
+          line-height 45px
+          font-size 14px
+          display inline-block
+          color $forgroundColor
+          font-weight bold
+          text-decoration none
+          border-bottom 1px solid $grayOO
+          padding-right 20px
+          text-overflow ellipsis
+          overflow hidden
+          // i
+          //   float right
+          //   margin-top 19px
+          //   border-top 6px dashed
+          //   border-left 6px solid transparent
+          //   border-right 6px solid transparent
+          .opt-icon
+            font-weight normal
+            float right
+            &.minus
+              display none
+            &.plus
+              display inline-block
+          &[aria-expanded="true"] + a
+            color $mainColor
+            border-bottom-color $white
+            .opt-icon
+              &.minus
+                display inline-block
+              &.plus
+                display none
+          &.collapsed
+            color $black
+            .opt-icon
+              &.minus
+                display none
+              &.plus
+                display inline-block
+          &[data-toggle]
+            position absolute
+            top 0
+            right 0
+            width auto
+            border none
+            padding-right 0
+            &:before
+              display none
+      .panel-collapse
+        margin-top -6px
+
+.product-menu-loading
+  .big-div,.min-div
+    width 100%
+    background $loadingBg
+    height 10px
+    margin-bottom 10px
+  .min-div
+    width 90%
+    margin-left 10%
+
+@media (min-width: 768px) and (max-width: 991px)
+  .product-menu
+    padding-left 20px
+
+@media screen and (max-width: 767px)
+  .product-list
+    // margin-top -30px
+    .title
+      padding 8px
+      font-size 16px
+  .product-list.row
+    margin-left -5px
+    margin-right -5px

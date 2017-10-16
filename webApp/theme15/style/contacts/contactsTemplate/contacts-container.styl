@@ -1,0 +1,75 @@
+.contacts-list
+  background-color $white
+  margin-top 20px
+  padding-bottom 50px
+  // box-shadow: 0 0 6px 4px rgba(0, 0, 0, 0.02);
+  .title
+    // margin-top 10px
+    margin-top 20px
+    // margin-bottom 20px
+    // padding 10px
+    // background $whiteOO
+    // font-size 18px
+.info-form
+  // margin 40px auto 0
+  // width 80%
+  .form-group
+    padding 0
+    min-height 50px
+    margin-bottom 25px
+    // border-bottom 1px solid #d8d8d8
+    label // remove label text and using placeholder
+      top 12px
+      left -10px
+    .validate-input
+      &::placeholder
+        // opacity 0
+        color $grayO
+  .short
+    margin-right 8.33%
+    .validate-tip, .valid-tip
+      right 0
+.req
+  color red
+.fi-name
+  font-weight normal
+  padding-left 5px
+.send
+  margin 25px auto 0
+  padding 0 75px
+  line-height 36px
+  display inline-block
+  // background-color $whiteOO
+  // color $blackOOO
+  // border 2px solid $grayO
+  background-color #CBCBCB // $whiteOO
+  border 2px solid #CBCBCB // $grayO
+  color $white // $blackOOO
+  border-radius 20px
+  outline none
+  &:focus, &:active
+    outline none
+.send.able
+  color $white
+  background-color $secondaryColor
+  border 2px solid $secondaryColor
+  &:hover, &:active, &:focus
+    background-color $mainColor
+    border-color $mainColor
+    color $white
+
+@media screen and (max-width: 767px)
+  .module-title
+    &:before
+      height 20px
+
+  .contacts-list
+    // margin-top -30px
+    .title
+      padding 8px
+      font-size 20px
+    &.row
+      margin-left -5px
+      margin-right -5px
+      padding-left 0
+      padding-right 0

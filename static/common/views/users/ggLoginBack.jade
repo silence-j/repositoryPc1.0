@@ -1,0 +1,19 @@
+extends ./userLayout
+block css
+block content
+append scripts
+    script.
+      function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return decodeURI(r[2]);
+        return null;
+      }
+      var failedMsg = getQueryString("failedMsg");
+      var uaa = navigator.userAgent.toLowerCase();
+      if (failedMsg) {
+        window.opener.GGshop.loginFail(failedMsg);
+      } else {
+        window.opener.GGshop.loginSuccess();
+      }
+      window.close();

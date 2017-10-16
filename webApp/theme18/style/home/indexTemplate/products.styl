@@ -1,0 +1,134 @@
+.newest-products-container
+  background-color transparent // $newestProductSectionBgColor
+  padding 0 // 100px 0
+  border-bottom 1px solid #EEEEEE
+
+.newest-products
+  background $newestProductSectionBgColor
+  border-left 1px solid #EEEEEE
+  border-right 1px solid #EEEEEE
+  margin-top 0 // 50px
+  padding 90px 0 0
+  overflow hidden
+  .title
+    display inline-block // place center and add vertical line at both sides
+    position relative
+    line-height 48px
+    font-size 40px
+    font-weight bold
+    color $newestProductSectionTitleColor
+    margin-bottom 0 // 20px
+    padding-bottom 110px
+    // text-transform uppercase
+    // &:before, &:after
+    //   content ''
+    //   display inline-block
+    //   position absolute
+    //   height 32px
+    //   width 1px
+    //   top 8px
+    //   background-color $newestProductTitleLineColor
+    // &:before
+    //   left -25px
+    // &:after
+    //   right -25px
+    &:before, &:after
+      content ''
+      position absolute
+      display inline-block
+      top 100px
+      left 50%
+      margin-left -18.5px
+      height 1px
+      width 38px
+      background $productTitleLineColor
+      -webkit-transform rotate(45deg)
+      -moz-transform rotate(45deg)
+      transform rotate(45deg)
+    &:after
+      -webkit-transform rotate(-45deg)
+      -moz-transform rotate(-45deg)
+      transform rotate(-45deg)
+    .title-line
+      display none // block
+      margin 0 auto
+      width 40px
+      height 4px
+      margin-top 25px
+      background $newestProductTitleLineColor
+
+  @import "../../common/productList.styl"
+
+  // special custom
+  .p-list
+    position relative
+    padding 0
+    border-top 1px solid $itemBorderColor
+    border-left 1px solid $itemBorderColor
+    &:nth-child(2)
+      &:after
+        content ""
+        display inline-block
+        position absolute
+        background $newestProductSectionBgColor
+        border-left 1px solid $itemBorderColor
+        transform rotate(-45deg)
+        top -12px
+        right -12px
+        width 24px
+        height 24px
+    &:nth-child(3)
+      &:after
+        content ""
+        display inline-block
+        position absolute
+        background $newestProductSectionBgColor
+        border-right 1px solid #F2F2F2
+        transform rotate(45deg)
+        top -12px
+        left -12px
+        width 24px
+        height 24px
+    .p-item
+      overflow hidden
+      border none
+  .productList.row
+    margin-left -1px
+    margin-right 0
+
+  .showMore-products
+    margin-top 35px
+    margin-bottom 40px
+    text-align center
+
+@media (min-width: 768px) and (max-width: 991px)
+  .newest-products
+    .productList
+     .p-list
+        &:nth-child(2)
+          &:after
+            display none
+        &:nth-child(3)
+          &:after
+            display none
+
+@media screen and (max-width: 767px)
+  .newest-products-container
+    padding-top 0 // 50px
+  .newest-products
+    margin-top 0 // 50px
+    padding 30px 0 0
+    .title
+      font-size 30px
+    .productList
+     .p-list
+        &:nth-child(2)
+          &:after
+            display none
+        &:nth-child(3)
+            display none
+        height 240px
+        overflow hidden
+        margin-bottom 20px
+        .img-container
+          height 170px

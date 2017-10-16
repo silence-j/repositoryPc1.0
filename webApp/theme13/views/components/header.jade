@@ -1,0 +1,164 @@
+mixin line(className)
+  if(className)
+    li.line-li.hidden-xs(class='#{className}')
+      span.line
+  else
+    li.line-li.hidden-xs
+      span.line
+
+.header.z-index-edit
+  .top.container
+    .logo-wrapper
+      .header-left.pull-left.hidden-xs
+        i.glyphicon.glyphicon-tel.sup-i
+        span.tel
+      img.logo-img#logo-img
+      .header-right.pull-right.hidden-xs
+        i.glyphicon.glyphicon-location.sup-i
+        span.location
+  .bottom
+    nav.navbar.navbar-default.container
+      .navbar-header
+        button.navbar-toggle.pull-left.collapsed(type="button", data-toggle="collapse", data-target="#navbar-collapse", aria-expanded="false")
+          span.menu-bar
+            span.menu-open.glyphicon.glyphicon-menu
+            span.menu-close.glyphicon.glyphicon-cancel
+          span.menu-text
+            | MENU
+        .header-right.visible-xs.pull-right
+          button.search-menu
+            i.glyphicon.glyphicon-search
+          .mbSearch-wrapper.animated.zoomIn
+            .input-group.search-input.mbSearch
+              input.form-control(type='input', placeholder='Search…')
+              span.input-group-addon.search-btn
+                i.glyphicon.glyphicon-search
+              span.input-group-addon.close-input
+                i.theme-icon.icon-cancel
+              ul.search-tip-list#hiddenSearchTipList
+                //- li
+                //-   | 测试关键词
+          button.info-menu
+            i.theme-icon.icon-dot-3.vert
+          ul.info-menu-list
+            li
+              i.glyphicon.glyphicon-tel.sup-i
+              span.tel
+            li
+              i.glyphicon.glyphicon-location.sup-i
+              span.location
+
+      #navbar-collapse.collapse.navbar-collapse
+        ul.nav.navbar-nav.col-sm-12
+          if(fb !== '1')
+            if(pageCode === 'index')
+              li.home.active
+                a(href="/?shopId=#{shopId}" class='nav-a')
+                  i.theme-icon.icon-home.hidden-xs
+                  span.visible-xs HOME
+            else
+              li.home
+                a(href="/?shopId=#{shopId}" class='nav-a')
+                  i.theme-icon.icon-home.hidden-xs
+                  span.visible-xs HOME
+            +line
+          if(pageCode === 'products')
+            li.drop-menu.active
+              a(href='/products?shopId=#{shopId}&fb=#{fb}')
+                | PRODUCTS
+                //- span.caret.slide-down.hidden-xs
+                //- span.caret.caret-up.slide-up.hidden-xs
+                i.theme-icon.icon-chevron-down.slide-down.hidden-xs
+                i.theme-icon.icon-chevron-up.slide-up.hidden-xs
+          else
+            li.drop-menu
+              a(href='/products?shopId=#{shopId}&fb=#{fb}')
+                | PRODUCTS
+                //- span.caret.slide-down.hidden-xs
+                //- span.caret.caret-up.slide-up.hidden-xs
+                i.theme-icon.icon-chevron-down.slide-down.hidden-xs
+                i.theme-icon.icon-chevron-up.slide-up.hidden-xs
+          if(fb !== '1' && (blogCount > 0))
+            +line
+            if(pageCode === 'blog')
+              li.active
+                a(class='nav-a',href='/blog/#{shopId}')
+                  | BLOG
+            else
+              li
+                a(href='/blog/#{shopId}')
+                  | BLOG 
+          +line
+          if(fb !== '1')
+            if(pageCode === 'profile')
+              li.active
+                a(class='nav-a', href='/profile?shopId=#{shopId}') COMPANY PROFILE
+            else
+              li
+                a(class='nav-a', href='/profile?shopId=#{shopId}') COMPANY PROFILE
+            +line
+            if(pageCode === 'contacts')
+              li.active
+                a(class='nav-a', href='/contacts?shopId=#{shopId}') CONTACT US
+            else
+              li
+                a(class='nav-a', href='/contacts?shopId=#{shopId}') CONTACT US
+            +line
+
+          li.nav-drop-menu.drop-right.user-li.pull-right.hidden-xs
+            a(class='nav-a', href='javascript:;')
+              i.glyphicon.glyphicon-user
+            ul.drop-hidden-menu.user-opration
+              li
+                a(href='/users/login?shopId=#{shopId}') SIGN IN
+              if(fb !== '1')
+                li
+                  a(href='/users/register?shopId=#{shopId}') SIGN UP
+            ul.drop-hidden-menu.user-loged
+              li
+                a(href='javascript:;').username
+              if(fb !== '1')
+                li
+                  a.signout.signOut(href="javascript:;") SIGN OUT
+          +line.pull-right.hidden-xs
+
+          li.search-li.pull-right.hidden-xs
+            a.search-bar.glyphicon.glyphicon-search
+          +line.pull-right.hidden-xs
+
+          li.user-li.visible-xs
+            span.user-opration
+              i.glyphicon.glyphicon-user.hidden-xs
+              a(href='/users/login?shopId=#{shopId}') SIGN IN
+              if(fb !== '1')
+                span OR
+                a(href='/users/register?shopId=#{shopId}') SIGN UP
+            span.user-loged
+              i.glyphicon.glyphicon-user.hidden-xs
+              a(href='javascript:;').username
+              if(fb !== '1')
+                span |
+                a.signOut(href="javascript:;") SIGN OUT
+          +line('visible-xs')
+          li.visible-xs
+            .social-container.icon-top
+              //- 通过JS动态添加
+              //- i.glyphicon.glyphicon-facebook
+              //- i.glyphicon.glyphicon-linkedIn
+              //- i.glyphicon.glyphicon-twitter
+
+      //- .hidden-search.animated.zoomIn.col-sm-12.hidden-xs
+      .hidden-search.animated.zoomIn.hidden-xs
+        .input-group
+          input.form-control#input-down(type='input')
+          label(for="input-down")
+            span TYPE AND HIT ENTER...
+          .input-group-btn.hide
+            button.btn.search-btn
+              i.glyphicon.glyphicon-search
+          .input-group-btn
+            button.btn.close-input
+              span.theme-icon.icon-cancel
+          ul.search-tip-list#hiddenSearchTipList
+            //- li
+            //-   | 测试关键词

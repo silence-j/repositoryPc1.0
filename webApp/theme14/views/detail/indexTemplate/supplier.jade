@@ -1,0 +1,65 @@
+div.desc-tit.module-title#supplier
+  | SEND YOUR MESSAGE TO THIS SUPPLIER
+  span.caret.caret-right
+  span.line
+.load-spec
+    p
+    p
+    p
+form.supplier-form.clearfix.valid-form#form
+  .row
+    .col-xs-10.col-xs-offset-1
+      .col-sm-6.col-xs-12.form-group.short
+        label
+          i.req *
+          span First name
+        input.empty-input#first-name.validate-input(name="firstName")
+        div.validate-tip.animated.fadeIn
+          i.glyphicon-tishi
+          span First name can't be empty
+      .col-sm-6.col-xs-12.form-group
+        label
+          i.req *
+          span Last name
+        input.empty-input#last-name.validate-input(name="lastName")
+        div.validate-tip.animated.fadeIn
+          i.glyphicon-tishi
+          span Last name can't be empty
+  .row
+    .col-xs-10.col-xs-offset-1
+      .col-sm-12.col-xs-12.form-group
+        label
+          i.req *
+          span Company
+        input.empty-input#company.validate-input(name="company")
+        div.validate-tip.animated.fadeIn
+          i.glyphicon-tishi
+          span Company can't be empty
+  .row
+    .col-xs-10.col-xs-offset-1
+      .col-sm-12.col-xs-12.form-group
+        label
+          i.req *
+          span Email address
+        input.empty-input#email.validate-input(name="email")
+        div.validate-tip.animated.fadeIn
+          i.glyphicon-tishi
+          span This is not a valid email address
+  .row
+    .col-xs-10.col-xs-offset-1
+      .col-sm-12.col-xs-12.form-group
+        label
+          i.req *
+          span Message
+        textarea.empty-input#msg.validate-input(name="content")
+        div.validate-tip.animated.fadeIn
+          i.glyphicon-tishi
+          span Message can't be empty or over 500 characters
+  .row
+    .col-xs-12.text-center
+      input(type="hidden",name="detailsStr")
+      input(type="hidden",name="shopId")
+      button.btn-send(type="button", disabled) SEND
+//- div.alert.alert-success.alert-dismissible.fade.in#alert(data-dismiss="alert")
+//-   i.glyphicon-tishi
+//-   span Thanks for your feedback, we will have sales contact later

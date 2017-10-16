@@ -1,0 +1,25 @@
+@import "../../../common/style/normal.styl"
+@import "../common/color.styl"
+@import "../common/normal.styl"
+@import "../common/header.styl"
+@import "../common/footer.styl"
+@import "./indexTemplate/carousel.styl"
+@import "./indexTemplate/advert.styl"
+@import "./indexTemplate/aboutUs.styl"
+@import "./indexTemplate/products.styl"
+
+.jumbotron
+  background $white url(/assets/theme11/images/jumbotron_bg.png) center top repeat-x
+  background-size 100% auto
+
+#nprogress
+  .bar
+    background $mainColor
+
+@media screen and (max-width: 767px)
+  .jumbotron
+    .container:first-child
+      padding 0
+  .footer-container
+    .discribe
+      line-height 30px

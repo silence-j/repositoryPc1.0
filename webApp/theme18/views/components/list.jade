@@ -1,0 +1,66 @@
+if (index === 'search')
+  //- search index
+  .p-list.col-md-3.col-sm-4.col-xs-6
+    .p-item
+      a.item-container(href='/detail?shopId=#{shopId}&productId=#{productId}')
+        .img-container
+          img(src='#{src}')
+          //- .hover-container
+          //- span.learn-more.btn-blue.btn-flat
+        .hover-container
+          //- .hover-title #{desc}
+          //- span.learn-more.btn-blue-trans
+          //-   i.glyphicon.glyphicon-plus
+          //-   span.text LEARN MORE
+        span.learn-more.btn-blue-trans
+          i.theme-icon.icon-right
+          //- span.text LEARN MORE
+          span.text More
+      a.item-container.tit(href='/detail?shopId=#{shopId}&productId=#{productId}')
+        .p-title #{desc}
+        //- .learn-more-cntr
+        //-   span.learn-more.btn-blue.btn-flat LEARN MORE
+else if(index)
+  //- home
+  .p-list.col-md-3.col-sm-4.col-xs-6
+    .p-item
+      a.item-container.tit(href='/detail?shopId=#{shopId}&productId=#{productId}')
+        .p-title #{desc}
+        //- .learn-more-cntr
+        //-   span.learn-more.btn-blue.btn-flat LEARN MORE
+      a.item-container(href='/detail?shopId=#{shopId}&productId=#{productId}')
+        .img-container
+          img(src='#{src}')
+          //- .hover-container
+          //- span.learn-more.btn-blue.btn-flat
+        .hover-container
+          //- .hover-title #{desc}
+          //- span.learn-more.btn-blue-trans
+          //-   i.glyphicon.glyphicon-plus
+          //-   span.text LEARN MORE
+        span.learn-more.btn-blue-trans
+          i.theme-icon.icon-right
+          //- span.text LEARN MORE
+          span.text More
+else
+  //- products index
+  .p-list.col-sm-4.col-xs-6
+    .p-item
+      a.item-container(href='/detail?shopId=#{shopId}&productId=#{productId}')
+        .img-container
+          img(src='#{src}')
+          //- .hover-container
+          //- span.learn-more.btn-blue.btn-flat
+        .hover-container
+          //- .hover-title #{desc}
+          //- span.learn-more.btn-blue-trans
+          //-   i.glyphicon.glyphicon-plus
+          //-   span.text LEARN MORE
+        span.learn-more.btn-blue-trans
+          i.theme-icon.icon-right
+          //- span.text LEARN MORE
+          span.text More
+      a.item-container.tit(href='/detail?shopId=#{shopId}&productId=#{productId}')
+        .p-title #{desc}
+        //- .learn-more-cntr
+        //-   span.learn-more.btn-blue.btn-flat LEARN MORE

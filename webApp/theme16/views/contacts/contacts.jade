@@ -1,0 +1,18 @@
+extends ../layout
+
+block css
+  link(rel="stylesheet" href="/thirtyPart/bootstrap/bootstrap.min.css")
+  link(rel='stylesheet' href="/plugins/animate.css/animate.min.css")
+  link(rel='stylesheet', href='/theme#{them}/css/contacts/index.css?v=#{version}')
+
+block content
+  include ../components/header
+  include ../contacts/contacts/top-banner
+  include ./contacts/contacts-container
+  include ../components/footer
+
+append scripts
+  script(src="/plugins/jquery/dist/jquery.min.js")
+  script(src="/thirtyPart/jquery.pin.js")
+  script(src='/plugins/bootstrap/dist/js/bootstrap.min.js')
+  script(src='/theme#{them}/js/contacts.js?v=#{version}')

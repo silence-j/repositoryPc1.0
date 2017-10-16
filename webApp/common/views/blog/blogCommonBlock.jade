@@ -1,0 +1,76 @@
+#blog-bg
+  img#blog-bg-img
+#blog-container
+  if (blogs.length > 0)
+    input#blogId(type="text",style="display:none;",value="#{blogs[0].id}")
+  .row.first-part
+    .left-container.col-md-7
+      if (blogs.length > 0)
+        .blog-title #{blogs[0].blogTitle}
+        .blog-content !{blogs[0].blogContents}
+    .right-container.col-md-5
+      .list-title 
+        .list-bg Blog List
+      .b-list
+        for blog in blogs
+          if(blogs[0].id === blog.id)
+            .blog-item.active-blog-item
+              a(href='/blog/#{shopId}/#{blog.id}?page=#{blogsWraper.page}') #{blog.blogTitle}
+          else
+            .blog-item 
+              a(href='/blog/#{shopId}/#{blog.id}?page=#{blogsWraper.page}') #{blog.blogTitle}  
+      .page-wraper  
+  .row.send-msg-part
+    .col-md-12
+      .msg-title SEND YOUR MESSAGE
+      form.info-form.clearfix.valid-form#form
+          .col-sm-5.col-xs-12.form-group.short
+            label
+              i.req *
+              span.fi-name First name
+            input.empty-input#first-name.validate-input(name='firstName')
+            div.validate-tip.animated.fadeIn
+              i.glyphicon-tishi
+              span First name can't be empty
+          .col-sm-6.col-xs-12.form-group
+            label
+              i.req *
+              span.fi-name Last name
+            input.empty-input#last-name.validate-input(name='lastName')
+            div.validate-tip.animated.fadeIn
+              i.glyphicon-tishi
+              span Last name can't be empty
+          .col-sm-12.col-xs-12.form-group
+            label
+              i.req *
+              span.fi-name Company
+            input.empty-input#company.validate-input(name='company')
+            div.validate-tip.animated.fadeIn
+              i.glyphicon-tishi
+              span Company can't be empty
+          .col-sm-12.col-xs-12.form-group
+            label
+              i.req *
+              span.fi-name Email address
+            input.empty-input#email.validate-input(name='email')
+            .validate-tip.animated.fadeIn
+              i.glyphicon-tishi
+              span This is not valid email address
+          .col-sm-12.col-xs-12.form-group
+            label
+              i.req
+              span.fi-name Phone
+            input.empty-input#phone.validate-input(name='phone')
+            div.validate-tip.animated.fadeIn
+              i.glyphicon-tishi
+              span This is not valid phone number
+          .col-sm-12.col-xs-12.form-group
+            label
+              i.req *
+              span.fi-name Message
+            textarea.empty-input#msg.validate-input(name='content')
+            div.validate-tip.animated.fadeIn
+              i.glyphicon-tishi
+              span Message can't be empty
+          div
+            button.send.send-to(type='button') SEND

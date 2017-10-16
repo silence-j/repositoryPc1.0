@@ -1,0 +1,4 @@
+User-agent: * 
+Sitemap: https://market.onloon.cc/sitemap.xml
+Disallow: /theme*/js/
+Disallow: /theme*/css/

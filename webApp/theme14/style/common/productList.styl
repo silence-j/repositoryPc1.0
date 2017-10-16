@@ -1,0 +1,137 @@
+// 产品列表loading
+.list-loading
+  margin-bottom 60px
+  .img-container
+    background $loadingBg
+    padding-bottom 100%
+    width 100%
+  .p-title
+    background $loadingBg
+    width 100%
+    height 20px
+    margin-top 10px
+    border-radius 10px
+
+// 产品列表
+.p-list
+  position relative
+  // padding 10px
+  padding 15px
+  // margin-bottom 60px
+  margin-bottom 0
+  // border 1px solid $white
+  // overflow hidden
+  .p-item
+    padding 0
+    // &.over-copy
+    //   position absolute
+    //   top 15px
+    //   left 15px
+    //   right 15px
+    //   z-index 99
+    //   background transparent
+    //   // box-shadow 1px 1px 15px $grayOOO
+    //   padding-bottom 0
+    //   .img-container
+    //     visibility hidden
+    //     opacity 0
+    //   .p-title
+    //     visibility hidden
+    //     opacity 0
+    //   .learn-more-cntr
+    //     display block
+    //     background-color $white
+    //     margin 0 -10px
+    //     padding 0 10px 10px 10px
+    .learn-more
+      // top 40%
+      // width 40px
+      // left 50%
+      // margin-left -20px
+      // background-color $mainColor
+      // border-color $mainColor
+      // color $white
+      // display none
+      // border-radius 20px
+      // &:hover, &:focus, &:active
+      //   background-color $secondaryColor
+      //   border-color $secondaryColor
+      top 40%
+      display none
+  .item-container
+    border 1px solid #EBF0F6
+    padding 10px
+    &.tit
+      border-color $white
+      padding 0 10px
+  .img-container
+    padding-bottom 100%
+    position relative
+    overflow hidden
+    img
+      position absolute
+      top 0
+      transition all 0.6s
+      width 100%
+    img:hover
+      // transform scale(1.2)
+      transform scale(1)
+  .p-title
+    height 40px
+    line-height 20px
+    font-size 14px
+    margin-top 10px
+    overflow hidden
+    text-overflow ellipsis
+    display -webkit-box
+    -webkit-box-orient vertical
+    -webkit-line-clamp 2
+    color $black
+  &:hover
+    .p-item
+      // border-bottom-color $white
+      .hover-container
+        display block
+
+// products hover 样式
+.item-container
+  display block
+  text-decoration none
+  &:hover, &:active, &:focus
+    text-decoration none
+    .learn-more
+      display block
+.img-container:hover
+  img
+    // transform scale(1.2)
+    transform scale(1)
+  .hover-container
+    // display block
+    display none
+  // .learn-more
+  //   display inline-block
+.hover-container
+  display none
+  width 100%
+  height 100%
+  background $grayOO
+  position absolute
+  opacity 0.5
+
+// 无产品就加载
+.boxImg
+  height 485px
+  text-align center
+  img
+    margin-top 30px
+
+@media (min-width: 768px) and (max-width: 991px)
+  .learn-more
+    width 65%
+    left 20%
+  .p-list
+    padding 5px
+@media (max-width: 767px)
+  .learn-more
+    width 80%
+    left 10%

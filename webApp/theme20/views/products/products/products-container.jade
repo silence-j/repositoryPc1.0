@@ -1,0 +1,46 @@
+.container.product-container
+  .row
+    .col-xs-12
+      .menu-title
+        | Products
+        span.caret.caret14.caret-right
+        span.line
+
+    .col-sm-9.col-xs-12.product-list-container
+      .row.product-list
+        //- using .menu-title instead
+        //- .col-xs-12
+        //-   .title Products
+        .col-md-12
+          .loading-search-title.hide
+        .col-xs-12
+          //- move result desc into title
+          .product-desc A total of
+            span.num
+            | records
+        .list-loading.col-sm-4.col-xs-6
+          .img-container
+          .p-title
+        .list-loading.col-sm-4.col-xs-6
+          .img-container
+          .p-title
+        .list-loading.col-sm-4.hidden-xs
+          .img-container
+          .p-title
+
+        .products-container-list.clearfix
+
+        .load-more-products.visible-xs
+          a.load-more
+            | LOAD MORE
+            i.theme-icon.icon-angle-double-right
+
+    .col-sm-3.product-menu.hidden-xs
+      .product-menu-loading
+        .big-div
+        .big-div
+        .min-div
+        .min-div
+        .min-div
+        .big-div
+        .big-div

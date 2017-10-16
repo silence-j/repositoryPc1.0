@@ -1,0 +1,30 @@
+div(style='overflow:hidden')
+  //- .col-xs-12
+  .container-fluid
+    #profile-business
+      .title.module-title
+        | COMPANY PROFILE
+        span.caret.caret-right
+        span.line
+      .content-container.company
+        ul.row
+          mixin profile(name,id)
+            li.col-sm-6.col-xs-12
+              .row
+                span(title="#{name}").col-md-4.col-sm-5.col-xs-6 #{name}
+                span(class="profile-#{id}").profile-value.col-md-8.col-sm-7.col-xs-6 #{text}
+          +profile("Year Established","1")
+          +profile("Total Employees","2")
+          +profile("Registered Capital","3")
+          +profile("Business Type","4")
+          +profile("Annual Output Value","5")
+          +profile("Total Export Revenue","6")
+          +profile("Export Percentage","7")
+          +profile("Main Markets","8")
+          +profile("Average Lead Time","9")
+          +profile("Export License No.","10")
+          +profile("Main Products","11")
+          +profile("Payment Type","12")
+          +profile("Payment Currency","13")
+          +profile("Location","14")
+

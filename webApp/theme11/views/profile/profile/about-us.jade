@@ -1,0 +1,19 @@
+div(style='overflow:hidden')
+  .col-xs-12
+    div
+      #profile-desc
+        .title.module-title
+          | ABOUT US
+          span.caret.caret-right
+          span.line
+        .content-container.about
+          .row
+            #companydesc.col-sm-5.col-xs-12
+              .img-wrapper.clearfix
+                img
+            .comDesc.col-sm-7.col-xs-12
+
+- var aboutImgBeforeClipShape = '<svg class="css-shape" width="0" height="0"><defs><clipPath id="about-us-img-before-clip-shape" clipPathUnits="objectBoundingBox"><polygon points="0 0, 1 0, 0.82 1, 0 1" /></clipPath></defs></svg>'
+!{aboutImgBeforeClipShape}
+- var aboutImgClipShape = '<svg class="css-shape" width="0" height="0"><defs><clipPath id="about-us-img-clip-shape" clipPathUnits="objectBoundingBox"><polygon points="0 0, 1 0, 0.85 1, 0 1" /></clipPath></defs></svg>'
+!{aboutImgClipShape}

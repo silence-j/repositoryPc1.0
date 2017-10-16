@@ -1,0 +1,232 @@
+// 分页
+.pagination
+  width 100%
+  text-align center
+
+// 模块标题
+.menu-title
+  position relative
+  // background-color #F7F7F7
+  height 60px
+  line-height 60px
+  margin-bottom 0
+  font-size 24px
+  font-weight bold
+  &:before
+    content ''
+    display inline-block
+    background-color $mainColor
+    // width 15px
+    // height 15px
+    width 3px
+    height 30px
+    margin-right 10px
+  .caret
+    display none
+    color $mainColor
+    margin-left 10px
+  .line
+    display none
+    position absolute
+    background-color $mainColor
+    height 2px
+    width 100px
+    bottom -10px
+    left 0
+  .product-menu &
+    display none
+
+// 商品数量描述
+.product-desc
+  display none
+  color $blackO
+  font-size 14px
+  font-weight normal
+  margin-left 10px
+  .num
+    color $mainColor
+    font-size normal
+    font-weight normal
+    margin-left 5px
+    margin-right 5px
+  .product-list &
+    display none
+    margin-top 10px
+
+// 列表
+.product-list-container
+  margin-top 20px
+  background $white
+.product-list
+  padding-left 0
+  // .products-container-list
+  .loading-search-title
+    width 30%
+    height 20px
+    margin-bottom 10px
+    background $loadingBg
+  .title
+    margin-top 10px
+    margin-bottom 20px
+    padding 10px
+    background $whiteOO
+    font-size 18px
+  .load-more-products
+    display none
+    text-align center
+    padding-top 15px
+    .load-more
+      display inline-block
+      height 36px
+      line-height 36px
+      text-decoration none
+      color $blackOO
+      border 1px solid $blackOOO
+      padding 0 15px
+      cursor pointer
+      &:hover, &:active, &:focus
+        text-decoration none
+      &[disabled]
+        background-color $grayOO
+      .theme-icon
+        margin-left 5px
+
+// 产品列表
+@import "../../common/productList.styl"
+
+// #accordion
+//   border-right 4px solid #E6E6E6
+.product-menu
+  padding 50px 0 0 50px
+  & + div.col-sm-9
+    padding-left 50px
+  .panel-group
+    .panel
+      a
+        padding-left 0
+        // &:before
+        //   display inline-block
+        //   content ""
+        //   height 6px
+        //   width 6px
+        //   background-color #6C6C6C
+        //   margin-right 10px
+        //   vertical-align middle
+      &.all .panel-heading a
+        border-bottom none
+        padding-left 0
+        color $categoryAllColor
+        border-bottom 1px solid $grayOO
+        &:before
+          display none
+      .panel-collapse
+        .panel-body ul
+          padding-left 0
+          margin-top 5px
+          margin-bottom 5px
+        a
+          display block
+          height 31px
+          line-height 31px
+          text-decoration none
+          color $categorySubColor
+          font-weight normal
+          padding-left 20px
+          // border-top 1px solid $grayO
+          // margin-right -4px
+          width 100%
+          overflow hidden
+          text-overflow ellipsis
+          white-space nowrap
+          &:hover, &.active
+            // color $blackTrue
+            // background-color #FDFAF3
+            color $mainColor
+            // border-right 4px solid $mainColor
+        // li:last-child a
+        //     border-bottom 1px solid $grayO
+      .panel-heading
+        .panel-title
+          &.reverse
+            a
+              color #e6253d
+      .panel-heading
+        .panel-title
+          position relative
+        a
+          width 100%
+          height 48px
+          line-height 48px
+          font-size 14px
+          display inline-block
+          color $categoryColor
+          font-weight bold
+          text-decoration none
+          border-bottom 1px solid $grayOO
+          padding-right 20px
+          text-overflow ellipsis
+          overflow hidden
+          // i
+          //   float right
+          //   margin-top 19px
+          //   border-top 6px dashed
+          //   border-left 6px solid transparent
+          //   border-right 6px solid transparent
+          .opt-icon
+            font-size 12px
+            font-weight normal
+            float right
+            &.minus
+              display none
+            &.plus
+              display inline-block
+              // display none
+          &[aria-expanded="true"]
+            color $mainColor
+            border-bottom-color $white
+            .opt-icon
+              &.minus
+                display inline-block
+                // display none
+              &.plus
+                display none
+          &.collapsed
+            color $black
+            .opt-icon
+              &.minus
+                display none
+              &.plus
+                display inline-block
+                // display none
+          &[data-toggle]
+            position absolute
+            top 0
+            right 0
+            width auto
+            height 47px
+            border none
+            padding-right 0
+
+.product-menu-loading
+  .big-div, .min-div
+    width 100%
+    background $loadingBg
+    height 10px
+    margin-bottom 10px
+  .min-div
+    width 90%
+    margin-left 10%
+
+@media (min-width: 768px) and (max-width: 991px)
+  .product-menu
+    padding-left 20px
+
+@media screen and (max-width: 767px)
+  .product-list
+    // margin-top -30px
+    .title
+      padding 8px
+      font-size 16px
+  .product-list.row
+    margin-left -5px
+    margin-right -5px

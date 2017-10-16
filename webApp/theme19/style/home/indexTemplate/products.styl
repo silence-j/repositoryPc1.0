@@ -1,0 +1,239 @@
+.newest-products-container
+  background-color transparent // $newestProductSectionBgColor
+  padding 80px 0 // 100px 0
+  border-bottom 1px solid #EEEEEE
+
+.newest-products
+  background $newestProductSectionBgColor
+  // border-left 1px solid $newestProductTitleBorderColor
+  // border-right 1px solid $newestProductTitleBorderColor
+  margin-top 0 // 50px
+  padding 0 // 90px 0 0
+  overflow hidden
+  .title
+    display inline-block // place center and add vertical line at both sides
+    position relative
+    line-height 48px
+    font-size 40px
+    color $newestProductSectionTitleColor
+    margin-bottom 0 // 20px
+    padding-bottom 80px
+    text-transform uppercase
+    // text-transform uppercase
+    // &:before, &:after // two vertical border beside the title
+    //   content ''
+    //   display inline-block
+    //   position absolute
+    //   height 32px
+    //   width 1px
+    //   top 8px
+    //   background-color $newestProductTitleLineColor
+    // &:before
+    //   left -25px
+    // &:after
+    //   right -25px
+    // &:before, &:after // close style
+    //   content ''
+    //   position absolute
+    //   display inline-block
+    //   top 100px
+    //   left 50%
+    //   margin-left -18.5px
+    //   height 1px
+    //   width 38px
+    //   background $productTitleLineColor
+    //   -webkit-transform rotate(45deg)
+    //   -moz-transform rotate(45deg)
+    //   transform rotate(45deg)
+    // &:after
+    //   -webkit-transform rotate(-45deg)
+    //   -moz-transform rotate(-45deg)
+    //   transform rotate(-45deg)
+    .title-line
+      display none // block
+      margin 0 auto
+      width 40px
+      height 4px
+      margin-top 25px
+      background $newestProductTitleLineColor
+
+  @import "../../common/productList.styl"
+
+  // special custom
+  .p-list
+    position relative
+    // padding 0
+    // border-top 1px solid $itemBorderColor
+    // border-left 1px solid $itemBorderColor
+    // &:nth-child(2)
+    //   &:after
+    //     content ""
+    //     display inline-block
+    //     position absolute
+    //     background $newestProductSectionBgColor
+    //     border-left 1px solid $itemBorderColor
+    //     transform rotate(-45deg)
+    //     top -12px
+    //     right -12px
+    //     width 24px
+    //     height 24px
+    // &:nth-child(3)
+    //   &:after
+    //     content ""
+    //     display inline-block
+    //     position absolute
+    //     background $newestProductSectionBgColor
+    //     border-right 1px solid #F2F2F2
+    //     transform rotate(45deg)
+    //     top -12px
+    //     left -12px
+    //     width 24px
+    //     height 24px
+    .p-item
+      overflow hidden
+      .img-container
+        -webkit-clip-path polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)
+        clip-path polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)
+        -webkit-clip-path url("#home-product-clip-path")
+        clip-path url("#home-product-clip-path")
+        html.safari &
+          -webkit-clip-path polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)
+          clip-path polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)
+    .p-title
+      display none
+    &:hover
+      .item-container.tit
+        display none
+
+  .product-grid
+    width 100%
+    margin 0 auto
+    background $newestProductSectionBgColor
+    &:after
+      content ""
+      display block
+      clear both
+
+  .product-grid-item
+    position relative
+    width 21.833%
+    padding-bottom 21.833%
+    overflow hidden
+    float left
+    background $itemOverlayBgColor
+    transform rotate(45deg)
+    margin 5.5%
+    margin-top -11%
+    overflow hidden
+    &:hover
+      background $itemBgColor
+
+  .product-grid-item:nth-child(1),
+  .product-grid-item:nth-child(2),
+  .product-grid-item:nth-child(3)
+     margin-top 5%
+  .product-grid-item:nth-child(5n+4)
+      margin-left 21.9%
+  .product-grid-item:nth-child(5n+6)
+    clear left
+  .product-grid-item:nth-child(5n+6):last-of-type
+    margin-left 38.25%
+
+  .product-grid-inner
+    box-sizing border-box
+    position absolute
+    top -25% // 0
+    left -25% // 0
+    width 150% // 100%
+    height 150% // 100%
+    transform rotate(-45deg)
+    text-align center
+    padding-top 0 // 40%
+    font-size 2em
+    overflow hidden
+    img
+      width 100%
+      height auto
+    .info-span
+      position absolute
+      top 50%
+      left 0
+      width auto
+      max-width 100%
+      height 40px
+      margin-top -20px
+      background rgba(0, 0, 0, 0.5)
+      text-align left
+      display none
+    .info-cntr
+      display block
+      position relative
+      .p-title
+        display inline-block
+        width 100%
+        height 40px
+        line-height 40px
+        overflow hidden
+        text-overflow ellipsis
+        padding-right 20px
+        padding-left 22px
+        color $white
+        font-size 15px
+      .learn-more
+        display none
+        position absolute
+        left auto
+        right 20px
+        top 0
+        bottom 0
+        width auto
+        line-height 40px
+        font-size 15px
+        color $white
+        .text
+          margin-right 5px
+    &:hover, &:focus
+      .info-span
+        display block
+        width 100%
+        background $mainColor url(/assets/$theme/images/btn_bg.png) top left repeat-x
+        .p-title
+          padding-right 80px
+        .learn-more
+          display inline-block
+
+  .productList.row
+    margin-left -1px
+    margin-right 0
+
+  .showMore-products
+    margin-top 35px
+    margin-bottom 40px
+    text-align center
+
+.showMore-line
+  height 1px
+  width 100%
+  margin-top -60px
+  background #EDEDED
+
+@media screen and (max-width: 767px)
+  .newest-products-container
+    padding-top 0 // 50px
+  .newest-products
+    margin-top 0 // 50px
+    padding 30px 0 0
+    .title
+      font-size 30px
+    .productList
+     .p-list
+        &:nth-child(2)
+          &:after
+            display none
+        &:nth-child(3)
+            display none
+        height 240px
+        overflow hidden
+        margin-bottom 30px
+        .img-container
+          height 170px

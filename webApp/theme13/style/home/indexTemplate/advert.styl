@@ -1,0 +1,70 @@
+.guide-container
+  margin-top 30px
+  box-shadow 10px 10px 15px $grayO inset
+  background-color #F7F7F7
+  padding 120px 0 100px
+
+  .guide-img
+    width 100%
+    overflow hidden
+    .row
+      margin 0
+    .img
+      animation-duration 1s
+      .img-holder
+        display inline-block
+        // height 300px
+        height 0
+        padding-bottom 100%
+        width: 100%
+        background #eff0f1
+      &>a
+        display block
+        width 100%
+        height 0
+        padding-bottom 100%
+        overflow hidden
+        background-position 50% 50%
+        background-repeat no-repeat
+        background-size cover
+        &:hover, &:focus
+          opacity 0.8
+        img
+          display none
+          width 100%
+          height auto
+      &:nth-child(1)
+        float left
+      &:nth-child(2)
+        float right
+        a
+          padding-bottom 48%
+          margin-bottom 4%
+      &:nth-child(3)
+        float right
+        a
+          padding-bottom 48%
+
+@media screen and (max-width: 767px)
+  .guide-container
+    margin-top 15px
+    box-shadow 10px 10px 15px $grayO inset, -10px -10px 15px $grayO inset
+    padding 50px 0 50px
+    .guide-img
+      .row
+        width 100%
+        // margin-left -25%
+      .img
+        // transition .4s ease-in-out
+        // transform translateX(-43%)
+        padding 0
+        &:nth-child(1)
+          text-align center
+          // margin-left -16.66667%
+          margin-bottom: 4%
+        &:nth-child(2)
+          text-align center
+        &:nth-child(3)
+          text-align center
+        &>a
+          border-width 0

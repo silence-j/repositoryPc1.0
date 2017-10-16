@@ -1,0 +1,128 @@
+mixin line(className)
+  if(className)
+    li.line-li.hidden-xs(class='#{className}')
+      span.line
+  else
+    li.line-li.hidden-xs
+      span.line
+
+.header
+  .top.container
+    img.logo-img#logo-img
+    //- .social-container.icon-top.form-inline.pull-right.hidden-xs
+    .social-container.form-inline.pull-right.hidden-xs
+      .top-user.pull-right
+        span.user-opration
+          a(href='/users/login', role='button').btn.btn-default
+            i.glyphicon.glyphicon-user
+            | SIGN IN
+          if(fb !== '1')
+            span OR
+            a(href='/users/register?shopId=#{shopId}').btn.btn-default SIGN UP
+        span.user-loged
+          a(href='javascript:;', role='button')
+            i.glyphicon.glyphicon-user
+          div.loged-opt
+            a(href='javascript:;').btn.btn-default.username
+            a(href="javascript:;").signOut.btn.btn-default SIGN OUT
+            //- a(href='https://server.onloon.com.cn/buyer/logout').btn.btn-default SIGN OUT
+          //- a.username
+          //- select#sign-sel.btn.btn-default
+            //- a(href='javascript:;').username
+            //- a(href='https://server.onloon.com.cn/buyer/logout', role='button').btn.btn-default
+            //-   i.glyphicon.glyphicon-user
+            //-   | SIGN OUT
+      .top-search.hidden-search.pull-right
+        .input-group
+          i.glyphicon.glyphicon-search.search-icon
+          input.form-control#input-down(type='text')
+          .input-group-btn
+            button.search-btn.btn.btn-default
+              | SEARCH
+  nav.navbar.bottom.navbar-default
+    .container
+      .row
+        .navbar-header
+          button.navbar-toggle.pull-left.collapsed(type="button", data-toggle="collapse", data-target="#navbar-collapse", aria-expanded="false")
+            span.menu-bar
+              span.menu-open.glyphicon.glyphicon-menu
+              span.menu-close.glyphicon.glyphicon-cancel
+            span.menu-text
+              | MENU
+          .visible-xs
+            .input-group.search-input.mbSearch
+              input.form-control(type='input', placeholder='Search…')
+              span.input-group-addon.search-btn
+                i.glyphicon.glyphicon-search
+        #navbar-collapse.collapse.navbar-collapse
+          ul.nav.navbar-nav.col-sm-12
+            if(fb !== '1')
+              if(pageCode === 'index')
+                li.active
+                  a(href="/?shopId=#{shopId}" class='nav-a') HOME
+              else
+                li
+                  a(href="/?shopId=#{shopId}" class='nav-a') HOME
+              +line
+            if(pageCode === 'products')
+              li.drop-menu.active
+                a(href='/products?shopId=#{shopId}&fb=#{fb}')
+                  | PRODUCTS
+                  //- span.caret.hidden-xs
+                  //- span.caret
+                  i.theme-icon.icon-chevron-down.slide-down
+                  i.theme-icon.icon-chevron-up.slide-up
+            else
+              li.drop-menu
+                a(href='/products?shopId=#{shopId}&fb=#{fb}')
+                  | PRODUCTS
+                  //- span.caret.hidden-xs
+                  //- span.caret
+                  i.theme-icon.icon-chevron-down.slide-down
+                  i.theme-icon.icon-chevron-up.slide-up
+            if(fb !== '1'&& (blogCount > 0))
+              +line
+              if(pageCode === 'blog')
+                li.active
+                  a(href='/blog/#{shopId}')
+                    | BLOG
+              else
+                li
+                  a(href='/blog/#{shopId}')
+                    | BLOG        
+            +line
+            if(fb !== '1')
+              if(pageCode === 'profile')
+                li.active
+                  a(class='nav-a', href='/profile?shopId=#{shopId}') COMPANY PROFILE
+              else
+                li
+                  a(class='nav-a', href='/profile?shopId=#{shopId}') COMPANY PROFILE
+              +line
+              if(pageCode === 'contacts')
+                li.active
+                  a(class='nav-a', href='/contacts?shopId=#{shopId}') CONTACT US
+              else
+                li
+                  a(class='nav-a', href='/contacts?shopId=#{shopId}') CONTACT US
+              +line
+            li.pull-right.user-li.visible-xs
+              span.user-opration
+                i.glyphicon.glyphicon-user.hidden-xs
+                a(href='/users/login?shopId=#{shopId}') SIGN IN
+                if(fb !== '1')
+                  span OR
+                  a(href='/users/register?shopId=#{shopId}') SIGN UP
+              span.user-loged
+                i.glyphicon.glyphicon-user.hidden-xs
+                a(href='javascript:;').username
+                if(fb !== '1')
+                  span |
+                  a.signOut(href="javascript:;") SIGN OUT
+            +line('pull-right visible-xs')
+            li.visible-xs
+              .social-container.icon-top
+                //- 通过JS动态添加
+                //- i.glyphicon.glyphicon-facebook
+                //- i.glyphicon.glyphicon-linkedIn
+                //- i.glyphicon.glyphicon-twitter

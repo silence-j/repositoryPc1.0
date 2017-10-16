@@ -1,0 +1,42 @@
+extends ../layout
+
+block css
+  meta(name="og-date", content="20170515")
+  meta(property="og:type", content="product")
+  meta(id="fbUrl", property="og:url")
+  meta(id="faceTit", property="og:title")
+  meta(id="faceUrl", property="og:image")
+  meta(property="og:site_name", content="http://www.loonxi.com")
+  link(rel="stylesheet" href="/thirtyPart/bootstrap/bootstrap.min.css")
+  link(rel='stylesheet' href="/plugins/animate.css/animate.min.css")
+  link(rel='stylesheet', href='/theme#{them}/css/detail/index.css?v=#{version}')
+
+block content
+  include ../components/header
+  include ./indexTemplate/mainPic
+
+  //- hr.split-line.hidden-xs
+  .container.desc-container.detail-loading
+    include ./indexTemplate/desc
+
+  //- hr.split-line.hidden-xs
+  .container.desc-container
+    include ./indexTemplate/supplier
+
+  //- hr.split-line.hidden-xs
+  //- .container.desc-container
+  //-   include ./indexTemplate/download
+
+  include ../components/footer
+
+append scripts
+  script.
+    window.prodDetail = '!{prodDetail}';
+    window.prodDesc = '!{prodDesc}';
+  script(src="/plugins/jquery/dist/jquery.min.js")
+  script(src="/thirtyPart/jquery.pin.js")
+  //- script(src='/plugins/bootstrap/dist/js/bootstrap.min.js')
+  script(src='/thirtyPart/bootstrap/bootstrap.min.js')
+  script(src='/thirtyPart/imgzoom.js')
+  script(src='/thirtyPart/select3.js')
+  script(src='/theme#{them}/js/detail.js?v=#{version}')

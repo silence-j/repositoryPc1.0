@@ -1,0 +1,54 @@
+.carousel-container
+  .banner-loading
+    width 100%
+    background $loadingBg
+    .img-container
+      position relative
+      padding-bottom 43.3%
+      background url('/images/banner-loading.png') no-repeat
+      background-size 50% 100%
+      background-position center
+  #carousel-banner
+    display none
+    .carousel-inner
+      //padding-bottom 43%
+      position relative
+      .item
+        height 0px
+        padding-bottom 43.3%
+        a
+         display inline-block
+         img
+           position absolute
+           top 0
+           width 100%
+           height 100%
+  .carousel-indicators
+    left auto
+    right 20px
+    bottom 20px
+    text-align right
+    margin 0
+    li
+      text-indent 0
+      border-radius 0
+      border none
+      width 30px
+      height 30px
+      line-height 30px
+      text-align center
+      background-color rgba(255, 255, 255, 0.5)
+      color $black
+      &.active
+        width 30px
+        height 30px
+        background-color rgba(0, 0, 0, 0.5)
+        color $forgroundColor
+
+@media screen and (max-width: 767px)
+  .banner-loading .img-container
+      height 0px
+      padding-bottom 43.3%
+  .carousel-container #carousel-banner .carousel-inner .item
+      height 0px
+      padding-bottom 43.3%

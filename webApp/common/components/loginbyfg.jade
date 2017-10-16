@@ -1,0 +1,46 @@
+.login-panel#login-panel
+  a.close.glyphicon-cancel 
+  p Sign Up To Contact Supplier!
+  button.btn-face
+    i.glyphicon-facebook
+    span Sign up with Facebook
+  button.btn-gg
+    i.glyphicon-gg
+    span Sign up with Google
+  //- div.g-signin2#g-sign(data-onsuccess="onSignIn", data-onfailure="onFail",data-theme="")
+.login-bar#login-bar
+  .login-bar-inner.col-lg-8.col-md-12.col-sm-12.hidden-xs.clearfix
+    span.col-lg-7 Login with Facebook ／Google and chat with supplier
+    button.btn-face
+        i.glyphicon-face2
+    button.btn-gg
+      i.glyphicon-gg2 
+  .login-bar-inner.visible-xs.clearfix
+    button.btn-face
+      i.glyphicon-facebook
+      span Sign up with Facebook
+    button.btn-gg
+      i.glyphicon-gg
+      span Sign up with Google
+
+block scripts
+  //- script(src='https://apis.google.com/js/platform.js',async,defer)
+  //- script.
+  //-   function onSignIn (googleUser) {
+  //-     var isLogin = localStorage.getItem('isLogin')
+  //-     var ggClick = localStorage.getItem('ggClick') // 是否点击过gg登陆按钮
+  //-     if (isLogin && +isLogin === 1) {
+  //-       return
+  //-     }
+  //-     if (!ggClick) {
+  //-       return
+  //-     }
+  //-     if (window.plat === 1) { // 在facebook嵌入端
+  //-       return
+  //-     }
+  //-     var id_token = googleUser.getAuthResponse().id_token
+  //-     window.location.href = '/users/ggBack/?shopId=' + window.shopId + '&id_token=' + id_token
+  //-   }
+  //-   function onFail () {
+  //-     alert('Google登陆失败')
+  //-   }

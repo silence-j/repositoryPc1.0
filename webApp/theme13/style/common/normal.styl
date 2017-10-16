@@ -1,0 +1,577 @@
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+  -webkit-appearance none
+  margin 0
+svg.css-shape
+  display block !important
+  html.safari &
+    display none !important
+
+@font-face {
+  font-family: 'buyer-theme_11';
+  src: url('/assets/theme13/font/buyer-theme_11.eot?19322747');
+  src: url('/assets/theme13/font/buyer-theme_11.eot?19322747#iefix') format('embedded-opentype'),
+       url('/assets/theme13/font/buyer-theme_11.woff?19322747') format('woff'),
+       url('/assets/theme13/font/buyer-theme_11.ttf?19322747') format('truetype'),
+       url('/assets/theme13/font/buyer-theme_11.svg?19322747#buyer-theme_11') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.theme-icon
+  font-family "buyer-theme_11"
+  font-style normal
+  font-weight normal
+  speak none
+  display inline-block
+  text-decoration: inherit
+  // width 1em
+  // margin-right .2em
+  font-size 16px
+  text-align center
+  // For safety - reset parent styles, that can break glyph codes
+  font-variant normal
+  text-transform none
+  // fix buttons height, for twitter bootstrap
+  // line-height 1em
+  // Animation center compensation - margins should be symmetric
+  // remove if not needed
+  // margin-left .2em
+  // You can be more comfortable with increased icons size
+  // font-size 120%
+  // Font smoothing. That was taken from TWBS
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+  // Uncomment for 3D effect
+  // text-shadow 1px 1px 1px rgba(127, 127, 127, 0.3)
+  &.icon-chevron-up:before
+    content '\e800'
+  &.icon-chevron-down:before
+    content '\e801'
+  &.icon-minus:before
+    content '\e802'
+  &.icon-plus:before
+    content '\e803'
+  &.icon-down-dir:before
+    content '\e804'
+  &.icon-left-dir:before
+    content '\e805'
+  &.icon-right-open:before
+    content '\e806'
+  &.icon-right-dir:before
+    content '\e807'
+  &.icon-up-dir:before
+    content '\e808'
+  &.icon-cancel:before
+    content '\e809'
+  &.icon-phone:before
+    content '\e80a'
+  &.icon-user:before
+    content '\e80b'
+  &.icon-search:before
+    content '\e80c'
+  &.icon-key:before
+    content '\e80d'
+  &.icon-twitter:before
+    content '\f099'
+  &.icon-facebook:before
+    content '\f09a'
+  &.icon-mail-alt:before
+    content '\f0e0'
+  &.icon-linkedin:before
+    content '\f0e1'
+  &.icon-doc-text:before
+    content '\f0f6'
+  &.icon-angle-double-left:before
+    content '\f100'
+  &.icon-angle-double-right:before
+    content '\f101'
+  &.icon-angle-left:before
+    content '\f104'
+  &.icon-angle-right:before
+    content '\f105'
+  &.icon-angle-up:before
+    content '\f106'
+  &.icon-angle-down:before
+    content '\f107'
+  &.icon-keyboard:before
+    content '\f11c'
+  &.icon-instagram:before
+    content '\f16d'
+  &.icon-left:before
+    content '\f177'
+  &.icon-right:before
+    content '\f178'
+  &.icon-institue:before
+    content '\f19c'
+  &.icon-google:before
+    content '\f1a0'
+  &.icon-file-pdf:before
+    content '\f1c1'
+  &.icon-file-word:before
+    content '\f1c2'
+  &.icon-file-excel:before
+    content '\f1c3'
+  &.icon-file-archive:before
+    content '\f1c6'
+  &.icon-pinterest:before
+    content '\f231'
+  &.icon-dot-3:before
+    content '\e80e'
+  &.icon-ellipsis:before
+    content '\f141'
+  &.icon-ellipsis-vert:before
+    content '\f142'
+  &.icon-home:before
+    content '\e80f'
+  &.icon-eye:before
+    content '\e811'
+  &.vert
+    transform rotate(90deg)
+
+.btn
+  display inline-block
+  border-radius 20px
+  .glyphicon
+    margin-top -5px
+.btn-default
+  height 40px
+  background-color $white
+  border 2px solid $grayO
+  font-size 14px
+  .glyphicon
+    color $mainColor
+  &:hover, &:focus
+    text-decoration none
+    border-color $mainColor
+    background-color $mainColor
+    color $white
+    .glyphicon
+      color $white
+
+.btn-blue, .btn-send
+  width 130px
+  height 40px
+  line-height 36px
+  text-align center
+  color $white
+  background $secondaryColor
+  border 2px solid $secondaryColor
+  word-break break-all
+  text-decoration none
+  &.btn-flat
+    color $white
+    background $mainColor
+    border-color $mainColor
+.btn-blue:hover, .btn-blue:focus, .btn-blue:active,
+.btn-send:hover, .btn-send:focus, .btn-send:active
+  color $white
+  background $mainColor
+  border-color $mainColor
+  text-decoration none
+
+.btn-send
+  padding 0
+  margin 0 auto
+  display block
+  height 40px
+  background-color $secondaryColor
+  border 2px solid $secondaryColor
+  color $white
+  line-height 36px
+  border-radius 20px
+.btn-send[disabled]
+  background-color $whiteOO
+  border-color $grayO
+  color $blackOOO
+
+.btn-blue-trans
+  padding 10px 30px
+  background $secondaryColor
+  border 2px solid $secondaryColor
+  color $white
+  border-radius 20px
+.btn-blue-trans:hover, .btn-blue-trans:focus, .btn-blue-trans:active
+  color $white
+  background $mainColor
+  border-color $mainColor
+
+.btn-black-trans
+  // padding 12px 30px
+  display inline-block
+  text-align center
+  paddding 0
+  height 50px
+  line-height 46px
+  background $white
+  border 1px solid
+  color $blackTrue
+  font-size 1.6rem
+  font-weight bold
+  cursor pointer
+.btn-black-trans:hover, .btn-black-trans:focus, .btn-black-trans:active
+  background $white
+  border 1px solid $mainColor
+  color $mainColor
+
+.caret
+  &.caret-right
+    border-left 7px dashed
+    border-left 7px solid \9
+    border-top 7px solid transparent
+    border-bottom 7px solid transparent
+    border-right none
+  &.caret-up
+    border-bottom 4px dashed
+    border-bottom 4px solid \9
+    border-left 4px solid transparent
+    border-right 4px solid transparent
+    border-top none
+  &.caret14
+    border-width 7px !important
+
+.ui-select, .ui-input
+  padding 6px 12px
+  width 100%
+  height 40px
+  -webkit-appearance none
+  background-image url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAsklEQVQ4T2NkoBAwUqifYZAYMH369ARGRsZ4Urzz////hZmZmQvAXpg/f77Az58/DzAyMuoTY8j///8vZmRkGIDUwsOAWENAmtnZ2R0SExM/oBhAjEvQNWMYABKYPn26AhMT0wUGBgZ+NO98ZGRkdEhLSwPJwQHWaJw1a5bB////DyAZglUzVhfAjEY25N+/f46ZmZkgAzEA3oQ0c+bMgH///gmAogtX7AySlEhM4qGZFwDG9EwR60u4QgAAAABJRU5ErkJggg==")
+  background-repeat no-repeat
+  background-position 98% center
+  border-radius 0
+  border 0
+  background-color $selectBgColor
+  color $selectColor
+  border 1px solid $selectBorderColor
+.ui-select:hover
+  border-color $mainColor
+  background-image url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAtklEQVQ4T2NkoBAwUqifYZAYYDrre8J/hv/xpHiHkYFx4ek0zgVgLxjM/y/A+uvbAQZGRn2iDPn//+LpdG4DkFp4GBBtyP//F3+zcTlcSGT8gGIAUS5B04xhANiQ6d8VWJj+XWBkZORH9s7///8/MjKyOpxOY7uALI41Gk1n/TL4///3AZghuDRjdQHMdGRD/jMyOp5J5TyALYDxJiTjmV8DmBiZBEDRhSt2BklKJCrx4FBEsRcAfxZJESh0fIsAAAAASUVORK5CYII=")
+.ui-input
+  background-image none
+
+.select3-hidden
+  display none
+  visibility hidden
+  padding-right 10px
+.select3
+  cursor pointer
+  display inline-block
+  position relative
+  width 50%
+  height 40px
+  vertical-align middle
+  font-size 16px
+  color $selectItemColor
+.select3-styled
+  position absolute
+  top 0
+  right 0
+  bottom 0
+  left 0
+  background-color $selectBgColor
+  color $selectColor
+  padding 8px 35px 8px 15px
+  transition all 0.2s ease-in
+  border 1px solid $selectBorderColor
+  border-radius 4px
+  text-align center
+  .chevron-down, .chevron-up
+    position absolute
+    top 10px
+    right 10px
+    display inline-block
+    font-size 12px
+    color $selectColor
+  .chevron-up
+    display none
+  &:after
+    display none
+    content ""
+    width 0
+    height 0
+    border 7px solid transparent
+    border-color $selectItemColor transparent transparent transparent
+    position absolute
+    top 16px
+    right 10px
+  &:hover
+    // background-color darken($selectBgColor, 2)
+    background-color $selectBgColor
+    border-color $selectHoverBorderColor
+  &:active, &.active
+    // background-color darken($selectBgColor, 5)
+    background-color $selectBgColor
+    .chevron-down
+      display none
+    .chevron-up
+      display inline-block
+    &:after
+      display none
+      top 9px
+      border-color transparent transparent $selectItemColor transparent
+.select3-options
+  display none
+  position absolute
+  top 100%
+  right 0
+  left 0
+  z-index 999
+  margin 0
+  padding 0
+  list-style none
+  background-color darken($selectBgColor, 5)
+  box-shadow 0 0 6px 0 rgba(0,0,0,0.20)
+  li
+    margin 0
+    padding 12px 0
+    text-indent 15px
+    // border-top 1px solid darken($selectBgColor, 10)
+    transition all 0.15s ease-in
+    background-color $selectItemBgColor
+    color $selectItemColor
+    &:hover
+      background-color $selectItemHoverBgColor
+      color $selectItemHoverColor
+    &[rel="hide"]
+      display none
+
+.modal
+  text-align: center;
+  &:before
+    display inline-block
+    vertical-align middle
+    content " "
+    height 100%
+.modal-dialog
+  display inline-block
+  text-align left
+  vertical-align middle
+
+.module-title
+  background-color transparent
+  position relative
+  font-weight bold
+  font-size 24px
+  margin-bottom 30px
+  // &::first-letter
+  //   color $mainColor
+  .caret
+    display none
+    color $mainColor
+    margin-left 10px
+  .line
+    display inline-block
+    position absolute
+    background-color $mainColor
+    height 5px
+    width 40px
+    bottom -5px
+    left 0
+
+.pagination>li
+  display inline-block
+  margin 0 5px
+.pagination>li>a, .pagination>li>span
+  padding 0
+  width 28px
+  height 28px
+  line-height 28px
+  text-align center
+  color #666
+  border-radius 4px
+.pagination>li:first-child>a, .pagination>li:first-child>span,
+.pagination>li:last-child>a, .pagination>li:last-child>span
+  border-radius 4px
+  span
+    font-size 14px
+.pagination>li>a:hover, .pagination>li>span:hover, .pagination>li>a:focus, .pagination>li>span:focus
+  border 1px solid $mainColor
+  color $white
+  background $mainColor
+  cursor pointer
+.pagination>.active>a, .pagination>.active>span
+   background-color $secondaryColor
+   border-color $secondaryColor
+
+/* 表单 focus加样式.form-group-focus;blur 去掉focus样式 根据是否输入 添加form-group-min样式 验证样式error*/
+.valid-form
+  .form-group
+    position relative
+    label
+      // position absolute
+      // top 16px
+      width 110px
+      font-size 14px
+      color $black
+      font-weight normal
+      margin-bottom 15px
+  .form-group.form-group-focus
+    border-color $mainColor
+    label
+      // top 3px
+      // font-size 12px
+      // color $mainColor
+  .form-group-min
+    label
+      // top 3px
+      // font-size 12px
+
+.validate-tip
+  display none
+  position absolute
+  right 0
+  top 0
+.error
+  border-color $errorColor !important
+  label
+    span
+      // color $errorColor
+      color $black
+  .validate-tip
+    display block
+    // min-height 18px
+    // padding 10px
+    // background-color #FFEEE6
+    color $errorColor
+    background-color #fff
+    i[class^="glyphicon"]
+      margin-right 6px
+.empty-input
+  // padding 10px 0 0 10px
+  padding 0 10px
+  width 100%
+  height 100%
+  // min-height 50px
+  min-height 40px
+  line-height 40px
+  // border 0
+  border 1px solid $grayO
+  border-radius 4px
+  outline 0
+  &:hover, &:active, &:focus
+    border-color $mainColor
+  &:active, &:focus
+    outline rgba(40, 184, 193, 0.10) solid thick
+
+// 提示框
+.alert
+  position fixed
+  z-index 10000
+  top 100px
+  left 50%
+  margin-left -242px
+  width 585px
+  padding 4px 0 4px 15px
+  color #666
+  word-break break-all
+  border-radius 4px
+  i
+    margin-right 10px
+    font-size 14px
+.alert-success
+  border 1px solid #e3f4db
+  background-color #f3faf0
+.alert-info
+  border 1px solid #cfe8fa
+  background-color #e7f3fc
+.alert-warning
+  border 1px solid #fec
+  background-color #FFFAEA
+
+.learn-more-cntr
+  position relative
+  // display none
+.learn-more
+  position absolute
+  width 55%
+  top 45%
+  left 25%
+  // box-shadow:0 0 10px rgba(53, 154, 246, .8)
+  // display block
+  // margin-top 10px
+  // width 100%
+  // color $forgroundColor !important
+  cursor pointer
+
+.cd-top
+  display inline-block
+  position fixed
+  bottom 66px
+  right 10px
+  height 40px
+  width 40px
+  border-radius 20px
+  overflow hidden
+  white-space nowrap
+  text-align center
+  font-size 20px
+  line-height 36px
+  text-decoration none
+  background $mainColor
+  border 2px solid $mainColor
+  visibility hidden
+  opacity 0
+  box-shadow 0 0 10px rgba(0, 0, 0, 0.05)
+  -webkit-transition opacity .3s 0s, visibility 0s .3s
+  -moz-transition opacity .3s 0s, visibility 0s .3s
+  transition opacity .3s 0s, visibility 0s .3s
+  cursor pointer
+  z-index 899
+  box-shadow 0 2px 8px 0 rgba(40, 184, 193, 0.40)
+  &:hover
+    text-decoration none
+    background-color $secondaryColor
+    border-color $secondaryColor
+  &.cd-is-visible,
+  &.cd-fade-out
+    -webkit-transition opacity .3s 0s, visibility 0s 0s
+    -moz-transition opacity .3s 0s, visibility 0s 0s
+    transition opacity .3s 0s, visibility 0s 0s
+  &.cd-is-visible
+    visibility visible
+    opacity 1
+  &.cd-fade-out
+    opacity .5
+  .theme-icon
+    width 36px
+    line-height 36px
+    font-size 20px
+    color $white
+@media (min-width: 769px) and (max-width: 809px)
+  .cd-top
+    right 0
+    left auto
+    margin-left 0
+@media (min-width: 810px)
+  .cd-top
+    right auto
+    left 50%
+    margin-left unit(750/2, 'px')
+@media (min-width: 993px) and (max-width: 1033px)
+  .cd-top
+    right 0
+    left auto
+    margin-left 0
+@media (min-width: 1034px)
+  .cd-top
+    right auto
+    left 50%
+    margin-left unit(970/2, 'px')
+@media (min-width: 1201px) and (max-width: 1243px)
+  .cd-top
+    right 0
+    left auto
+    margin-left 0
+@media (min-width: 1244px)
+  .cd-top
+    right auto
+    left 50%
+    margin-left unit(1200/2, 'px')
+
+@media screen and (max-width: 767px)
+  .validate-tip
+    position static
+    margin-top 10px
+@media (min-width: 1200px)
+  .container
+    width 1200px

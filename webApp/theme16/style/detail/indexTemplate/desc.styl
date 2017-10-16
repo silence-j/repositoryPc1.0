@@ -1,0 +1,122 @@
+.split-line
+  border-top 1px solid $detailLineColor
+
+.desc-container
+  background-color $forgroundColor
+  padding-bottom 50px
+  padding-left 20px
+  padding-right 20px
+
+// .desc-tit
+//   margin 10px 0
+//   padding 10px
+//   font-size 2.4rem
+//   font-weight bold
+//   background-color $moduleTitleBgColor
+//   color $moduleTitleColor
+
+.desc-attr
+  margin-bottom 20px
+  border-bottom 1px solid $detailLineColor
+  ul
+    margin 30px 10px 20px 30px
+    padding 0
+  li
+    // float left
+    margin-bottom 10px
+    // width 33.33%
+    font-size 13px
+    label
+      display inline-block
+      margin-right 5px
+      min-width 80px
+      // color #999
+    span
+      color #999!important
+
+.desc-img
+  padding 15px
+  color $itemDetailDefatulColor
+  img, *
+    max-width 100%
+    height auto
+  table
+    // width 90%
+    // margin-left auto
+    // margin-right auto
+    border-top 1px solid $black
+    border-left 1px solid $black
+    th, td
+      // text-align left
+      border-right 1px solid $black
+      border-bottom 1px solid $black
+      // padding 5px
+    th
+      background $blackO
+
+.supplier-form
+  margin 20px auto
+  // width 80%
+  .form-item // remove label text and using placeholder
+    margin 0
+  .form-group
+    min-height 50px
+    padding 0
+    label // remove label text and using placeholder
+      top 12px
+      left -10px
+    .validate-input
+      &::placeholder
+        // opacity 0
+        color $inputPlaceHolderColor
+  .short
+    padding-right 5%
+    .validate-tip, .valid-tip
+      right 10%
+    // div
+    //   padding-bottom 0
+
+.req
+  color red
+  margin-right 2px
+
+.btn-send
+  display inline-block
+  margin 0
+// .btn-send:hover
+//   color $btnDefaultHoverColor
+//   background-color $btnDefaultHoverBgColor
+//   border 2px solid $btnDefaultHoverBorderColor
+.download-list
+  ul
+    padding 0 20px
+  .down-item
+    position relative
+    height 64px
+    line-height 64px
+    border-bottom 1px solid $downloadItemBorderColor
+    a.titl
+      color $textColor
+      text-decoration none
+      margin 0 0 0 5px
+      display inline-block
+    .btn-blue-trans
+      position absolute
+      right 0
+      top 18px
+      padding 0 15px
+      height 30px
+      line-height 30px
+      font-size 13px
+  .pagination
+    float right
+
+@media (max-width: 767px)
+  .desc-container
+    padding-left 15px
+    padding-right 15px
+  // .supplier-form
+  //   .short
+  //     border 0
+  //     div
+  //       width 95%

@@ -1,0 +1,312 @@
+@import "../common/color.styl"
+@import "../common/header.styl"
+@import "../common/footer.styl"
+@import "../../../common/style/normal.styl"
+@import "../common/normal.styl"
+@import "./indexTemplate/desc.styl"
+body
+    background-color $whiteOO
+label
+    font-weight normal
+a:hover, a:focus
+    text-decoration none
+// loading
+.detail-loading
+    .right-pic h1
+      background-color $loadingBg
+      height 80px
+    .img-list>a
+        background-color $loadingBg
+    .load-spec 
+        margin 35px 0
+        p
+            height 20px
+            background-color $loadingBg
+    .load2
+        margin 0
+        width 100%
+        float left
+    .share-four
+        a 
+            height 24px
+            width 24px
+            background-color $loadingBg
+        a:before
+            content ""
+    .desc-attr
+        display none
+    // .supplier-form, .spec-box, .num-box, .fob-box, .btn-group, .download-list, .carousel-control
+    //     display none
+.mainpic-container
+    margin-top 20px
+    padding-bottom 20px
+    background-color $white
+.left-pic
+    padding 20px
+    .carousel
+        height 0
+        padding-bottom 100%
+        background-color $loadingBg
+    // .carousel 
+    //     height 550px
+    .carousel-inner, .item
+        height auto
+        max-height 545px
+// .img-box .item img
+    // width 100%
+    // padding-bottom 100%
+.carousel-control
+    opacity 1
+    text-shadow none
+.carousel-control.right,.carousel-control.left
+    // display inline-block
+    height 40px
+    width 40px
+    top 50%
+    margin-top -20px
+    background-image none
+    background-color rgba(220,220,220,.5)
+    z-index 999
+    .glyphicon
+        margin 9px auto
+        height 22px
+        position static
+        font-size 16px
+.carousel-control:hover
+    background-color rgba(0,0,0,.5)
+.magnify-begin,.magnify-show
+  display none
+  position absolute
+  top 19px
+  background-color  #fff
+.magnify-begin 
+  left 0
+  width 150px
+  height 150px
+  opacity 0.5
+  cursor move
+.magnify-show 
+  width  445px
+  height  445px
+  border 1px solid #ccc
+  overflow  hidden
+  z-index  10000
+.left-pic
+  .magnify-show > img
+    width 1635px
+    max-height 1635px
+@media screen and (max-width: 1080px)
+  .left-pic
+    .magnify-show > img
+      width 1335px!important
+      max-height 1335px!important
+@media screen and (max-width: 938px)
+  .left-pic
+    .magnify-show > img
+      width 1005px!important
+      max-height 1005px!important
+      
+.img-list
+    margin 25px 0 17px 0
+.img-list>a
+    margin-right 10px
+    width 50px
+    height 50px
+    display inline-block
+    border 2px solid transparent
+    img
+        width 100%
+        height 100%
+        border 1px solid $border
+.img-list>a.select, .img-list>a:hover
+    border 2px solid $mainColor
+    img
+        border 1px solid $mainColor
+.share-four
+    margin 14px 0
+    text-align center
+    label
+        margin-right 20px
+        color $blackOO
+    a
+        margin-right 40px
+        display inline-block
+        font-size 16px
+        vertical-align bottom
+
+.glyphicon-facebook 
+    color #577dce
+.glyphicon-twitter
+    color #48b4fd
+.glyphicon-linkedIn
+    color #259bd8
+.glyphicon-pinterest
+    color #fa5855
+.right-pic
+    h1
+        position relative
+        margin 20px 0 0 0
+        color #333
+        word-break break-all
+        span
+          padding-left 0
+          font-size 2.4rem
+// sku 报价
+.spec-box,.fob-box
+    // margin-top 10px
+    border-top 2px solid $border
+    h3
+      color $mainColor
+      font-size 1.8rem
+.spec-box
+  .price-tab
+    margin-bottom 10px
+    margin-left 0
+    border-top 0
+.form-group
+    margin-bottom 25px
+    label 
+        width 90px
+        color $blackOO
+        vertical-align bottom
+    .ui-select
+        width 36%
+.calu-wrap
+    position relative
+    width 25%
+    display inline-block
+    a
+        position absolute
+        top 9px
+        width 20px
+        height 20px
+        color $blackOO
+    .glyphicon-reduce
+        left 7px
+    .glyphicon-plus
+        right 5px
+    input
+        padding-right 20%
+        padding-left 20%
+        width 100%
+        text-align center
+.btn-group
+    padding-top 35px
+    width 100%
+    overflow hidden
+    button
+        vertical-align middle
+    .btn-blue
+        display inline-block
+        margin-right 15px 
+        height 50px
+        line-height 50px
+        width 50%
+        font-size 1.6rem
+        font-weight bold
+        vertical-align middle
+    .btn-blue:hover
+        color #fff
+    .btn-black-trans
+        width 30%
+        min-width 105px
+        vertical-align middle
+    .btn-black-trans[disabled]:hover
+        border: 2px solid #000;
+        color: #000;
+// 数量报价 
+.num-box
+    margin-left -10px
+    border-top 2px solid $border
+.price-tab
+    margin-top -14px
+    ul 
+        padding-left 10px
+        background-color #f2f2f2
+    li
+        float left
+        width 19%
+        padding-right 1%
+    p
+      font-size 1.4rem
+    .price
+        color $mainColor
+        font-size 1.8rem
+        font-weight bold
+        max-width 100%
+        overflow hidden
+        white-space nowrap
+        text-overflow ellipsis
+    .tit p
+        margin-top 20px
+        color $blackOO
+
+.text-group
+    padding-left 10px
+    min-height 31px
+    p
+      display inline-block
+      margin 0
+    label
+      width 20%
+      color $blackOO
+// fob报价
+.fob-box
+    margin-bottom 5px
+    margin-left -7px
+    padding-left 10px
+    h3
+        display inline-block
+    span
+        color $blackO
+    .tit-unit
+        margin 0 5px
+    .text-group
+        padding-left 0
+// @media screen and (max-width: 768px)   
+//    .img-box .item img
+//       height 300px
+.ui-hr
+   display inline-block
+   margin 0 10px
+   width 0
+   height 17px
+   border 0
+   border-left 1px solid #e8e8e8
+   vertical-align middle
+.spec-box,.fob-box,.num-box,.img-list
+    float left
+    width 100%
+// 匹配手机
+.img-responsive, .carousel-inner>.item>img
+    width 100%
+    max-height 545px //太长的得截一下，否则放大镜不对
+.share-four-xs
+        position absolute
+        top 50%
+        right 20px
+        margin -10px 0 0 -10px
+    .glyphicon-share
+        font-size 20px
+        color $blackO
+.share-four-toggle
+    display none
+    position absolute
+    right -19px
+    top 35px
+    width 50px
+    text-align center
+    border 1px solid #D8D8D8
+    background-color $white
+    a
+        display block
+        margin 20px 0
+        font-size 18px
+@media screen and (max-width: 768px)
+   .left-pic
+       padding 0
+   .text-group
+      p
+        width 200px
+        vertical-align middle
+

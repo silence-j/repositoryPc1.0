@@ -1,0 +1,75 @@
+.contacts-container.container
+  .row
+    .contacts-list.col-xs-12
+      .container-title.row
+        .col-xs-12
+          .title.module-title
+            | Contact Us
+            span.caret.caret-right
+            span.line
+      form.info-form.clearfix.valid-form.col-xs-12#form
+        .row
+          .col-xs-12
+            .col-sm-5.col-xs-12.form-group.short
+              label
+                i.req *
+                span.fi-name First name
+              input.empty-input#first-name.validate-input(name='firstName', placeholder="First name")
+              div.validate-tip.animated.fadeIn
+                i.glyphicon-tishi
+                span First name can't be empty
+              div.valid-tip.animated.fadeIn
+                i.theme-icon.icon-ok-circled
+            .col-sm-6.col-xs-12.form-group
+              label
+                i.req *
+                span.fi-name Last name
+              input.empty-input#last-name.validate-input(name='lastName', placeholder="Last name")
+              div.validate-tip.animated.fadeIn
+                i.glyphicon-tishi
+                span Last name can't be empty
+              div.valid-tip.animated.fadeIn
+                i.theme-icon.icon-ok-circled
+            .col-sm-5.col-xs-12.form-group.short
+              label
+                i.req *
+                span.fi-name Company
+              input.empty-input#company.validate-input(name='company', placeholder="Company")
+              div.validate-tip.animated.fadeIn
+                i.glyphicon-tishi
+                span Company can't be empty
+              div.valid-tip.animated.fadeIn
+                i.theme-icon.icon-ok-circled
+            .col-sm-6.col-xs-12.form-group
+              label
+                i.req *
+                span.fi-name Email address
+              input.empty-input#email.validate-input(name='email', placeholder="Email address")
+              .validate-tip.animated.fadeIn
+                i.glyphicon-tishi
+                span This is not valid email address
+              div.valid-tip.animated.fadeIn
+                i.theme-icon.icon-ok-circled
+            .col-xs-12.form-group
+              label
+                i.req
+                span.fi-name Phone
+              input.empty-input#phone.validate-input(name='phone', placeholder="Phone")
+              div.validate-tip.animated.fadeIn
+                i.glyphicon-tishi
+                span This is not valid phone number
+              div.valid-tip.animated.fadeIn
+                i.theme-icon.icon-ok-circled
+            .col-sm-12.col-xs-12.form-group
+              label
+                i.req *
+                span.fi-name Message
+              textarea.empty-input#msg.validate-input(name='content', rows="3", placeholder="Message")
+              div.validate-tip.animated.fadeIn
+                i.glyphicon-tishi
+                span Message can't be empty or over 500 characters
+              div.valid-tip.animated.fadeIn
+                i.theme-icon.icon-ok-circled
+            .col-sm-12.col-xs-12.form-group
+              .col-xs-12.text-center
+                button.send.send-to(type='button') SEND

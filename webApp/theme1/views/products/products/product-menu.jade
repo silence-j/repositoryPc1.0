@@ -1,0 +1,17 @@
+a.menu-title(href='/products?shopId=#{shopId}') All Products 
+#accordion.panel-group
+  each group,i in groups
+    .pane.panel-default
+      .panel-heading
+        .panel-title
+          a.content-link(href="/products?shopId=#{shopId}&groupId=#{group.id}")
+            | #{group.name}
+            if group.subGroup.length > 0
+              a.caret-link(data-toggle="collapse",data-parent="#accordion",href="#collapse#{i}")
+                i.caret
+      .panel-collapse.collapse(id='collapse#{i}')
+        .panel-body
+          ul
+            each gp in group.subGroup
+              li
+                a(href='/products?shopId=#{shopId}&groupId=#{gp.id}') #{gp.name}

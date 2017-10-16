@@ -1,0 +1,32 @@
+//- .container
+//-   .newest-product-line
+
+.newest-products-container
+  .container.newest-products
+    .row
+      .col-xs-12.text-center
+        .title
+          | Newest Products
+          span.title-line
+    .productList.row#productList.product-grid
+      .list-loading.col-md-3.col-sm-4.col-xs-6
+        .img-container
+        .p-title
+      .list-loading.col-md-3.col-sm-4.col-xs-6
+        .img-container
+        .p-title
+      .list-loading.col-md-3.col-sm-4.col-xs-6.visible-lg.visible-md.visible-sm
+        .img-container
+        .p-title
+      .list-loading.col-md-3.col-sm-4.col-xs-6.visible-lg.visible-md
+        .img-container
+        .p-title
+    .showMore-products
+      button.btn-blue-trans.show-all
+        i.glyphicon.glyphicon-plus
+        span.text
+          | VIEW ALL PRODUCTS
+  .showMore-line
+
+- var homeProductClipPath = '<svg class="css-shape" width="0" height="0"><defs><clipPath id="home-product-clip-path" clipPathUnits="objectBoundingBox"><polygon points="0.5 0, 1 0.5, 0.5 1, 0 0.5" /></clipPath></defs></svg>'
+!{homeProductClipPath}

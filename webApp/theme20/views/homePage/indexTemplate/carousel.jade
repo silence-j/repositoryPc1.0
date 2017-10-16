@@ -1,0 +1,31 @@
+.carousel-container
+  div.banner-loading
+    .img-container
+  div#carousel-banner.carousel.slide(data-ride="carousel")
+    .carousel-indicators-container.dots
+      .container
+        ol.carousel-indicators.col-xs-12
+          li.active(data-target="#carousel-banner",data-slide-to="0")
+          li(data-target="#carousel-banner",data-slide-to="1")
+    .carousel-indicators-container.thumbs
+      .container
+        ol.carousel-indicators.col-sm-8.col-sm-offset-4.col-xs-9.col-xs-offset-3
+          li.active(data-target="#carousel-banner",data-slide-to="0")
+          li(data-target="#carousel-banner",data-slide-to="1")
+    .carousel-inner#carousel-inner(role="listbox")
+      //- .item.active
+      //-   img(src="images/1.png",alt="")
+      //-   .carousel-caption 吃舅啊大饭
+      //- .item
+      //-   img(src="images/2.png",alt="")
+      //-   .carousel-caption 吃馒头啊包子
+    .carousel-dir-container
+      .container
+        .carousel-dir-controls
+          a.left.carousel-control(href="#carousel-banner",role="button",data-slide="prev")
+            span.glyphicon.glyphicon-chevron-left(aria-hidden="true")
+          a.right.carousel-control(href="#carousel-banner",role="button",data-slide="next")
+            span.glyphicon.glyphicon-chevron-right(aria-hidden="true")
+
+- var homeCarouselThumbClipPath = '<svg class="css-shape" width="0" height="0"><defs><clipPath id="home-carousel-thumb-clip-path" clipPathUnits="objectBoundingBox"><polygon points="0.12 0, 1 0, 1 1, 0 1" /></clipPath></defs></svg>'
+!{homeCarouselThumbClipPath}

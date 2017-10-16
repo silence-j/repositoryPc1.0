@@ -1,0 +1,133 @@
+.footer-container
+  margin-top 0 // 40px
+  // background $footerBgColor
+  background $footerBgColor url(/assets/$theme/images/footer_bg.png) top center no-repeat
+  background-size cover
+
+  .footer-main
+    // border-top 3px solid $footerBorderColor
+    padding 75px 0
+
+  .support, .quick-links, .follow-us
+    margin-top 0 // 30px
+    text-align left
+    .title
+      color $footerTitleColor
+      font-size 18px
+    .context
+      line-height 30px
+      color $footerColor
+      p
+        margin 0
+      a, a:active
+        color $footerLinkColor
+        text-decoration none
+      a:hover, a:focus
+        color $footerLinkHoverColor
+        .glyphicon
+          color $footerLinkHoverColor
+      .sup-i
+        color $footerIconSupportColor
+        margin-right 10px
+      &.links
+        padding-top 0 // 30px
+        .nav-link
+          float none
+          width auto
+          padding 0 50px
+          // border-right 1px solid $footerLinkBorderColor
+          &:last-child
+            border-right-width 0
+      &.contact
+        padding 0
+        .contact-item
+          position relative
+          padding-left 40px
+          .sup-i
+            display inline-block
+            position absolute
+            left 15px
+            top 0
+            width 20px
+            height 20px
+            line-height 30px
+            color $footerIconSupportColor
+      &.social
+        margin 0
+        a
+          display inline-block
+          margin-right 30px
+          &:last-child
+            margin-right 0
+        .glyphicon
+          color $footerIconSocialColor
+          width 20px
+          height 20px
+          font-size 20px
+          text-align center
+          &.glyphicon-facebook
+            background transparent
+          &.glyphicon-linkedIn
+            background transparent
+          &.glyphicon-twitter
+            background transparent
+
+  .footer-copyright
+    position relative
+    margin-top 0 // 30px
+    background $footerNavBgColor
+    border none
+    border-top 1px solid $footerBorderColor
+    color $footerColor
+    border-radius 0
+  .discribe
+    text-align center
+    font-size 13px
+    line-height 40px
+  .footer-container.has-login-bar
+    height 332px
+
+@media screen and (max-width: 767px)
+  .footer-container
+    .footer-top, .footer-main
+      background $footerBgColor
+    .footer-line
+      background $footerColor
+    .support, .quick-links, .follow-us
+      text-align left
+      .context
+        &.footer-logo
+          text-align left
+        &.links
+          .nav-link
+            padding 0 10px
+
+    .follow-us
+      margin 0
+      font-size 20px
+      .context.social
+        text-align center
+        a
+          display inline-block
+          padding 0 30px
+          margin 0
+    .footer-copyright
+      margin-top 0
+      .contact
+        text-align left
+        .contact-item
+          display block
+          margin-bottom 10px
+          &:last-child
+            width 90%
+      .discribe
+        line-height 30px
+        padding 0
+        text-align center
+
+@media screen and (max-width: 374px)
+  .footer-container
+    .follow-us
+      .context.social
+        a
+          padding 0 20px

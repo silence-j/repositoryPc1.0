@@ -1,0 +1,262 @@
+// 分页
+.pagination
+  width 100%
+  text-align center
+
+.product-container
+  padding-top 50px
+
+// menu title
+.menu-title
+  position relative
+  height 60px
+  line-height 60px
+  margin-bottom 0
+  font-size 35px
+  font-weight bold
+  text-align left
+  color $productTitleColor
+  // text-transform uppercase
+  // &:before // square prefix style
+  //   content ''
+  //   display inline-block
+  //   background-color $mainColor
+  //   // width 15px
+  //   // height 15px
+  //   width 3px
+  //   height 30px
+  //   margin-right 10px
+  // &:before, &:after // close style
+  //   content ''
+  //   position absolute
+  //   display inline-block
+  //   top 100px
+  //   left 50%
+  //   margin-left -13.5px
+  //   height 1px
+  //   width 38px
+  //   background $newestProductTitleLineColor
+  //   -webkit-transform rotate(45deg)
+  //   -moz-transform rotate(45deg)
+  //   transform rotate(45deg)
+  // &:after
+  //   -webkit-transform rotate(-45deg)
+  //   -moz-transform rotate(-45deg)
+  //   transform rotate(-45deg)
+  .caret
+    display none
+    color $mainColor
+    margin-left 10px
+  .line
+    display none // inline-block
+    position absolute
+    background-color $productTitleLineColor
+    width 32px
+    height 2px
+    bottom -10px
+    left 50%
+    margin-left -16px
+  .product-desc
+    margin-left 10px
+  .product-menu &
+    display none
+
+// 商品数量描述
+.product-desc
+  display none
+  margin-left 0 // 10px
+  font-size 14px
+  color $itemCountDescColor
+  font-weight normal
+  .num
+    margin-left 5px
+    margin-right 5px
+    font-size normal
+    font-weight normal
+    color $itemCountDescNumColor
+  .product-list &
+    display none
+    margin-top 10px
+
+// 列表
+.product-list-container
+  margin-top 0 // 50px
+  margin-bottom 80px
+  background $productListCntrBgColor
+.product-list
+  padding-left 0
+  // .products-container-list
+  .loading-search-title
+    width 30%
+    height 20px
+    margin-bottom 10px
+    background $loadingBg
+  .title
+    margin-top 10px
+    margin-bottom 20px
+    padding 10px
+    background $productTitleBgColor
+    font-size 18px
+  .load-more-products
+    display none
+    text-align center
+    padding-top 15px
+    .load-more
+      display inline-block
+      height 36px
+      line-height 36px
+      padding 0 15px
+      border 1px solid $mbLoadMoreBorderColor
+      background-color $mbLoadMoreBgColor
+      color $mbLoadMoreColor
+      text-decoration none
+      cursor pointer
+      &:hover, &:active, &:focus
+        text-decoration none
+      &[disabled]
+        background-color $mbLoadMoreDisabledBgColor
+      .theme-icon
+        margin-left 5px
+
+// 产品列表
+@import "../../common/productList.styl"
+
+// #accordion
+//   border-right 4px solid $categoryBorderColor
+
+.product-menu
+  padding 0 0 0 50px // 30px 0 0 50px
+  & + div.col-sm-9
+    padding-left 50px
+  .panel-group
+    .panel
+      a
+        padding-left 0
+        // &:before
+        //   display inline-block
+        //   content ""
+        //   height 6px
+        //   width 6px
+        //   background-color $categoryIconColor
+        //   margin-right 10px
+        //   vertical-align middle
+      &.all .panel-heading a
+        border-bottom none
+        padding-left 0
+        color $categoryAllColor
+        border-bottom 1px solid $categoryBorderColor
+        &:before
+          display none
+      .panel-collapse
+        .panel-body ul
+          padding-left 0
+          margin-top 5px
+          margin-bottom 5px
+        a
+          display block
+          height 31px
+          line-height 31px
+          text-decoration none
+          color $categorySubColor
+          font-weight bold
+          padding-left 20px
+          // border-top 1px solid $categoryBorderColor
+          // margin-right -4px
+          width 100%
+          overflow hidden
+          text-overflow ellipsis
+          white-space nowrap
+          &:hover, &.active
+            // border-right 4px solid $categoryBorderColor
+            // background-color $categorySubBgColor
+            color $categorySubHoverColor
+        // li:last-child a
+        //     border-bottom 1px solid $categoryBorderColor
+      .panel-heading
+        .panel-title
+          position relative
+        a
+          width 100%
+          height 48px
+          line-height 48px
+          font-size 14px
+          display inline-block
+          color $categoryColor
+          font-weight bold
+          text-decoration none
+          border-bottom 1px solid $categoryBorderColor
+          padding-right 20px
+          text-overflow ellipsis
+          overflow hidden
+          // i
+          //   float right
+          //   margin-top 19px
+          //   border-top 6px dashed
+          //   border-left 6px solid transparent
+          //   border-right 6px solid transparent
+          &.active
+            color $mainColor
+          .opt-icon
+            font-size 12px
+            font-weight normal
+            float right
+            &.minus
+              display none
+            &.plus
+              display inline-block
+              // display none
+          &[aria-expanded="true"]
+            color $mainColor
+            // border-bottom-color $categoryBorderColor
+            border-bottom none
+            & + a
+              color $mainColor
+            .opt-icon
+              &.minus
+                // display none
+                display inline-block
+              &.plus
+                display none
+          &.collapsed
+            color $categoryColor
+            .opt-icon
+              &.minus
+                display none
+              &.plus
+                // display none
+                display inline-block
+          &[data-toggle]
+            position absolute
+            top 0
+            right 0
+            width auto
+            padding-right 0
+
+.product-menu-loading
+  .big-div, .min-div
+    width 100%
+    background $loadingBg
+    height 10px
+    margin-bottom 10px
+  .min-div
+    width 90%
+    margin-left 10%
+
+@media (min-width: 768px) and (max-width: 991px)
+  .menu-title
+    margin-left -5px
+    margin-right -5px
+  .product-menu
+    padding-left 20px
+
+@media screen and (max-width: 767px)
+  .product-container
+    padding-top 20px
+  .product-list
+    // margin-top -30px
+    .title
+      padding 8px
+      font-size 16px
+  .product-list.row
+    margin-left -5px
+    margin-right -5px

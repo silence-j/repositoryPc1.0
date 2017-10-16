@@ -1,0 +1,185 @@
+// 产品列表loading
+.list-loading
+  margin-bottom 60px
+  .img-container
+    background $loadingBg
+    padding-bottom 100%
+    width 100%
+  .p-title
+    background $loadingBg
+    width 100%
+    height 20px
+    margin-top 10px
+    border-radius 10px
+
+// 产品列表
+.p-list
+  position relative
+  // padding 10px
+  padding 15px
+  // margin-bottom 60px
+  margin-bottom 0
+  // border 1px solid $itemBorderColor
+  // overflow hidden
+  .p-item
+    position relative
+    background-color $itemBgColor
+    padding 0
+    // &.over-copy
+    //   position absolute
+    //   top 15px
+    //   left 15px
+    //   right 15px
+    //   z-index 99
+    //   background transparent
+    //   // box-shadow 1px 1px 15px $itemBoxShadowColor
+    //   padding-bottom 0
+    //   .img-container
+    //     visibility hidden
+    //     opacity 0
+    //   .p-title
+    //     visibility hidden
+    //     opacity 0
+    //   .learn-more-cntr
+    //     display block
+    //     background-color $itemLearnMoreCntrBgColor
+    //     margin 0 -10px
+    //     padding 0 10px 10px 10px
+    .learn-more
+      display none
+      top 40%
+      // top 40%
+      // width 40px
+      // left 50%
+      // margin-left -20px
+      // background-color $itemLearnMoreBgColor
+      // border-color $itemLearnMoreBorderColor
+      // color $itemLearnMoreColor
+      // display none
+      // border-radius 20px
+      // &:hover, &:focus, &:active
+      //   background-color $itemLearnMoreHoverBgColor
+      //   border-color $itemLearnMoreHoverBorderColor
+      //   color $itemLearnMoreHoverColor
+      &:before, &:after
+        position absolute
+        content ''
+        display block
+        width 32px
+        height 2px
+        background-color $mainColor
+      &:before
+        top -7px
+        left -16px
+      &:after
+        bottom -7px
+        right -16px
+  .item-container
+    // border 1px solid $itemBorderColor
+    padding 0 // 10px
+    transition 0.2 all ease
+    &.tit
+      border-color $itemTitleColor
+      padding 10px
+  .img-container
+    padding-bottom 100%
+    position relative
+    overflow hidden
+    img
+      position absolute
+      top 0
+      transition all 0.6s
+      width 100%
+    img:hover
+      // transform scale(1.2)
+      transform scale(1)
+  .p-title
+    height 40px
+    line-height 20px
+    padding 0
+    overflow hidden
+    text-overflow ellipsis
+    display -webkit-box
+    -webkit-box-orient vertical
+    -webkit-line-clamp 2
+    font-size 14px
+    color $itemTitleColor
+  &:hover
+    .p-item
+      box-shadow 2px 2px 15px $itemBoxShadowColor
+      // border-bottom-color $itemBorderColor
+      // padding-bottom 30px // hover roll up style
+      // .item-container
+      //   margin-top -15px  // hover roll up style
+      // .img-container // image shadow
+      //   box-shadow 1px 1px 10px $itemBoxShadowColor
+      .hover-container
+        display block
+
+// products hover 样式
+.item-container
+  display block
+  text-decoration none
+  &:hover, &:active, &:focus
+    text-decoration none
+    .learn-more
+      display block
+      position absolute // hover with title style
+      bottom 10px
+      top auto
+      width 40px
+      left 50%
+      margin-left -20px
+      padding 0
+      background-color $forgroundColor
+      border-color $forgroundColor
+      color $mainColor
+      text-align center
+      .glyphicon
+        color $mainColor
+      &:hover, &:focus
+        margin-left -67.5px
+        padding 0 10px
+        width auto
+        .glyphicon
+          color $mainColor
+        .text
+          display inline-block
+.img-container:hover
+  img
+    // transform scale(1.2)
+    transform scale(1)
+  .hover-container
+    // display block
+    display none
+  // .learn-more
+  //   display inline-block
+.hover-container
+  display none
+  position absolute
+  // width 100% // hover with title style
+  // height 100%
+  // background $itemOverlayBgColor
+  // opacity $itemOverlayBgOpacity
+  top 0
+  bottom 0
+  left 0
+  right 0
+  background-color transparent
+  border 2px solid $mainColor
+  .hover-title // hover with title style
+    position absolute
+    bottom 0
+    left 0
+    right 0
+    padding 10px 10px 65px 10px
+    background-color $mainColor
+    color $forgroundColor
+
+
+// 无产品就加载
+.boxImg
+  height 485px
+  text-align center
+  img
+    margin-top 30px

@@ -1,0 +1,49 @@
+div.desc-tit#supplier  SEND YOUR MESSAGE TO THIS SUPPLIER
+.load-spec
+    p
+    p
+    p
+form.supplier-form.clearfix.valid-form#form
+   .col-sm-12.col-xs-12.form-group
+     label 
+       i.req * 
+       span Message
+     textarea.empty-input(name="content")
+     div.validate-tip.animated.fadeIn
+       i.glyphicon-tishi
+       span Message can't be empty
+   .col-sm-5.col-xs-12.form-group.short
+         label 
+           i.req * 
+           span First name  
+         input.empty-input(name="firstName")
+         div.validate-tip.animated.fadeIn
+           i.glyphicon-tishi
+           span First name can't be empty
+   .col-sm-6.col-xs-12.form-group
+       label 
+         i.req * 
+         span Last name
+       input.empty-input(name="lastName")
+       div.validate-tip.animated.fadeIn
+         i.glyphicon-tishi
+         span Last name can't be empty
+   .col-sm-12.col-xs-12.form-group
+     label 
+       i.req * 
+       span Company
+     input.empty-input(name="company")
+     div.validate-tip.animated.fadeIn
+       i.glyphicon-tishi
+       span Company can't be empty
+   .col-sm-12.col-xs-12.form-group
+     label 
+       i.req * 
+       span Email address
+     input.empty-input(name="email")
+     div.validate-tip.animated.fadeIn
+       i.glyphicon-tishi
+       span This is not a valid email address
+   input(type="hidden",name="detailsStr")
+   input(type="hidden",name="shopId")
+   button.btn-send(type="button",disabled) SEND

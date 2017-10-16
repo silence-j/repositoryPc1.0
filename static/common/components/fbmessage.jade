@@ -1,0 +1,24 @@
+div.fb-messengermessageus(messenger_app_id='168680507009068',page_id='#{homePageId}',color="blue",size="large")
+script.
+
+  var openMessage = '#{openMessage}'
+  var isLogin = localStorage.getItem('isLogin')
+  if (+openMessage === 1 && +isLogin === 1) { // 1开0关
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '168680507009068',
+            cookie     : true,
+            xfbml      : true,
+            version    : 'v2.8'
+        });
+        FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  }

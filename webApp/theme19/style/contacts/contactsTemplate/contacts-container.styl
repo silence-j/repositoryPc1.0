@@ -1,0 +1,70 @@
+.contacts-list
+  margin-top 20px
+  padding-bottom 50px
+  background-color $contactSectionBgColor
+  // box-shadow 0 0 6px 4px $contactSectionBoxShadowColor
+  .title
+    margin-top 20px // 10px
+    // margin-bottom 20px
+    // padding 10px
+    // background $contactTitleBgColor
+    // font-size 18px
+.info-form
+  // margin 40px auto 0
+  // width 80%
+  .form-group
+    padding 0
+    min-height 50px
+    margin-bottom 25px
+    label // remove label text and using placeholder
+      top 12px
+      left -10px
+    .validate-input
+      &::placeholder
+        // opacity 0
+        color $inputPlaceHolderColor
+  .short
+    margin-right 8.33%
+    .validate-tip, .valid-tip
+      right 0
+.req
+  color red
+.fi-name
+  font-weight normal
+  padding-left 5px
+.send
+  display inline-block
+  margin 25px auto 0
+  padding 0 75px
+  line-height 36px
+  background-color $btnDisableBgColor
+  border 2px solid $btnDisableBgColor
+  color $btnDisableColor
+  border-radius $btnBorderRadius
+  outline none
+  &:focus, &:active
+    outline none
+.send.able
+  background-color $secondaryColor
+  border 2px solid $secondaryColor
+  color $forgroundColor
+  &:hover, &:active, &:focus
+    background-color $backgroundColor
+    border-color $backgroundColor
+    color $forgroundColor
+
+@media screen and (max-width: 767px)
+  .module-title
+    &:before
+      height 20px
+
+  .contacts-list
+    // margin-top -30px
+    .title
+      // padding 8px
+      font-size 20px
+    &.row
+      margin-left -5px
+      margin-right -5px
+      padding-left 0
+      padding-right 0

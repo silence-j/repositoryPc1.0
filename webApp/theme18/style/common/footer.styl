@@ -1,0 +1,298 @@
+.footer-container
+  margin-top 0 // 40px
+  background $footerBgColor
+
+  .footer-line
+    line-height 1px
+    height 1px
+    width 100%
+    background linear-gradient(to right, $footerBorderAltColor, $footerBorderAltColor 50%, $footerBorderColor 50%, $footerBorderColor)
+
+  .navbar
+    border-radius 0
+
+  .footer-top
+    background $footerBgColor url(/assets/$theme/images/footer_bg.png) top center repeat-y
+    .support
+      .contact.context
+        .tel-item
+          font-size 60px
+          &.tel-half
+            .left-half
+              text-align right
+              color $footerAltColor
+            .right-half
+              text-align left
+              color $footerColor
+
+  .footer-main
+    // border-top 3px solid $footerBorderColor
+    background $footerBgColor url(/assets/$theme/images/footer_bg.png) top center repeat-y
+
+  .support, .quick-links, .follow-us
+    margin-top 0 // 30px
+    text-align center
+    .title
+      color $footerTitleColor
+      font-size 30px
+    .context
+      color $footerColor
+      p
+        margin 0
+      a, a:active
+        color $footerLinkColor
+        text-decoration none
+      a:hover, a:focus
+        color $footerLinkHoverColor
+        .glyphicon
+          color $footerLinkHoverColor
+      .sup-i
+        color $footerIconSupportColor
+        margin-right 10px
+      // &.footer-logo
+      //   text-align center
+      //   .logo-img
+      //     height 73.60px
+      //     width auto
+      &.links
+        text-align center
+        padding-top 0 // 30px
+        height 100px
+        line-height 100px
+        .nav-link
+          float none
+          width auto
+          padding 0 50px
+          // border-right 1px solid $footerLinkBorderColor
+          &:last-child
+            border-right-width 0
+      &.contact
+        padding 0
+        .contact-item
+          padding 80px 0
+          display block
+          position relative
+          text-align center
+          &:after
+            content ''
+            display inline-block
+            position absolute
+            left 50%
+            margin-left -21px
+            bottom 80px
+            width 42px
+            height 1px
+            margin-top 40px
+            background-color #4A788E
+          &:nth-child(1) // two color style
+            // background $footerBgColor
+            color $footerAltColor
+            padding 60px 50px 60px 0
+            &:after
+              display none
+            .contact-inner
+              border 5px solid $footerAltColor
+              padding 90px 40px
+            .sup-i
+              color $footerAltColor
+              border-color $footerAltColor
+            p
+              color $footerAltColor
+          &:nth-child(2)
+            // background $footerBgAltColor
+            color $footerColor
+            padding 60px 0 60px 50px
+            &:after
+              display none
+            .contact-inner
+              border 5px solid $footerColor
+              padding 90px 40px
+            .sup-i
+              color $footerColor
+              border-color $footerColor
+            p
+              color $footerColor
+          // &:last-child
+          //   width 273px
+          //   margin-right 0
+          // &:before
+          //   content ""
+          //   display inline-block
+          //   vertical-align text-top
+          //   height 100%
+          .sup-i
+            display block
+            width 60px
+            height 60px
+            line-height 60px
+            margin-left auto
+            margin-right auto
+            border-radius 30px
+            font-size 30px
+            // border 1px solid $footerIconSupportColor
+            color $footerIconSupportColor
+          p
+            margin-top 40px
+            margin-bottom 40px
+            display block
+            height auto // 50px
+            line-height 25px
+            font-size 15px
+            overflow hidden
+            text-overflow ellipsis
+            color $footerColor
+            vertical-align top
+          // &:nth-child(2)
+          //   background-color $footerBgAltColor
+      &.social
+        margin 0
+        line-height 100px // 30px
+        a
+          display inline-block
+          line-height 100px // 30px
+          margin-right 240px
+          &:last-child
+            margin-right 0
+        .glyphicon
+          color $footerIconSocialColor
+          width 40px
+          height 40px
+          font-size 35px
+          text-align center
+          &.glyphicon-facebook
+            background-color transparent
+          &.glyphicon-linkedIn
+            background-color transparent
+          &.glyphicon-twitter
+            background-color transparent
+
+  .quick-links
+    // margin-top 25px
+    margin-top 0
+  .support
+    margin-top 0
+  .follow-us
+    margin-top 0
+    // padding 40px 0
+    // line-height 40px
+    font-size 14px
+    text-align center
+    .title
+      display none
+
+  .context-line
+    text-align center
+    margin-top 15px
+    &:before
+      content ''
+      display inline-block
+      width 30px
+      height 3px
+      background-color $mainColor
+
+  .footer-top
+    border none
+    background-color $footerNavBgColor
+    padding-top 24px
+    // .container
+    //   border-bottom 1px solid $footerBorderColor
+
+  .footer-copyright
+    position relative
+    margin-top 0 // 30px
+    background-color $footerNavBgColor
+    border none
+    // border-top 1px solid $footerBorderColor
+    color $footerColor
+    border-radius 0
+  .discribe
+    display none
+    text-align center
+    font-size 13px
+    line-height 40px
+
+@media screen and (max-width: 767px)
+  .footer-container
+    .footer-top, .footer-main
+      background $footerBgColor
+    .footer-line
+      background $footerColor
+    .support, .quick-links, .follow-us
+      text-align left
+      .context
+        &.footer-logo
+          text-align left
+        &.links
+          .nav-link
+            padding 0 10px
+        &.contact
+          .tel-item
+            margin-bottom 50px
+            &.visible-xs
+              font-size 40px
+              color $white
+              margin-bottom 20px
+          .contact-item
+            padding 40px 0
+            font-family "Arial Regular"
+            &:nth-child(1)
+              padding 20px
+            &:nth-child(2)
+              padding 20px
+              .contact-inner
+                border 5px solid $footerAltColor
+                padding 90px 40px
+              .sup-i
+                color $footerAltColor
+                border-color $footerAltColor
+              p
+                color $footerAltColor
+            &:after
+              bottom 40px
+
+    .follow-us
+      margin 0
+      padding 20px 0
+      font-size 20px
+      .context.social
+        text-align center
+        a
+          display inline-block
+          padding 0 40px
+          margin 0
+    .footer-copyright
+      margin-top 0
+      .contact
+        text-align left
+        .contact-item
+          display block
+          margin-bottom 10px
+          &:last-child
+            width 90%
+      .discribe
+        line-height 30px
+        padding 0
+        text-align center
+
+@media screen and (max-width: 479px)
+  .footer-container
+    .follow-us
+      float none
+      width 100%
+      text-align center
+      .context.social
+        a
+          padding 0 30px
+
+@media screen and (max-width: 374px)
+  .footer-container
+    .follow-us
+      .context.social
+        a
+          padding 0 20px
+    .support
+      .context
+        &.contact
+          .tel-item
+            &.visible-xs
+              font-size 30px

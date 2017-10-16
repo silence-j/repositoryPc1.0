@@ -1,0 +1,218 @@
+.ms-browser
+  .aboutUs-container
+    .overlay-img
+      .ab-img-container
+        .img-left
+          width 80%
+          float right
+.img-left
+  float right
+.aboutUs-container
+  position relative
+  margin-top 0 // 80px
+  padding 0 // 150px 0 100px
+  // background-color $forgroundColor
+  width 100%
+  background #FD7944 url(/assets/$theme/images/about_us_bg_line.png) left bottom repeat-x
+
+  // about us top title
+  .title
+    position relative
+    background-color transparent
+    font-size 30px
+    line-height 80px
+    font-weight normal
+    color $aboutUsSectionTitleColor
+    text-transform uppercase
+    span
+      margin-right 0.25em
+    .title-line
+      display none
+      z-index -1
+      left 210px
+      top 36px
+      position absolute
+      width 135%
+      height 100px
+      border-top 2px solid $aboutUsSectionTitleLineColor
+      border-right 2px solid $aboutUsSectionTitleLineColor
+      &:before
+        content ""
+        display none // inline-block
+        width 0
+        height 0
+        vertical-align middle
+        border-right 7px dashed
+        border-right 7px solid \9
+        border-top 6px solid transparent
+        border-bottom 6px solid transparent
+        top -7px
+        left -6px
+        position absolute
+    .title-wrapper &
+      text-align center
+      line-height normal
+      margin-top 40px
+      margin-bottom 40px
+
+  .aboutUs
+    padding-top 0
+    padding-bottom 0
+    .discrible-container
+      // position static
+      background $aboutUsSectionDescBgColor
+      padding 85px 0 0 // 90px 0
+      .title
+        // display none // using background title
+        color $aboutUsSectionTitleColor
+        // text-shadow 1px 1px 5px $black
+        text-align center
+        font-size 45px
+        line-height normal
+        text-align left
+        padding 0 65px
+        span
+          display block
+        .title-line
+          display none
+      .discrible
+        // padding 2.5% 5% 5% 0
+        padding 0 60px
+        margin-top 45px
+        .jump-to
+          text-decoration: none
+        .discrible-text
+          .text
+            max-height 192px
+            line-height 24px
+            // overflow hidden
+            // text-overflow ellipsis
+            // display -webkit-box
+            // -webkit-box-orient vertical
+            // -webkit-line-clamp 8
+            font-size 16px
+            color $aboutUsSectionColor
+          .shaped
+            content ""
+            display inline-block
+            float right
+            height 350px
+            width 65%
+            -webkit-clip-path  polygon( 64% 100%, 0 0 ,100% 0)
+            clip-path  polygon( 64% 100%, 0 0 ,100% 0)
+            // -webkit-clip-path url("#about-us-shaped-clip-shape")
+            // clip-path url("#about-us-shaped-clip-shape")
+            -webkit-shape-outside  polygon( 64% 100%, 0 0 ,100% 0)
+            shape-outside polygon( 64% 100%, 0 0 ,100% 0)
+            // -webkit-shape-outside url("#about-us-shaped-outside")
+            // shape-outside url("#about-us-shaped-outside")
+            html.safari &
+              -webkit-clip-path polygon(100% 0, 0 0, 100% 100%)
+              clip-path polygon(100% 0, 0 0, 100% 100%)
+          p.text-loading
+            height 20px
+            border-radius 10px
+            margin 0 0 18px
+          .half
+            width 70%
+        .btn-wrapper
+          text-align left
+        .btn
+          margin-top 25px
+          background $aboutUsLearnMoreBtnBgColor
+          border-color $aboutUsLearnMoreBtnBorderColor
+          color $aboutUsLearnMoreBtnColor
+    .aboutUs-img
+      padding 0 // 40px 0
+      .ab-img-container
+        width 100%
+        height 0
+        padding-bottom 50%
+        text-align right
+        overflow hidden
+        img
+          width 100%
+          height auto
+        .img-hold
+          position absolute
+          top 0
+          width 100%
+          height 100%
+          background $loadingBg
+  .overlay-img
+    position absolute
+    left 50%
+    margin-left -275px
+    top 0
+    bottom 0
+    right 0
+    overflow hidden
+    -webkit-clip-path polygon(0 0, 100% 0, 100% 100%, 50% 100%)
+    clip-path polygon(0 0, 100% 0, 100% 100%, 50% 100%)
+    -webkit-clip-path url("#about-us-overlay-clip-shape")
+    clip-path url("#about-us-overlay-clip-shape")
+    html.safari &
+      -webkit-clip-path polygon(0 0, 100% 0, 100% 100%, 50% 100%)
+      clip-path polygon(0 0, 100% 0, 100% 100%, 50% 100%)
+    .ab-img-container
+      overflow hidden
+      height 100%
+
+@media screen and (max-width: 1199px)
+  .aboutUs-container
+    margin-top 0 // 50px
+    .title
+      color $mbAboutUsSectionTitleColor
+    .aboutUs
+      padding 0
+      & > .row
+        margin 0
+      .title-wrapper
+        text-align center
+        // .title
+        //   color $mainColor
+      .aboutUs-img
+        padding-bottom 0
+        .title
+          font-size 36px
+          .title-line
+            left 135px
+            width 65%
+        .ab-img-container
+          margin-top 0 // 30px
+      .discrible-container
+        background none
+        padding 0 15px
+        min-height auto
+        &:before
+          display none
+        .title
+          padding 0 15px
+        .discrible-cntr
+          height auto
+          padding-bottom 0
+        .discrible
+          padding 10px
+          margin-top 0 // 20px
+          .discrible-text
+            color $aboutUsSectionColor
+            // .shaped
+            //   width 205px
+            //   -webkit-clip-path polygon(100% 0,0 0,100% 100%)
+            //   clip-path polygon(100% 0,0 0,100% 100%)
+            //   -webkit-shape-outside polygon(100% 0,0 0,100% 100%)
+            //   shape-outside polygon(100% 0,0 0,100% 100%)
+            .text
+              overflow hidden
+              text-overflow ellipsis
+              display -webkit-box
+              -webkit-box-orient vertical
+              -webkit-line-clamp 8
+          .btn-wrapper
+            margin 0
+            text-align center
+            .btn-default .text
+              display inline-block
+              margin-left 5px
+    .overlay-img
+      margin-left -100px

@@ -1,0 +1,27 @@
+div(style='overflow:hidden')
+  .col-xs-12
+    .container-fluid
+      #profile-desc
+        .title.module-title
+          | ABOUT US
+          span.caret.caret-right
+          span.line
+        .content-container.about
+          .row
+            .comDesc.col-sm-12.col-xs-12
+              .title.module-title
+                | About Us
+                span.caret.caret-right
+                span.line
+              span#companydesc
+                img
+              p
+            .col-sm-12.col-sm-offset-5.hide
+            //- #companydesc.col-sm-12.col-xs-12
+            //-   .img-wrapper.clearfix
+            //-     img
+
+- var profileCompanyDescClipPath = '<svg class="css-shape" width="0" height="0"><defs><clipPath id="profile-company-desc-clip-path" clipPathUnits="objectBoundingBox"><polygon points="0 0, 1 0, 1 1, 0.5 1" /></clipPath></defs></svg>'
+!{profileCompanyDescClipPath}
+- var profileCompanyDescShapeOutside = '<svg class="css-shape" width="0" height="0"><defs><clipPath id="profile-company-desc-shape-outside" clipPathUnits="objectBoundingBox"><polygon points="0 0, 1 0, 1 1, 0.5 1" /></clipPath></defs></svg>'
+!{profileCompanyDescShapeOutside}

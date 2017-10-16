@@ -1,0 +1,190 @@
+.profile-section
+  margin-top -60px
+  background $white
+  &>div>.col-xs-12
+    padding 0 15px
+  .title
+    font-family HelveticaNeueLTPro-Bd,sans-serif
+    font-size 24px
+    font-weight bold
+    margin-top 20px
+    padding 13px
+    background $whiteOO
+  .arrow-container
+    position relative
+    .icon-arrow
+      position absolute
+      top 57%
+      font-size 24px
+      color $blackOOO
+      cursor pointer
+      &.glyphicon-dleft
+        left 2%
+      &.glyphicon-dright
+        right 2%
+  .content-container
+    padding-left 4%
+    padding-right 4%
+    margin-bottom 30px;
+    &.about
+      margin-top 20px
+      img
+        float left
+        margin-right 15px;
+        margin-bottom 20px;
+      .img-loading
+        float left
+        height 340px
+        width: 520px
+        margin-right 15px;
+        margin-bottom 20px;
+        background #F2F2F2
+      p
+        line-height 18px
+        margin: 0 15px 0
+        color $blackO
+        word-break normal
+      .loading-container
+        float right
+        .p-loading
+          line-height 18px
+          margin-bottom 20px
+          background  #F2F2F2
+          width: 500px
+          height 20px
+        .pl-loading
+          width:90%
+          height 20px
+          position absolute
+          right 48px
+          background  #F2F2F2
+    &.company
+      margin-top 15px
+      ul
+        padding-left 0
+      li
+        margin-top 15px
+        span
+          &:first-child
+            color $blackOO
+          &:last-child
+            color $blackO
+            p
+              overflow hidden;
+              text-overflow ellipsis;
+              white-space nowrap;
+              margin:0 0;
+    &.trademark
+      margin-top 30px
+      .loading-cal
+        float left
+        margin 0 9px
+        width: 250px
+        height: 300px
+        background #f2f2f2
+      .title-loading
+      .show-container
+        text-align center
+      .license
+        float none
+        display inline-block
+        .desc
+          white-space nowrap
+          overflow hidden
+          text-overflow ellipsis
+        .img-container
+          padding-bottom 130%
+          position relative
+          overflow hidden
+          border 1px solid $grayOO
+          text-align left
+          img
+            position absolute
+            top 0
+            width 90%
+            margin-left 5%
+    &.download
+      padding-left 0
+      padding-right 0
+      .down-loading
+        width 100%
+        height 26px
+        margin-bottom  18px
+        background #f2f2f2
+      ul
+        padding-left 0
+        .down-item
+          position relative
+          padding-left 16px
+          height 64px
+          border-bottom 1px dotted #e8e8e8
+          i
+            float left
+            line-height 64px
+          p
+            display inline-block
+            margin 20px 0 0 5px
+            font-size 13px
+            padding 0
+            color #333
+            overflow hidden
+            text-overflow ellipsis
+            white-space nowrap
+            width 45%
+          .btn-blue-trans
+            position absolute
+            right 20px
+            top 15px
+            padding 0 15px
+            height 30px
+            line-height 30px
+            font-size 13px
+.mask-container
+  display none
+  position fixed
+  left 0
+  right 0
+  top 0
+  bottom 0
+  z-index 999
+  background rgba(110,110,110,.7)
+  .modal-dialog
+    width 100%
+    height 100%
+    margin 0px auto
+    display table
+    text-align center
+    .modal-content
+      display table-cell
+      vertical-align middle
+      .close-mask
+        right 24%
+        position absolute
+        cursor pointer
+        opacity 0.7
+        color #fff
+        font-size 28px
+      .img-preview
+        left 25%
+        .icon-arrow
+          position absolute
+          top 38%
+          font-size 24px
+          color $blackOOO
+          cursor pointer
+          &.glyphicon-chevron-left
+            left -6%
+            font-size 70px
+          &.glyphicon-chevron-right
+            right -6%
+            font-size 70px
+        .img-section
+          padding-bottom 10%
+          margin-left 8%
+          img
+            width 100%
+@media screen and (max-width: 768px)
+  .profile-section
+    margin-left -10px
+    margin-right -10px
+    margin-top 10px

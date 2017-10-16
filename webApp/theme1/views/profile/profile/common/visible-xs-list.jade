@@ -1,0 +1,10 @@
+.row.carousel-section.visible-xs
+  .show-container-xs
+    each cert,index in certList
+        .license.col-xs-4(data-i="#{index}" style='margin-top:10px')
+          .img-container
+            img(src="#{cert.urlWhole}")
+          if (cert.nameEn != '' && cert.nameEn != null)
+              p.desc(title="#{cert.nameEn}") #{cert.nameEn}
+          else
+              p.desc &nbsp;

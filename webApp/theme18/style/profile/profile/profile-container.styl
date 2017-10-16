@@ -1,0 +1,338 @@
+.split-line
+  border-top 1px solid $detailLineColor
+
+.profile-section
+  margin-top 0 // 80px
+  background $forgroundColor
+  // box-shadow 0 0 6px 4px $profileSectionBoxShadowColor
+  font-size 14px
+  .title
+    margin-top 20px
+    // padding 10px
+    // background $profileAboutUsTitleBgColor
+  .comDesc .title
+    display none // inline-block // inline the section title
+    margin-top 0
+    .line
+      bottom -20px
+      left 0
+      margin-left 0
+  .arrow-container
+    position relative
+    .icon-arrow
+      position absolute
+      top 57%
+      width 40px
+      height 50px
+      line-height 50px
+      // top 64px
+      // bottom 0
+      // width 34px
+      font-size 20px
+      text-align center
+      background-color $tradeCertNavBgNormal
+      color $tradeCertNavColor
+      cursor pointer
+      vertical-align middle
+      z-index 3
+      &:before
+        align-items center
+        width 100%
+        display flex
+        justify-content center
+        height 100%
+      &:hover, &.active
+        background-color $tradeCertNavBgActive
+        color $tradeCertNavHoverColor
+      &.icon-arrow-left
+        left 0
+      &.icon-arrow-right
+        right 0
+
+  .module-title
+    padding 10px 0
+
+  #profile-desc
+    margin-top 80px
+    // padding-bottom 30px
+    // border 1px solid $profileSectionLineColor
+  .content-container
+    // padding-left 2%
+    // padding-right 2%
+    padding-bottom 10px // 30px
+    // border-bottom 1px solid $profileSectionLineColor
+    &.about
+      // margin-top 50px
+      // margin-bottom 30px
+      // #companydesc
+      //   padding 20px
+      //   position relative
+      //   .img-wrapper
+      //     // position absolute
+      //     // top -60%
+      //     // left 0
+      //     // width 95%
+      //     // height 0
+      //     // padding-bottom 100%
+      //     width 100%
+      //     overflow hidden
+      //     img
+      //       width 100%
+      //       height auto
+      #companydesc
+        max-width 40%
+        float right
+        margin-left 10px
+        margin-bottom 10px
+        img
+          max-width 100%
+      .comDesc
+        position relative
+        // padding 50px 35px 0 75px
+        line-height 24px
+        font-size 13px
+        color $textColor
+        p
+          margin 0
+          font-size 14px
+          // &:first-line
+          //   font-style italic
+          //   font-weight bold
+          //   color $mainColor
+          //   font-size 40px
+          //   line-height 50px
+        // &:before
+        //   position absolute
+        //   content ''
+        //   display inline-block
+        //   left 15px
+        //   top 35px
+        //   width 40px
+        //   height 40px
+        //   background url(/assets/theme12/images/quote.png) left top no-repeat
+        //   background-size contain
+        // & + .hidden-xs
+        //   padding-left 75px
+        //   .title
+        //     .line
+        //       display inline-block
+        //       position static
+        //       width 40px
+        //       height 4px
+        //       vertical-align text-top
+        //       margin-top 11px
+        //       margin-left 20px
+    &.company
+      margin-top 15px
+      // padding-left 0
+      // padding-right 0
+      ul
+        // padding-left 0 // add table style
+        border-top 1px solid $tableBorderColor
+        border-left 1px solid $tableBorderColor
+        margin 0
+        padding 0
+      li
+        // margin-top 15px
+        margin 0 // add table style
+        border-right 1px solid $tableBorderColor
+        border-bottom 1px solid $tableBorderColor
+        background-color $forgroundColor
+        span
+          height 40px
+          line-height 40px // add table style
+          overflow hidden
+          text-overflow ellipsis
+          white-space nowrap
+          &:first-child
+            background-color $tableThBgColor
+            border-right 1px solid $tableBorderColor
+            color $tableThColor
+          &:last-child
+            color $tableTdColor
+            font-weight bold
+            p
+              overflow hidden
+              text-overflow ellipsis
+              white-space nowrap
+              margin 0 0
+        &:nth-child(3), &:nth-child(4), &:nth-child(7), &:nth-child(8), &:nth-child(11), &:nth-child(12)
+          background-color $tableHoverBgColor
+          border-right-color $tableHoverBorderColor
+          span:first-child
+            border-right-color $tableHoverBorderColor
+    &.trademark
+      margin-top 30px
+      padding-left 4%
+      padding-right 4%
+      .license
+        .img-container
+          padding-bottom 130%
+          position relative
+          overflow hidden
+          border 1px solid $tradeCertBorderColor
+          background-position 50% 50%
+          background-repeat no-repeat
+          background-size cover
+          img
+            display none
+            position absolute
+            top 0
+            // width 90%
+            width auto
+            height 100%
+            margin-left 5%
+        .desc
+          text-align center
+          overflow hidden
+          text-overflow ellipsis
+          white-space nowrap
+    &.download
+      ul
+        padding-left 0
+        .down-item
+          position relative
+          height 50px
+          line-height 50px
+          margin-bottom 10px
+          // border-bottom 1px solid $downloadItemBorderColor
+          border 1px solid $downloadItemBorderColor
+          &:hover
+            background-color $downloadItemHoverBgColor
+            border-color $downloadItemHoverBorderColor
+          & > i
+            float left
+            margin-left 10px
+          a.titl
+            color $textColor
+            text-decoration none
+            display inline-block
+            margin 0
+            padding 0 0 0 10px
+            overflow hidden
+            text-overflow ellipsis
+            white-space nowrap
+            width 45%
+          .btn-blue-trans
+            position absolute
+            right 10px
+            top 10px
+            padding 0 15px
+            height 30px
+            line-height 30px // 26px
+            font-size 13px
+            text-decoration none
+            .theme-icon
+              display inline-block
+              margin-right 5px
+            .text
+              display inline-block
+              // margin-left 5px
+      .load-more-download
+        display none
+        text-align center
+        padding-top 10px
+        .load-more
+          display inline-block
+          height 36px
+          line-height 36px
+          text-decoration none
+          background-color $mbLoadMoreBgColor
+          color $mbLoadMoreColor
+          border 1px solid $mbLoadMoreBorderColor
+          padding 0 15px
+          cursor pointer
+          &:hover, &:active, &:focus
+            text-decoration none
+          &[disabled]
+            background-color $mbLoadMoreDisabledBgColor
+          .theme-icon
+            margin-left 5px
+
+.mask-container
+  display none
+  position fixed
+  left 0
+  right 0
+  top 0
+  bottom 0
+  background rgba(110,110,110,.7)
+  z-index 999
+  .modal-dialog
+    width 60%
+    .modal-body
+      width 100%
+      .img-preview
+        position relative
+        // position fixed
+        // top 25%
+        // left 25%
+        .icon-arrow
+          position absolute
+          top 45%
+          font-size 24px
+          color $maskArrowColor
+          cursor pointer
+          &.glyphicon-chevron-left
+            left 2%
+          &.glyphicon-chevron-right
+            right 2%
+        .img-section
+          // padding-bottom 10%
+          img
+            width 100%
+      .close.close-mask
+        position absolute
+        top -30px
+        right 15px
+        color $maskCloseColor
+        opacity 1
+        font-size 30px
+
+// @media screen and (max-width: 991px)
+//   .profile-section
+//     .content-container
+//       padding-left 5%
+//       padding-right 5%
+
+@media screen and (max-width: 767px)
+  .profile-section
+    font-size 18px
+    .container-fluid
+      padding 0
+    #profile-desc
+      border none
+      margin-top 20px
+    .content-container
+      padding-left 0 // 15px
+      padding-right 0 // 15px
+      &.about
+        #companydesc
+          max-width 100%
+          width 100%
+          margin-right 0
+        .comDesc
+          // padding 30px 0 0 0
+          // padding 0
+          // &:before
+          //   left 0
+          //   top 15px
+          p
+            font-size 18px
+      &.company
+        li
+          span
+            &:last-child
+              p
+                text-align left
+          &:nth-child(3), &:nth-child(4), &:nth-child(7), &:nth-child(8), &:nth-child(11), &:nth-child(12)
+            background-color $tableBgColor
+            border-right-color $tableBorderColor
+            span:first-child
+              border-right-color $tableBorderColor
+      &.trademark
+        padding-left 0
+        padding-right 0
+  .mask-container
+    .modal-dialog
+      width 80%

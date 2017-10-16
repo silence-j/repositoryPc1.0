@@ -1,0 +1,230 @@
+.footer-container
+  margin-top 0 // 40px
+  background $footerBgColor
+  #footer-container
+    border-top 1px solid $footerBorderColor
+
+  .support, .quick-links, .follow-us
+    margin-top 0 // 30px
+    text-align center
+    .title
+      color $footerTitleColor
+      font-size 30px
+    .context
+      color $footerColor
+      .logo-img
+        width:66px
+      p
+        margin 0
+      a, a:active
+        color $footerLinkColor
+        text-decoration none
+      a:hover, a:focus
+        color $footerLinkHoverColor
+        .glyphicon
+          color $footerLinkHoverColor
+      .sup-i
+        color $footerIconSupportColor
+        margin-right 10px
+      // &.footer-logo
+      //   text-align center
+      //   .logo-img
+      //     height 73.60px
+      //     width auto
+      &.links
+        text-align center
+        padding-top 0 // 30px
+        height 100px
+        line-height 100px
+        .nav-link
+          float none
+          width auto
+          padding 0 30px
+          min-width 164px
+          display inline-block
+          // border-right 1px solid $footerLinkBorderColor
+          &:last-child
+            border-right-width 0
+          a
+            font-weight bold
+      &.contact
+        padding-top 25px
+        .contact-item
+          // padding 80px 0
+          display block
+          position relative
+          text-align center
+          // &:after // below line style
+          //   content ''
+          //   display inline-block
+          //   position absolute
+          //   left 50%
+          //   margin-left -21px
+          //   bottom 80px
+          //   width 42px
+          //   height 1px
+          //   margin-top 40px
+          //   background-color #4A788E
+          // &:last-child
+          //   width 273px
+          //   margin-right 0
+          // &:before
+          //   content ""
+          //   display inline-block
+          //   vertical-align text-top
+          //   height 100%
+          .sup-i
+            display block
+            width 60px
+            height 60px
+            line-height 60px
+            margin-left auto
+            margin-right auto
+            border-radius 30px
+            font-size 28px
+            border 1px solid $footerIconSupportColor
+            color $footerIconSupportColor
+          p
+            // margin-top 40px
+            // margin-bottom 40px
+            display block
+            height 30px
+            line-height 30px
+            font-size 15px
+            overflow hidden
+            text-overflow ellipsis
+            color $footerColor
+            vertical-align top
+          // &:nth-child(2)
+          //   background-color $footerBgAltColor
+      &.social
+        margin 0
+        line-height 100px // 30px
+        a
+          margin-right 25px
+          &:last-child
+            margin-right 0
+        .glyphicon
+          color $footerIconSocialColor
+          width 16px
+          height 16px
+          line-height 40px
+          font-size 16px
+          text-align center
+          &.glyphicon-facebook
+            background-color transparent
+          &.glyphicon-linkedIn
+            background-color transparent
+          &.glyphicon-twitter
+            background-color transparent
+
+  .quick-links
+    // margin-top 25px
+    margin-top 0
+  .support
+    margin-top 0
+  .follow-us
+    margin-top 0
+    // padding 40px 0
+    // line-height 40px
+    font-size 14px
+    text-align center
+    .title
+      display none
+
+  .context-line
+    text-align center
+    margin-top 15px
+    &:before
+      content ''
+      display inline-block
+      width 30px
+      height 3px
+      background-color $mainColor
+
+  .footer-top
+    border none
+    background $footerNavBgColor
+    padding-top 40px // 24px
+    .container
+      border-bottom 1px solid $footerBorderAltColor
+
+  .footer-copyright
+    display none
+    position relative
+    margin-top 0 // 30px
+    background $footerBgAltColor
+    border none
+    border-top 1px solid $footerBorderColor
+    color $footerColor
+    border-radius 0
+  .discribe
+    text-align center
+    font-size 13px
+    line-height 40px
+
+@media (min-width: 768px) and (max-width: 991px)
+  .footer-container
+    .follow-us
+      width 100%
+      .context
+        &.social
+          text-align center
+    .quick-links
+      width 100%
+      .context
+        &.links
+          .nav-link
+            padding 0
+            text-align center
+            min-width 120px
+            &.hidden-xs
+              display inline-block
+              img
+                //width 40%
+
+@media screen and (max-width: 767px)
+  .footer-container
+    .support, .quick-links, .follow-us
+      text-align left
+      .context
+        &.footer-logo
+          text-align left
+        &.links
+          height auto
+          line-height 30px
+          .nav-link
+            padding 0 10px
+            min-width auto
+        &.contact
+          .contact-item
+            padding 10px 0 // 40px 0
+            &:after
+              bottom 40px
+    .support
+      margin-left -15px
+      margin-right -15px
+    .follow-us
+      margin 0
+      padding 20px 0
+      font-size 20px
+      .context.social
+        text-align center
+        line-height 50px
+        a
+          display inline-block
+          padding 0 40px
+          margin 0
+    .footer-copyright
+      margin-top 0
+      .contact
+        text-align left
+        .contact-item
+          display block
+          margin-bottom 10px
+          &:last-child
+            width 90%
+      .discribe
+        line-height 30px
+        padding 0
+        text-align center

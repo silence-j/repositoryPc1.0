@@ -1,0 +1,16 @@
+extends ../layout
+
+block css
+  link(rel="stylesheet" href="/thirtyPart/bootstrap/bootstrap.min.css")
+  link(rel='stylesheet' href="/plugins/animate.css/animate.min.css")
+  link(rel='stylesheet', href='/theme#{them}/css/search/index.css?v=#{version}')
+
+block content
+  include ../components/header
+  include ./search/search-result
+  include ../components/footer
+
+append scripts
+  script(src="/plugins/jquery/dist/jquery.min.js")
+  script(src='/plugins/bootstrap/dist/js/bootstrap.min.js')
+  script(src='/theme#{them}/js/search.js?v=#{version}')

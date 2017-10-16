@@ -1,0 +1,86 @@
+@import "../common/color.styl"
+@import "../common/header.styl"
+@import "../common/footer.styl"
+@import "../../../common/style/normal.styl"
+@import "../common/normal.styl"
+.loader-more
+  display none
+body
+  background $whiteOO
+.search-result
+  background $white
+  margin-top 20px
+  .loading-search-title
+    width 30%
+    margin-top 20px
+    height 20px
+    margin-bottom 10px
+    background $loadingBg
+  .search-title
+    display none
+    margin-top 20px
+    height 30px
+    .num
+      color $mainColor
+      margin-right 5px
+// 列表
+.p-list
+  padding 10px
+  margin-bottom 60px
+  border 1px solid $white
+  overflow hidden
+  .img-container
+    padding-bottom 100%
+    position relative
+    overflow hidden
+    img
+      position absolute
+      top 0
+      transition all 0.6s
+      width 100%
+    img:hover
+      transform scale(1.2)
+  .p-title
+    height 40px
+    font-size 16px
+    overflow hidden
+    text-overflow ellipsis
+    display -webkit-box
+    -webkit-box-orient vertical
+    -webkit-line-clamp 2
+// 列表loading
+.list-loading
+  margin-bottom 60px
+  .img-container
+    background $loadingBg
+    padding-bottom 100%
+    width 100%
+  .p-title
+    background $loadingBg
+    width 100%
+    height 20px
+    margin-top 10px
+    border-radius 10px
+// 分页
+.pagination
+  width 100%
+  text-align center
+  margin-top -20px
+  margin-bottom 40px
+.search-container-empty
+  text-align center
+  margin-top 10%
+  margin-bottom 15%
+  .info-text
+    color $blackOO
+    .search-text
+      margin-left 10px
+      color $black
+@media screen and (max-width: 768px)
+  .pagination
+    display none
+  .loader-more
+    color: $gray
+    display block
+    text-align center
+    padding-bottom 30px;

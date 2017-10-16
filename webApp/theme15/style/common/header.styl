@@ -1,0 +1,546 @@
+@import "color.styl"
+@import "homeEditor.styl"
+
+.navbar
+  min-height 40px
+  margin-bottom 0
+.header
+  background $headerBgColor
+
+  .top
+    background-color $headerTopBgColor
+    height 30px
+    line-height 30px
+    overflow hidden
+
+    // pc version social area
+    .social-container
+      display inline-block
+      vertical-align middle
+      a
+        display inline-block
+        margin-left 30px
+        color $blackOO
+        &:hover, &:focus, &:active
+          color $white
+          text-decoration none
+        &:first-child
+          margin-left 0
+
+    // pc version user area
+    .user-container
+      background-color $black
+      vertical-align middle
+      padding 0 10px
+      &:hover
+        background-color #E6253D
+      &:before
+        content ""
+        display inline-block
+        vertical-align middle
+        height 100%
+      span
+        display inline-block
+        vertical-align middle
+        color $white
+      a
+        text-decoration none
+        color $white
+        margin-right 10px
+        &:hover, &:active, &:focus
+          text-decoration none
+        &:last-child
+          margin-right 0
+        &.username
+          padding-right 10px
+          border-right 1px solid $blackTrue
+      .glyphicon-user
+        color $white
+        margin-right 5px
+
+  .bottom
+    border-top 1px solid $grayOOO
+    background #fff
+    z-index 499
+    .navbar
+      position relative
+      background $navbarBgColor
+      border none
+      border-radius 0
+
+    .navbar-header
+      background-color $navbarBgColor
+      position relative
+
+      // mobile version menu
+      button
+        padding: 11px 15px
+        margin 5px 0 0 0
+        font-weight bold
+        border none
+        background-color $mbTopSearchBtnBgColor
+        color $mbTopSearchBtnColor
+        .menu-close
+          display none
+        .menu-bar
+          font-size 14px
+          vertical-align bottom
+          display inline-block
+          margin-left 10px
+          margin-right 5px
+          width 30px
+          background-color $mbTopSearchLabelBgColor
+          color $mbTopSearchLabelColor
+        .menu-text
+          vertical-align text-bottom
+          color $mbTopSearchBtnColor
+      button:focus
+        border none
+        background none
+      button:hover
+        border none
+        background none
+      // mobile version search
+      .search-input
+        height 50px
+        border-top 1px solid $mbTopSearchBorderColor
+        border-bottom 1px solid $mbTopSearchBorderColor
+        background $mbTopSearchInputBgColor
+        input
+          background $mbTopSearchInputBgColor
+          color $mbTopSearchInputColor
+          border none
+          border-radius 0
+          height 50px
+          box-shadow none
+          &:active, &:focus
+            box-shadow none
+        span
+          border none
+          background $whiteOO
+      .search-tip-list
+        display none
+        position absolute
+        left 0
+        right 0
+        top 40px
+        padding 5px 0 15px
+        z-index 699
+        background $white
+        margin 0
+        li
+          display block
+          height 35px
+          line-height 35px
+          padding 0 10px
+          overflow hidden
+          text-overflow ellipsis
+          &:hover
+            background-color #F7F7F7
+
+    // pc version logo
+    .logo-img-loading
+      display inline-block
+      background $loadingBg
+      height 52px
+      width 120px
+      margin-top 18px
+    .logo-wrapper
+      position absolute
+      z-index 501
+      left 15px
+      top 0
+      width auto
+      height 88px
+      line-height 88px
+      overflow hidden
+      .logo-img
+        display none
+        height 52px
+        width auto
+
+    // pc version search
+    .top-search
+      position absolute
+      z-index 199
+      right 15px
+      top 0
+      width auto
+      height 88px
+      line-height 88px
+      .search-bar
+        display inline-block
+        vertical-align middle
+        text-decoration none
+        color $blackO
+        margin-right 10px
+        &:hover, &:active, &:focus
+          text-decoration none
+      .hidden-search
+        line-height normal
+        width 200px
+        margin-left 0
+        background-color $pcTopSearchBgColor
+        display inline-block
+        animation-duration 0.2s
+        vertical-align middle
+        .input-group
+          position relative
+          width 100%
+          .form-control
+            background $pcTopSearchInputBgColor
+            border 1px solid $pcTopSearchInputBgColor
+            height 40px
+            line-height 38px
+            padding 0 12px
+            border-radius 5px
+            box-shadow none
+            color $pcTopSearchInputColor
+            &::placeholder
+              color $pcTopSearchInputColor
+            &:active, &:focus
+              background $pcTopSearchInputFocusBgColor
+              border 1px solid $pcTopSearchBorderColor
+              color $pcTopSearchInputFocusColor
+              box-shadow none
+              outline none
+          .btn
+            background none
+            border none
+            height 40px
+            padding 0 5px
+            color $pcTopSearchBtnColor
+            &:focus
+              outline none
+              color $pcTopSearchBtnHoverColor
+            &.search-btn
+              margin-left -30px
+              z-index 9
+            &.close-input
+              padding 0 20px 0 10px
+        .search-tip-list
+          position absolute
+          z-index 999
+          top 40px
+          left 0
+          right 0
+          margin 0
+          padding 5px 0
+          background-color $pcTopSearchTipListBgColor
+          // box-shadow 0 0 6px 0 $pcTopSearchTipListShadowColor
+          border 1px solid $pcTopSearchTipListBorderColor
+          display none
+          overflow hidden
+          li
+            display block
+            height 35px
+            line-height 35px
+            padding 0 10px
+            cursor pointer
+            overflow hidden
+            text-overflow ellipsis
+            &:hover
+              background-color $pcTopSearchTipListItenHoverBgColor
+            &.empty
+              cursor default
+
+    ul.navbar-nav
+      position relative
+      text-align center
+      & > li
+        float none
+        display inline-block
+        padding 0 25px
+        & > a
+          height 88px
+          line-height 85px
+          padding 0
+          background-color $navbarItemBgColor
+          color $navbarItemColor
+          font-size 16px
+          .caret
+            margin-left 2.5px
+          &:hover, &:focus
+            cursor pointer
+            text-decoration none
+            background-color $navbarItemHoverBgColor
+            color $navbarItemHoverColor
+            // border-bottom 3px solid $mainColor
+        &:hover, &:focus
+          & > a
+            border-bottom 3px solid $mainColor
+      li:last-child
+        margin-right 0
+      li.active
+        border-bottom none
+        & > a
+          background-color $navbarItemHoverBgColor
+          color $navbarItemHoverColor
+          border-bottom 3px solid $mainColor
+          &:hover, &:active, &:focus
+            background-color $navbarItemHoverBgColor
+            color $navbarItemHoverColor
+      li.drop-menu, li.nav-drop-menu
+        position relative
+        .slide-down, .slide-up
+          vertical-align middle
+          display inline-block
+          margin-top -3px
+          margin-left 2px
+          font-size 12px
+        .slide-up
+          display none
+        .drop-hidden-menu
+          position absolute
+          z-index 99
+          top 88px
+          left 25px
+          width 220px
+          height 0
+          padding 5px 0 10px
+          margin-top 0
+          background $navbarSubBgColor
+          // border-top 5px solid $mainColor
+          opacity 0
+          overflow hidden
+          // box-shadow 1px 1px 5px $grayOOO
+          transition opacity 0.2s ease
+          li
+            // border-bottom 1px solid transparent
+            display block
+            max-height 40px
+            text-align left
+            a
+              position relative
+              display inline-block
+              width 100%
+              height 40px
+              line-height 40px
+              padding 0 10px
+              background-color $navbarSubItemBgColor
+              color $navbarSubItemColor
+              font-size 14px
+              text-overflow ellipsis
+              overflow hidden
+              white-space nowrap
+              &:hover, &:active, &:focus
+                background-color $navbarSubItemHoverBgColor
+                color $navbarSubItemHoverColor
+                text-decoration none
+              i
+                position absolute
+                right 5px
+                top 0
+                font-size 13px
+                float right
+            .drop-hidden-menu-2-wrapper
+              position absolute
+              z-index 999
+              width 220px
+              height 0
+              margin -50px 0 0 220px
+              padding 0
+              opacity 0
+              overflow hidden
+              background $navbarSub2BgColor
+              transition opacity 0.2s ease
+            .drop-hidden-menu-2
+              background-color $navbarSub2BgColor
+              padding 5px 0 10px
+              // box-shadow 1px 1px 5px $grayOOO
+          li.drop-menu-2:hover
+            & > a
+              background $navbarSubItemHoverBgColor
+              color $navbarSubItemHoverColor
+            .drop-hidden-menu-2-wrapper
+              height auto
+              opacity 1
+      li.drop-menu:hover, li.nav-drop-menu:hover
+        .slide-down
+          display none
+        .slide-up
+          display inline-block
+        .drop-hidden-menu
+          height auto
+          opacity 1
+          overflow visible
+          margin 0px
+      li.line-li
+        display none
+        margin 0
+        padding 0
+        vertical-align middle
+        .line
+          display inline-block
+          height 20px
+          width 1px
+          background $navbarItemLineColor
+          vertical-align middle
+      li.search-li, li.user-li
+        a
+          padding 0 20px
+      .user-opration, .user-loged
+        color $blackO
+        display none
+        line-height 60px
+        a
+          color $blackO
+        span
+          margin 0 7px
+        i
+          margin-right 6px
+        .username
+          width: 40px
+          display inline-block
+          white-space nowrap
+          overflow hidden
+          text-overflow: ellipsis
+          line-height 10px
+          padding 0
+
+@media (min-width: 768px) and (max-width: 999px)
+  .header
+    .bottom
+      ul.navbar-nav
+        & > li
+          padding 0 5px
+      .top-search
+        right 5px
+        .hidden-search
+          width 180px
+/*old 767px*/
+@media screen and (max-width: 999px)
+  .header
+    .top
+      background-color $white
+      min-height 90px
+      text-align center
+      .logo-wrapper
+        line-height 90px
+        height 90px
+      .logo-img
+        height 45px
+    .bottom
+      .navbar-collapse
+        background-color $headerBgColor
+        padding 0
+      ul.navbar-nav
+        background-color $headerBgColor
+        margin 0
+        padding 0
+        & > li
+          display block
+          line-height 60px
+          height auto
+          padding 0 15px
+          border-bottom 1px solid $whiteO
+          text-align left
+          & > a
+            background-color transparent
+            color $blackTrue
+            text-decoration none
+            height 60px
+            line-height 60px
+            padding 0
+            text-align left
+            &:hover, &:active, &:focus
+              background-color transparent
+              color $blackTrue
+              border-bottom none
+            &:before
+              content ''
+              display inline-block
+              width 15px
+              height 15px
+              background-color $mainColor
+              margin-right 10px
+        li.drop-menu, li.drop-menu:hover
+          .drop-hidden-menu
+            position static
+            top 0
+            background $white
+            width 100%
+            height auto
+            padding 0
+            border-top none
+            box-shadow none
+            opacity 1
+            li
+              border none
+              max-height none
+            li.drop-menu-2, li.drop-menu-2:hover
+              background $white
+              max-height none
+              height auto
+              // border-top 1px solid $grayOO
+              border none
+              a
+                background-color transparent
+                color $blackTrue
+                padding 0 25px
+                border-radius 0 !important
+                font-size 16px
+                line-height 40px
+              .drop-hidden-menu-2-wrapper
+                position static
+                background $white
+              .drop-hidden-menu-2
+                background $white
+                width 100%
+                height auto
+                opacity 1
+                margin-left 0
+                margin-top 0
+                padding 0
+                border-top none
+                box-shadow none
+                li
+                  height 40px
+                  margin-bottom 15px
+                  padding-left 10px
+                  padding-right 10px
+                  float left
+                a
+                  line-height 36px
+                  background $loadingBg
+                  padding 2px 10px
+                  text-align center
+                  margin-bottom 7px
+                  border-radius 0 !important
+                  &:hover, &:focus
+                    background-color $mainColor
+                    color $white
+        li.active
+          border-bottom 1px solid $whiteO
+          a, a:hover, a:active, a:focus
+            font-weight normal
+            background-color transparent
+            color $blackTrue
+            border-bottom none
+        li.user-li
+          background $loadingBg
+          width 100%
+          text-align left
+          .user-opration, .user-loged
+            margin-left 10px
+            line-height 40px
+            a
+              background-color transparent
+              padding 0
+              font-weight normal
+              color $blackO
+              &.username
+                width auto
+                display inline
+        .social-container
+          color $grayO
+          a
+            display inline-block
+            padding 0 10px
+            text-align center
+            color $grayO
+            &:hover, &:active, &:focus
+              text-decoration none
+              color $mainColor
+          i
+            font-size 18px

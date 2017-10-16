@@ -1,0 +1,22 @@
+.row.carousel-section.hidden-xs
+  .hidden.hidden-left
+  .show-container(style='text-align:center')
+    each cert,index in certList
+      if(index < 4)
+        .license.col-sm-3(data-i="#{index}", style='float: none;display: inline-block;')
+          .img-container(style="background-image:url(#{cert.urlWhole})")
+            img(src="#{cert.urlWhole}")
+          if (cert.nameEn != '' && cert.nameEn != null)
+            p.desc(title='#{cert.nameEn}') #{cert.nameEn}
+          else
+            p.desc &nbsp;
+  .hidden.hidden-right
+    each cert,index in certList
+      if(index >= 4)
+        .license.col-sm-3(data-i="#{index}", style='float: none;display: inline-block;')
+          .img-container(style="background-image:url(#{cert.urlWhole})")
+            img(src="#{cert.urlWhole}")
+          if (cert.nameEn != '' && cert.nameEn != null)
+            p.desc(title='#{cert.nameEn}') #{cert.nameEn}
+          else
+            p.desc &nbsp;

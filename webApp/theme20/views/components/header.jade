@@ -1,0 +1,207 @@
+mixin line(className)
+  if(className)
+    li.line-li.hidden-xs(class='#{className}')
+      span.line
+  else
+    li.line-li.hidden-xs
+      span.line
+
+.header
+  .top.visible-xs
+    .container
+      //- pc version social area
+      .social-container.pull-left.icon-top.hidden-xs
+        //- 通过JS动态添加
+        //- i.glyphicon.glyphicon-facebook
+        //- i.glyphicon.glyphicon-linkedIn
+        //- i.glyphicon.glyphicon-twitter
+
+      //- mobile version logo
+      .logo-wrapper.visible-xs
+        img.logo-img
+
+      //- pc version user area
+      .user-container.pull-right.hidden-xs
+        span.user-opration
+          i.glyphicon.glyphicon-user
+          a(href='/users/login?shopId=#{shopId}') Sign in
+          if(fb !== '1')
+            | or &nbsp;
+            a(href='/users/register?shopId=#{shopId}') Sign up
+        span.user-loged
+          i.glyphicon.glyphicon-user
+          a(href='javascript:;').username
+          if(fb !== '1')
+            a.signOut(href="javascript:;") SIGN OUT
+            //- a(href='#{apiHost}/buyer/logout') SIGN OUT
+
+  .bottom
+    nav.navbar.navbar-default.container
+      .navbar-header
+        //- mobile version menu
+        button.navbar-toggle.pull-left.collapsed(type="button", data-toggle="collapse", data-target="#navbar-collapse", aria-expanded="false")
+          span.menu-bar
+            span.menu-open.glyphicon.glyphicon-menu
+            span.menu-close.glyphicon.glyphicon-cancel
+          span.menu-text
+            | MENU
+
+        //- mobile version search
+        .visible-xs
+          .input-group.search-input.mbSearch
+            input.form-control(type='input', placeholder='Search…')
+            span.input-group-addon.search-btn
+              i.glyphicon.glyphicon-search
+            ul.search-tip-list#hiddenSearchTipList
+              //- li
+              //-   | 测试关键词
+
+      //- pc version logo
+      .logo-wrapper.hidden-xs
+        img.logo-img#logo-img
+
+      //- navbar
+      #navbar-collapse.collapse.navbar-collapse.navbar-right
+        ul.nav.navbar-nav.col-sm-12
+          if(fb !== '1')
+            if(pageCode === 'index')
+              li.home.active
+                a(href="/?shopId=#{shopId}" class='nav-a')
+                  //- i.theme-icon.icon-home.hidden-xs
+                  span Home
+            else
+              li.home
+                a(href="/?shopId=#{shopId}" class='nav-a')
+                  //- i.theme-icon.icon-home.hidden-xs
+                  span Home
+            +line
+          if(pageCode === 'products')
+            li.drop-menu.active
+              a(href='/products?shopId=#{shopId}&fb=#{fb}')
+                | Products
+                //- span.caret.slide-down.hidden-xs
+                //- span.caret.caret-up.slide-up.hidden-xs
+                i.theme-icon.icon-chevron-down.slide-down.hidden-xs
+                i.theme-icon.icon-chevron-up.slide-up.hidden-xs
+          else
+            li.drop-menu
+              a(href='/products?shopId=#{shopId}&fb=#{fb}')
+                | Products
+                //- span.caret.slide-down.hidden-xs
+                //- span.caret.caret-up.slide-up.hidden-xs
+                i.theme-icon.icon-chevron-down.slide-down.hidden-xs
+                i.theme-icon.icon-chevron-up.slide-up.hidden-xs
+          if(fb !== '1'&& (blogCount > 0))
+            +line
+            if(pageCode === 'blog')
+              li.active
+                a(class='nav-a', href='/blog/#{shopId}')
+                  | Blog
+            else
+              li
+                a(href='/blog/#{shopId}')
+                  | Blog         
+          +line
+          if(fb === '1')
+            li
+              a(style="width:200px") &nbsp;
+          if(fb !== '1')
+            if(pageCode === 'profile')
+              li.active
+                a(class='nav-a', href='/profile?shopId=#{shopId}') Company Profile
+            else
+              li
+                a(class='nav-a', href='/profile?shopId=#{shopId}') Company Profile
+            +line
+            if(pageCode === 'contacts')
+              li.active
+                a(class='nav-a', href='/contacts?shopId=#{shopId}') Contact Us
+            else
+              li
+                a(class='nav-a', href='/contacts?shopId=#{shopId}') Contact Us
+            +line
+
+          //- pc version user area with dorp downlist
+          li.nav-drop-menu.drop-right.user-li.pull-right.hidden-xs
+            a(class='nav-a', href='javascript:;')
+              i.glyphicon.glyphicon-user
+            ul.drop-hidden-menu.user-opration
+              li
+                a(href='/users/login?shopId=#{shopId}') SIGN IN
+              if(fb !== '1')
+                li
+                  a(href='/users/register?shopId=#{shopId}') SIGN UP
+            ul.drop-hidden-menu.user-loged
+              li
+                a(href='javascript:;').username
+              if(fb !== '1')
+                li
+                  a.signOut(href="javascript:;") SIGN OUT
+                  //- a(href='#{apiHost}/buyer/logout') SIGN OUT
+          //- +line('hidden-xs')
+
+          //- pc version search area
+          li.search-li.pull-right.hidden-xs
+            a.search-bar
+              i.glyphicon.glyphicon-search
+            a.close-input
+              i.theme-icon.icon-cancel
+          +line('hidden-xs')
+
+          //- mobile version user area
+          li.user-li.visible-xs
+            span.user-opration
+              i.glyphicon.glyphicon-user.hidden-xs
+              a(href='/users/login?shopId=#{shopId}') Sign In
+              if(fb !== '1')
+                span OR
+                a(href='/users/register?shopId=#{shopId}') Sign Up
+            span.user-loged
+              i.glyphicon.glyphicon-user.hidden-xs
+              a(href='javascript:;').username
+              if(fb !== '1')
+                span |
+                a.signOut(href="javascript:;") SIGN OUT
+                //- a(href='#{apiHost}/buyer/logout') SIGN OUT
+
+          //- mobile version social area
+          //- +line('visible-xs')
+          +line
+          li.visible-xs
+            .social-container.icon-top
+              //- 通过JS动态添加
+              //- i.glyphicon.glyphicon-facebook
+              //- i.glyphicon.glyphicon-linkedIn
+              //- i.glyphicon.glyphicon-twitter
+
+      //- pc version search in navbar
+      .top-search
+        a.search-bar.glyphicon.glyphicon-search
+        .hidden-search.animated.zoomIn.hidden-xs
+          .input-group
+            input.form-control#input-down(type='input', placeholder="Enter keywords...")
+            .input-group-btn.search-btn-container
+              button.btn.search-btn
+                i.glyphicon.glyphicon-search
+            .input-group-btn.close-input-container
+              button.btn.close-input
+                span.theme-icon.icon-cancel
+            ul.search-tip-list#hiddenSearchTipList
+              //- li
+              //-   | 测试关键词
+
+  //- pc version search hidden in new line
+  .foot-search
+    .container
+      .hidden-search.animated.zoomIn.hidden-xs
+        .input-group
+          input.form-control#input-down(type='input', placeholder='Search...')
+          .input-group-btn
+            button.btn.search-btn
+              i.glyphicon.glyphicon-search
+          .input-group-btn.hide
+            button.btn.close-input
+              span.theme-icon.icon-cancel
+          ul.search-tip-list#hiddenSearchTipList
+            //- li
+            //-   | 测试关键词

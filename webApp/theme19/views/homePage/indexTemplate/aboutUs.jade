@@ -1,0 +1,44 @@
+.aboutUs-container
+  .container.aboutUs#aboutUs
+    .title-wrapper.visible-md.visible-sm.visible-xs
+      .title
+        span About
+        | Us
+        span.title-line
+    .row-two
+      //- .discrible-container.col-sm-6.col-xs-12
+      .discrible-container.col-sm-12
+        //- .discrible-cntr
+        .title.hidden-md.hidden-sm.hidden-xs
+          span About
+          | Us
+          span.title-line
+        .discrible
+          .discrible-text
+            .shaped.hidden-md.hidden-sm.hidden-xs
+            p.text
+            p.text-loading
+            p.text-loading
+            p.text-loading
+            p.text-loading.half
+          p.text-loading.btn
+          //- p.btn-blue LEARN MORE
+      //- .aboutUs-img.col-sm-6.col-xs-12
+      .aboutUs-img.col-sm-12.visible-md.visible-sm.visible-xs
+        .title.hide
+          span About
+          | Us
+          span.title-line
+        .ab-img-container.default-color
+          //- img#img-left(src='')
+          .img-hold
+  //- .overlay-line
+  .overlay-img.hidden-md.hidden-sm.hidden-xs
+    .ab-img-container.default-color
+//- points="0.64 1, 0 0, 1 0"
+- var aboutUsShapedClipShape = '<svg class="css-shape" width="0" height="0"><defs><clipPath id="about-us-shaped-clip-shape" clipPathUnits="objectBoundingBox"><polygon points="1 0.5, 0 0, 1 1" /></clipPath></defs></svg>'
+!{aboutUsShapedClipShape}
+- var aboutUsShapedOutside = '<svg class="css-shape" width="0" height="0"><defs><clipPath id="about-us-shaped-outside" clipPathUnits="objectBoundingBox"><polygon points="1 0, 0 0, 1 1" /></clipPath></defs></svg>'
+!{aboutUsShapedOutside}
+- var aboutUsOverlayClipShape = '<svg class="css-shape" width="0" height="0"><defs><clipPath id="about-us-overlay-clip-shape" clipPathUnits="objectBoundingBox"><polygon points="0 0, 1 0, 1 1, 0.5 1" /></clipPath></defs></svg>'
+!{aboutUsOverlayClipShape}

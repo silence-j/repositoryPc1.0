@@ -1,0 +1,190 @@
+.loader-more
+  display none
+// 分页
+.pagination
+  width 100%
+  text-align center
+// 列表
+.product-list
+  margin-top -60px
+  background $white
+  .products-container-list
+    padding 0 15px
+  .loading-search-title
+    width 30%
+    height 20px
+    margin-bottom 10px
+    background $loadingBg
+  .title
+    font-family HelveticaNeueLTPro-Bd,sans-serif
+    font-size 24px
+    font-weight bold
+    margin-top 20px
+    margin-bottom 30px
+    padding 10px
+    background $whiteOO
+  .product-desc
+    font-size 16px
+    display none
+    color $blackO
+    padding 0 12px
+    .num
+      font-weight bold
+      color $mainColor
+      margin-left 5px
+      margin-right 5px
+// 列表loading
+.list-loading
+  margin-bottom 60px
+  .img-container
+    background $loadingBg
+    padding-bottom 100%
+    width 100%
+  .p-title
+    background $loadingBg
+    width 100%
+    height 20px
+    margin-top 10px
+    border-radius 10px
+.boxImg
+  height 485px
+  text-align center
+  img
+   margin-top 30px
+.p-list
+  padding 10px
+  margin-bottom 10px
+  border 1px solid $white
+  overflow hidden
+  a:hover
+    color: #359AF6
+    text-decoration none
+  .img-container
+    padding-bottom 100%
+    position relative
+    overflow hidden
+    .btn-on
+      padding-top 10px
+      padding-bottom 10px
+      height inherit
+      line-height 15px
+      //width 60%
+    img
+      position absolute
+      top 0
+      transition all 0.6s
+      width 100%
+    img:hover
+      transform scale(1.2)
+  .p-title
+    font-weight 600
+    height 40px
+    font-size 14px
+    overflow hidden
+    text-overflow ellipsis
+    display -webkit-box
+    -webkit-box-orient vertical
+    -webkit-line-clamp 2
+    color: #000
+    margin-top 22px
+.p-list:hover
+  border 1px solid $grayOOO
+.product-menu
+  padding 30px 0 0 50px
+  .menu-title
+    font-weight bold
+    font-size 14px
+    margin-bottom 24px
+    color: #333
+    text-decoration none
+    display inline-block
+  .panel-group
+    .pane
+      .panel-heading
+        .panel-title
+          position relative
+          height 39px
+          a
+           text-decoration none
+          //.collapsed
+          //  .caret
+          //    transform rotate(180deg)
+          //    transition all .3s
+          //    color: #359AF6
+      .panel-collapse
+        .panel-body ul
+          margin-top 0
+          padding-left 10px
+          li
+            margin-bottom 16px
+            a
+              color $black
+              font-weight normal
+              text-decoration none
+      .panel-heading
+        .panel-title
+          &.reverse
+            a
+              color #359AF6
+              i
+                color #359AF6
+                transform rotate(180deg)
+                transition all .3s
+          a
+            //height 45px
+            display inline-block
+            width 100%
+            overflow hidden
+            text-overflow ellipsis
+            white-space nowrap
+            color $black
+            font-weight bold
+            text-decoration none
+            word-break break-all
+            &.content-link
+              width 92%
+            &.caret-link
+              position absolute
+              width 12px
+              top 7px
+              right 0
+              i
+                float right
+                border-top 6px dashed
+                border-left 6px solid transparent
+                border-right 6px solid transparent
+
+.product-menu-loading
+  .big-div,.min-div
+    width 100%
+    background $loadingBg
+    height 10px
+    margin-bottom 10px
+  .min-div
+    width 90%
+    margin-left 10%
+@media screen and (max-width: 1092px)
+  .btn-on
+    width 60%
+    font-size 10px
+@media screen and (max-width: 768px)
+  body,html
+    // font-size 14px
+    .pagination
+      display none
+    .loader-more
+      color: $gray
+      display block
+      text-align center
+      padding-bottom 30px;
+    .product-list
+      margin-top 10px
+      .btn-on
+        width 50%
+        font-size 14px
+      .title
+        padding 8px
+        font-size 16px
+    .product-list.row
+      margin-left -5px
+      margin-right -5px

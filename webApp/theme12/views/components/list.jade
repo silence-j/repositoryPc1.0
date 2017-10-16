@@ -1,0 +1,22 @@
+if(index)
+  .p-list.col-md-3.col-sm-4.col-xs-6
+    .p-item
+      a.item-container(href='/detail?shopId=#{shopId}&productId=#{productId}')
+        .img-container
+          img(src='#{src}')
+          .hover-container
+          span.learn-more.btn-blue.btn-flat LEARN MORE
+        .p-title #{desc}
+        //- .learn-more-cntr
+        //-   span.learn-more.btn-blue.btn-flat LEARN MORE
+else
+  .p-list.col-sm-4.col-xs-6
+    .p-item
+      a.item-container(href='/detail?shopId=#{shopId}&productId=#{productId}')
+        .img-container
+          img(src='#{src}')
+          .hover-container
+          span.learn-more.btn-blue.btn-flat LEARN MORE
+        .p-title #{desc}
+        //- .learn-more-cntr
+        //-   span.learn-more.btn-blue.btn-flat LEARN MORE

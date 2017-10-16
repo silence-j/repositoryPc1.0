@@ -1,0 +1,55 @@
+.guide-container
+  margin-top 30px
+  max-width 100%
+  overflow hidden
+  .guide-img
+    width 100%
+    .img
+      animation-duration 1s
+      overflow hidden
+      .img-holder
+        display inline-block
+        // height 300px
+        height 0
+        padding-bottom 100%
+        width 100%
+        background #EFF0F1
+      & > a
+        display block
+        width 100%
+        height 0
+        padding-bottom 100%
+        overflow hidden
+        background-position 50% 50%
+        background-repeat no-repeat
+        background-size cover
+        &:hover, &:focus
+          opacity 0.8
+          box-shadow 1px 1px 10px $blackO
+        img
+          display none
+          width 100%
+          height auto
+      &.img2
+        & > a
+          padding-bottom 47.5%
+
+@media screen and (max-width: 767px)
+  .guide-container
+    margin-top 15px
+    .guide-img
+      .row
+        width 150%
+        // margin-left -25%
+      .img
+        // transition .4s ease-in-out
+        // transform translateX(-43%)
+        &:nth-child(1)
+          text-align center
+          margin-left -16.66667%
+        &:nth-child(2)
+          text-align center
+        &:nth-child(3)
+          text-align center
+        & > a
+          border-width 0
